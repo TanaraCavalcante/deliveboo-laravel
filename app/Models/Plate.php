@@ -16,4 +16,10 @@ class Plate extends Model
         'visibility',
         'image'
     ];
+
+    //! Relation "many to one" with Restaurant
+    public function restaurants()
+    {
+        return $this->hasMany(Restaurant::class);
+    }
 }
