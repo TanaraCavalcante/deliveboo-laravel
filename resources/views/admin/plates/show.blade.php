@@ -18,11 +18,7 @@
 
                 <p class="card-title">Descrizione: {{$plate->description}}</p>
 
-                <p class="card-title">Ingredienti: {{$plate->ingredients}}</p>
-
                 <h6 class="card-title fw-bold">Prezzo:{{ $plate->price }}</h6>
-
-                <h6 class="card-title fw-bold">Disponibilità:{{ $plate->visibility }}</h6>
                 
                 <div>Link: <a href="{{ $plate->image }}" target="_blank">{{ $plate->image }}</a></div>
 
