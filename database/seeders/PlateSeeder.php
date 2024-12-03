@@ -344,7 +344,7 @@ class PlateSeeder extends Seeder
         ];
 
         foreach ($plates as $plate){
-            $newPlate = Plate::create([$plate]);
+            $newPlate = Plate::create($plate);
         }
     }
 }
