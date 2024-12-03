@@ -10,6 +10,7 @@ class Plate extends Model
     use HasFactory;
     protected $fillable = [
         'name',
+        'restaurant_id',
         'description',
         'ingredients',
         'price',
