@@ -10,8 +10,17 @@ class Restaurant extends Model
     use HasFactory;
 
     //! Relation "one to Many" with Plate
-    public function plate() //um tipo pode servir para varios projetos
+    public function plate()
     {
         return $this->belongsTo(Plate::class);
     }
+
+
+    //! Relation "one to Many" with RestaurantType
+    public function restaurantType()
+    {
+        return $this->belongsTo(RestaurantType::class);
+    }
+
+    
 }
