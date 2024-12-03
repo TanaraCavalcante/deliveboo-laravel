@@ -13,7 +13,6 @@ class PlateController extends Controller
     public function index(){
         $plate = Plate::paginate(10);
         return view('admin.plates.index', compact('plates'));
-
     }
     public function create(){
         $plate = new Plate();
@@ -36,7 +35,8 @@ class PlateController extends Controller
         $plate->update($data);
         return redirect()->route('admin.plates.show', $plate);
     }
-    public function destroy(){
-
+    public function destroy(Plate $plate){
+        $plate->delete();
+        return redirect()->route('admin.plates.index');
     }
 }
