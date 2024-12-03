@@ -20,6 +20,7 @@ class PlateController extends Controller
         return view('admin.plates.create', compact('plate'));
     }
     public function store(StorePlateRequest $request){
+        $data = $request->validated();
 
     }
     public function show(){
