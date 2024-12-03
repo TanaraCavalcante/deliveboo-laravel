@@ -17,7 +17,14 @@ use Illuminate\Support\Facades\Auth;
 Route::get('/', function () {
     return view('welcome');
 });
+
+Route::get('/home', function () {
+    return view('home');
+});
+
 Auth::routes();
+
+
 Route::middleware('auth')->controller(AdminPlateController::class)->prefix('/admin')->name('admin.')->group(function(){
     route::get('/plates','index')->name('plates.index');
     route::get('/plates/create','create')->name('plates.create');
