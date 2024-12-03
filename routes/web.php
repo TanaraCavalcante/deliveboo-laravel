@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\Admin\PlateController as AdminPlateController;
 
 /*
 |--------------------------------------------------------------------------
@@ -13,10 +14,13 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
+Route::middleware('auth')->controller(AdminPlateController::class)->prefix('/admin')->name('admin.')->group(function(){
+    route::get('/plates','index')->name('plates.index');
+    route::get('/plates/create','create')->name('plates.create');
+    route::post('/plates','store')->name('plates.store');
+    route::get('/plates/{plate}','show')->name('plates.show');
+    route::get('/plates/{plate}/edit','edit')->name('plates.edit');
+    route::put('/plates/{plate}','update')->name('plates.update');
+    route::delete('/plates/{plate}','destroy')->name('plates.delete');
+
 });
-
-Auth::routes();
-
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
