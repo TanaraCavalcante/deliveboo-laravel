@@ -17,6 +17,12 @@ class Plate extends Model
         'image'
     ];
 
+     //! Relation "one to Many" with Plate
+     public function orderPlate()
+     {
+         return $this->belongsTo(OrderPlate::class);
+     }
+
     //! Relation "many to one" with Restaurant
     public function restaurants()
     {

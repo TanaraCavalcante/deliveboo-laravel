@@ -8,4 +8,10 @@ use Illuminate\Database\Eloquent\Model;
 class OrderPlate extends Model
 {
     use HasFactory;
+
+     //! Relation "many to one" with Plate
+     public function plates()
+     {
+         return $this->hasMany(Plate::class);
+     }
 }
