@@ -7,5 +7,10 @@ use Illuminate\Http\Request;
 
 class PlateController extends Controller
 {
-    
+    public function index(){
+
+    }
+    public function show(){
+        
+    }
 }
