@@ -1,4 +1,5 @@
 @extends("layouts.app")
+@section("page-title", "Lista dei piatti")
 
 @section("content")
 <h1>Lista dei piatti:</h1>
