@@ -54,12 +54,28 @@ class PlateSeeder extends Seeder
                 "image" => "https://images.pexels.com/photos/1435896/pexels-photo-1435896.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
             ],
             [
+                "name" => "Spaghetti alle Vongole",
+                "description" => "Un piatto tipico della cucina italiana, con spaghetti conditi con vongole fresche, aglio, olio d'oliva, prezzemolo e un tocco di vino bianco.",
+                "ingredients" => "spaghetti, vongole, aglio, olio d'oliva, prezzemolo, vino bianco",
+                "price" => 12.50,
+                "visibility" => true,
+                "image" => "https://images.pexels.com/photos/20545318/pexels-photo-20545318/free-photo-of-piastre-pasto-pasta-minestra.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+            ],
+            [
                 "name" => "Risotto ai Funghi",
                 "description" => "Un risotto cremoso preparato con funghi freschi, brodo vegetale e una spruzzata di parmigiano.",
                 "ingredients" => "riso, funghi porcini, brodo vegetale, parmigiano",
                 "price" => 12.00,
                 "visibility" => true,
                 "image" => "https://images.pexels.com/photos/28442559/pexels-photo-28442559/free-photo-of-risotto-gourmet-con-funghi-su-piatto-elegante.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+            ],
+            [
+                "name" => "Risotto ai Frutti di Mare",
+                "description" => "Un risotto cremoso con una selezione di frutti di mare freschi, come gamberi, cozze e calamari, cucinato con brodo di pesce.",
+                "ingredients" => "riso, gamberi, cozze, calamari, brodo di pesce, vino bianco, aglio",
+                "price" => 16.00,
+                "visibility" => true,
+                "image" => "https://images.pexels.com/photos/28503604/pexels-photo-28503604/free-photo-of-risotto-gourmet-ai-frutti-di-mare-con-capesante-e-verdure.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
             ],
             [
                 "name" => "Parmigiana di Melanzane",
@@ -78,6 +94,22 @@ class PlateSeeder extends Seeder
                 "image" => "https://images.pexels.com/photos/11160096/pexels-photo-11160096.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
             ],
             [
+                "name" => "Filetto di Salmone alla Griglia",
+                "description" => "Un delizioso filetto di salmone grigliato, servito con un contorno di verdure al vapore e una salsa al limone.",
+                "ingredients" => "filetto di salmone, limone, olio d'oliva, verdure al vapore",
+                "price" => 14.00,
+                "visibility" => true,
+                "image" => "https://images.pexels.com/photos/7627414/pexels-photo-7627414.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+            ],
+            [
+                "name" => "Frittura Mista di Pesce",
+                "description" => "Un piatto di pesce fresco, tra cui calamari, gamberi e piccole verdure, fritti croccanti e serviti con una spruzzata di limone.",
+                "ingredients" => "calamari, gamberi, verdure miste, farina, olio di semi, limone",
+                "price" => 14.50,
+                "visibility" => true,
+                "image" => "https://images.pexels.com/photos/16533150/pexels-photo-16533150/free-photo-of-pasto-arance-snack-spuntino.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+            ],
+            [
                 "name" => "Bruschetta al Pomodoro",
                 "description" => "Fette di pane tostato con pomodori freschi, basilico e olio d'oliva.",
                 "ingredients" => "pane, pomodoro, basilico, olio d'oliva, aglio",
@@ -92,6 +124,14 @@ class PlateSeeder extends Seeder
                 "price" => 20.00,
                 "visibility" => true,
                 "image" => "https://images.pexels.com/photos/8753745/pexels-photo-8753745.jpeg"
+            ],
+            [
+                "name" => "Pollo Fritto",
+                "description" => "Pollo croccante e dorato, impanato e fritto fino alla perfezione, servito con una salsa barbecue e patatine fritte.",
+                "ingredients" => "pollo, farina, uova, pangrattato, olio di semi, salsa barbecue, patatine fritte",
+                "price" => 10.50,
+                "visibility" => true,
+                "image" => "https://images.pexels.com/photos/17282046/pexels-photo-17282046/free-photo-of-cibo-trama-cena-pranzo.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
             ],
             [
                 "name" => "Focaccia Genovese",
@@ -110,6 +150,14 @@ class PlateSeeder extends Seeder
                 "image" => "https://images.pexels.com/photos/8522690/pexels-photo-8522690.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
             ],
             [
+                "name" => "Pattatine Fritte",
+                "description" => "Pattatine fritte croccanti, dorate e servite con un pizzico di sale, ideali come accompagnamento per ogni piatto principale.",
+                "ingredients" => "patate, olio di semi, sale",
+                "price" => 3.00,
+                "visibility" => true,
+                "image" => ""
+            ],
+            [
                 "name" => "Pizza Margherita",
                 "description" => "Una pizza classica con pomodoro fresco, mozzarella di bufala e basilico, simbolo della cucina napoletana.",
                 "ingredients" => "pomodoro, mozzarella di bufala, basilico, olio d'oliva",
@@ -118,12 +166,20 @@ class PlateSeeder extends Seeder
                 "image" => "https://images.pexels.com/photos/29609013/pexels-photo-29609013/free-photo-of-autentica-pizza-napoletana-con-basilico-fresco.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
             ],
             [
+                "name" => "Marinara",
+                "description" => "Una pizza semplice ma ricca di sapore, con pomodoro, aglio, origano, olio extravergine d'oliva e un tocco di basilico fresco.",
+                "ingredients" => "pomodoro, aglio, origano, olio extravergine d'oliva, basilico",
+                "price" => 6.00,
+                "visibility" => true,
+                "image" => "https://images.pexels.com/photos/12891059/pexels-photo-12891059.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+            ],
+            [
                 "name" => "Pizza Diavola",
                 "description" => "Una pizza piccante con pomodoro, mozzarella, salame piccante, peperoncino e olio d'oliva.",
                 "ingredients" => "pomodoro, mozzarella, salame piccante, peperoncino, olio d'oliva",
                 "price" => 8.50,
                 "visibility" => true,
-                "image" => "https://images.pexels.com/photos/29608924/pexels-photo-29608924.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+                "image" => "https://images.pexels.com/photos/3682837/pexels-photo-3682837.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
             ],
             [
                 "name" => "Pizza Vegetariana",
