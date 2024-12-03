@@ -182,6 +182,30 @@ class PlateSeeder extends Seeder
                 "image" => "https://images.pexels.com/photos/3616956/pexels-photo-3616956.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
             ],
             [
+                "name" => "Bacon Burger",
+                "description" => "Un succulento hamburger con carne di manzo, formaggio cheddar, bacon croccante, lattuga, pomodoro e maionese, servito con patatine fritte.",
+                "ingredients" => "panino, carne di manzo, cheddar, bacon, lattuga, pomodoro, maionese, patatine fritte",
+                "price" => 12.00,
+                "visibility" => true,
+                "image" => "https://images.pexels.com/photos/11812583/pexels-photo-11812583.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+            ],
+            [
+                "name" => "Burger Vegetariano",
+                "description" => "Un hamburger vegetariano con un delizioso burger di ceci, lattuga, pomodoro, cipolla rossa e salsa yogurt, servito con patatine fritte.",
+                "ingredients" => "panino, burger di ceci, lattuga, pomodoro, cipolla rossa, salsa yogurt, patatine fritte",
+                "price" => 9.50,
+                "visibility" => true,
+                "image" => "https://images.pexels.com/photos/1624473/pexels-photo-1624473.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+            ],
+            [
+                "name" => "Hamburger di Pollo",
+                "description" => "Un hamburger gustoso con pollo grigliato, lattuga croccante, pomodoro fresco, maionese e salsa barbecue, servito con patatine fritte.",
+                "ingredients" => "panino, pollo grigliato, lattuga, pomodoro, maionese, salsa barbecue, patatine fritte",
+                "price" => 10.00,
+                "visibility" => true,
+                "image" => "https://images.pexels.com/photos/5474640/pexels-photo-5474640.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+            ],
+            [
                 "name" => "Tiramisu",
                 "description" => "Il classico dolce italiano, preparato con strati di savoiardi imbevuti nel caffè, crema al mascarpone e una spolverata di cacao.",
                 "ingredients" => "savoiardi, mascarpone, caffè, zucchero, uova, cacao",
@@ -205,7 +229,14 @@ class PlateSeeder extends Seeder
                 "visibility" => true,
                 "image" => "https://images.pexels.com/photos/19202780/pexels-photo-19202780/free-photo-of-frutta-dessert-delizioso-fotografia-di-cibo.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
             ],
-
+            [
+                "name" => "Torta al Cioccolato",
+                "description" => "Un dolce ricco e goloso, preparato con un impasto al cioccolato fondente, ideale per gli amanti del cioccolato.",
+                "ingredients" => "cioccolato fondente, farina, burro, zucchero, uova, lievito",
+                "price" => 5.50,
+                "visibility" => true,
+                "image" => "https://images.pexels.com/photos/1854652/pexels-photo-1854652.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+            ],
         ];
 
         foreach ($plates as $plate){
