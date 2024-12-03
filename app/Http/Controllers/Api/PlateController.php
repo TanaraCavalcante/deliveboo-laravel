@@ -9,7 +9,7 @@ use Illuminate\Http\Request;
 class PlateController extends Controller
 {
     public function index(){
-        $plates = Plate::all();
+        $plates = Plate::paginate(15);
         return response()->json(
             [
                 "success" => true,
@@ -17,7 +17,14 @@ class PlateController extends Controller
             ]
         );
     }
-    public function show(){
+    public function show(Plate $plate){
+        $plate = Plate::with('restaurant')->findOrFail($plate->id);
+        return response()->json(
+            [
+                "success"=> true,
+                "results"=> $plate,
+            ]
+        );
 
     }
 }
