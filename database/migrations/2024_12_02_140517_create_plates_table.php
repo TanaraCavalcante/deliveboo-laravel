@@ -13,11 +13,11 @@ return new class extends Migration
     {
         Schema::create('plates', function (Blueprint $table) {
             $table->id();
-            $table->unsignedBigInteger('restaurant_id');
+            $table->unsignedBigInteger('restaurant_id')->nullable();
             $table->foreign('restaurant_id')->references('id')->on('restaurants');
             $table->string('name');
             $table->text('description');
-            $table->decimal('price', 3, 2);
+            $table->decimal('price', 6, 2);
             $table->text('ingredients');
             $table->boolean('visibility');
             $table->string('image');
