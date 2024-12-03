@@ -10,7 +10,8 @@ class Type extends Model
     use HasFactory;
 
     //! Relation "Many to Many" with Restaurant
-   public function restaurants() //nome no plural para relacao many to many
+   public function restaurants() 
    {
        return $this->belongsToMany(Restaurant::class);
    }
+}

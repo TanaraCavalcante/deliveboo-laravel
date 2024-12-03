@@ -15,12 +15,12 @@ class Restaurant extends Model
         return $this->belongsTo(Plate::class);
     }
 
+    //! Relation "Many to Many" with Type
+   public function types()
+   {
+       return $this->belongsToMany(Type::class);
+   }
+}
 
-    //! Relation "one to Many" with RestaurantType
-    public function restaurantType()
-    {
-        return $this->belongsTo(RestaurantType::class);
-    }
 
-    
 }
