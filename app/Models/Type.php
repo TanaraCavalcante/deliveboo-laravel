@@ -9,9 +9,8 @@ class Type extends Model
 {
     use HasFactory;
 
-    //! Relation "one to Many" with RestaurantType
-    public function restaurantType()
-    {
-        return $this->belongsTo(RestaurantType::class);
-    }
-}
+    //! Relation "Many to Many" with Restaurant
+   public function restaurants() //nome no plural para relacao many to many
+   {
+       return $this->belongsToMany(Restaurant::class);
+   }

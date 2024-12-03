@@ -14,4 +14,10 @@ class OrderPlate extends Model
      {
          return $this->hasMany(Plate::class);
      }
+
+     //! Relation "many to one" with Order
+     public function orders()
+     {
+         return $this->hasMany(Order::class);
+     }
 }
