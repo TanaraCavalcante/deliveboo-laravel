@@ -18,7 +18,7 @@ class PlateController extends Controller
         );
     }
     public function show(Plate $plate){
-        $plate = Plate::with('restaurant')->findOrFail($plate->id);
+        $plate = Plate::findOrFail($plate->id);
         return response()->json(
             [
                 "success"=> true,
