@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
 use App\Http\Requests\StorePlateRequest;
+use App\Http\Requests\UpdatePlateRequest;
 use App\Models\Plate;
 use Illuminate\Http\Request;
 
@@ -30,7 +31,7 @@ class PlateController extends Controller
     public function edit( Plate $plate){
         return view('admin.plates.edit', compact('plate'));
     }
-    public function update(){
+    public function update( UpdatePlateRequest $request){
 
     }
     public function destroy(){
