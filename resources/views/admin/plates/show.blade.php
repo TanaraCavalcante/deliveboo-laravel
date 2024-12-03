@@ -8,7 +8,7 @@
     <div class="row justify-content-center">
      
     
-        <div class="card col-12  p-4">
+        <div class="card col-12 col-md-8 col-lg-6  p-4">
             
             <div class="card-body">
 
@@ -21,6 +21,8 @@
                 <h6 class="card-title fw-bold">Prezzo:{{ $plate->price }}</h6>
                 
                 <div>Link: <a href="{{ $plate->image }}" target="_blank">{{ $plate->image }}</a></div>
+
+                
 
           
 

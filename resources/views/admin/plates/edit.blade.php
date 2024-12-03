@@ -8,7 +8,7 @@
       <div class="row justify-content-center">
       
 
-        <form class="col-12  card p-4" method="POST" action="{{route("admin.plates.update" , $plate->id)}}">
+        <form class="col-12 col-md-8 col-lg-6  card p-4" method="POST" action="{{route("admin.plates.update" , $plate->id)}}">
             @method('PUT')
             @csrf
                 <h1>Modifica {{ $plate->name }}</h1>

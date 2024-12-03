@@ -5,12 +5,12 @@
 <div class="container">
 
 <div class="row">
-    <div class="col-12">
+    <div class="col-12 col-md-8 col-lg-6">
         <div class="mb-3">
             <a href="{{route("admin.plates.create")}}" class="btn btn-sm btn-primary me-1 m-1">Crea un nuovo piatto!</a>
 
         </div>
-    
+    <div class="table-responsive">
 <table class="table table-hover table-striped "> 
     
     <thead>
@@ -54,13 +54,14 @@
     
       @empty
       <tr>
-        <td colspan="11">Non ci sono Piatti disponibili al momento...
+        <td colspan="11">Non ci sono piatti disponibili al momento...
         </td>
       </tr>
             
       @endforelse
     </tbody>
   </table> 
+</div>
 </div>
 </div>
             </div> 
