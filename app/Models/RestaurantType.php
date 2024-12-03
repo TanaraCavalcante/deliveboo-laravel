@@ -15,4 +15,10 @@ class RestaurantType extends Model
     {
         return $this->hasMany(Restaurant::class);
     }
+
+     //! Relation "many to one" with Type
+     public function types()
+     {
+         return $this->hasMany(Type::class);
+     }
 }
