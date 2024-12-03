@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Admin\PlateController as AdminPlateController;
+use Illuminate\Support\Facades\Auth;
 
 /*
 |--------------------------------------------------------------------------
@@ -13,7 +14,10 @@ use App\Http\Controllers\Admin\PlateController as AdminPlateController;
 | be assigned to the "web" middleware group. Make something great!
 |
 */
-
+Route::get('/', function () {
+    return view('welcome');
+});
+Auth::routes();
 Route::middleware('auth')->controller(AdminPlateController::class)->prefix('/admin')->name('admin.')->group(function(){
     route::get('/plates','index')->name('plates.index');
     route::get('/plates/create','create')->name('plates.create');
