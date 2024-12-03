@@ -87,7 +87,7 @@ class PlateSeeder extends Seeder
             ],
             [
                 "name" => "Frittura di Calamari",
-                "description" => "Calamari freschi fritti, serviti croccanti con una spolverata di sale e limone.",
+                "description" => "500g di calamari freschi fritti, serviti croccanti con una spolverata di sale e limone.",
                 "ingredients" => "calamari, farina, olio di frittura, limone",
                 "price" => 11.00,
                 "visibility" => true,
@@ -95,7 +95,7 @@ class PlateSeeder extends Seeder
             ],
             [
                 "name" => "Filetto di Salmone alla Griglia",
-                "description" => "Un delizioso filetto di salmone grigliato, servito con un contorno di verdure al vapore e una salsa al limone.",
+                "description" => "Un delizioso filetto di salmone grigliato, servito con un contorno di verdure al vapore e una salsa al limone. Circa 300g per porzione.",
                 "ingredients" => "filetto di salmone, limone, olio d'oliva, verdure al vapore",
                 "price" => 14.00,
                 "visibility" => true,
@@ -103,7 +103,7 @@ class PlateSeeder extends Seeder
             ],
             [
                 "name" => "Frittura Mista di Pesce",
-                "description" => "Un piatto di pesce fresco, tra cui calamari, gamberi e piccole verdure, fritti croccanti e serviti con una spruzzata di limone.",
+                "description" => "Un piatto di 600g di pesce fresco, tra cui calamari, gamberi e piccole verdure, fritti croccanti e serviti con una spruzzata di limone.",
                 "ingredients" => "calamari, gamberi, verdure miste, farina, olio di semi, limone",
                 "price" => 14.50,
                 "visibility" => true,
@@ -111,15 +111,15 @@ class PlateSeeder extends Seeder
             ],
             [
                 "name" => "Bruschetta al Pomodoro",
-                "description" => "Fette di pane tostato con pomodori freschi, basilico e olio d'oliva.",
+                "description" => "3 pezzi di fette di pane tostato con pomodori freschi, basilico e olio d'oliva.",
                 "ingredients" => "pane, pomodoro, basilico, olio d'oliva, aglio",
-                "price" => 5.00,
+                "price" => 2.50,
                 "visibility" => true,
                 "image" => "https://images.pexels.com/photos/2998956/pexels-photo-2998956.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
             ],
             [
                 "name" => "Bistecca alla Fiorentina",
-                "description" => "Una succulenta bistecca di manzo cotta alla griglia, tipica della cucina toscana.",
+                "description" => "350g di Una succulenta bistecca di manzo cotta alla griglia, tipica della cucina toscana.",
                 "ingredients" => "bistecca di manzo, olio d'oliva, rosmarino, sale grosso",
                 "price" => 20.00,
                 "visibility" => true,
@@ -127,7 +127,7 @@ class PlateSeeder extends Seeder
             ],
             [
                 "name" => "Pollo Fritto",
-                "description" => "Pollo croccante e dorato, impanato e fritto fino alla perfezione, servito con una salsa barbecue e patatine fritte.",
+                "description" => "300g di pollo croccante e dorato, impanato e fritto fino alla perfezione, servito con una salsa barbecue e patatine fritte.",
                 "ingredients" => "pollo, farina, uova, pangrattato, olio di semi, salsa barbecue, patatine fritte",
                 "price" => 10.50,
                 "visibility" => true,
@@ -151,11 +151,19 @@ class PlateSeeder extends Seeder
             ],
             [
                 "name" => "Pattatine Fritte",
-                "description" => "Pattatine fritte croccanti, dorate e servite con un pizzico di sale, ideali come accompagnamento per ogni piatto principale.",
+                "description" => "150g di pattatine fritte croccanti, dorate e servite con un pizzico di sale, ideali come accompagnamento per ogni piatto principale.",
                 "ingredients" => "patate, olio di semi, sale",
                 "price" => 3.00,
                 "visibility" => true,
-                "image" => ""
+                "image" => "https://images.pexels.com/photos/2498440/pexels-photo-2498440.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+            ],
+            [
+                "name" => "Insalata Mista",
+                "description" => "Un'insalata fresca con lattuga, pomodorini, cetrioli, carote e un condimento leggero di olio d'oliva e aceto balsamico.",
+                "ingredients" => "lattuga, pomodorini, cetrioli, carote, olio d'oliva, aceto balsamico, formaggio",
+                "price" => 4.50,
+                "visibility" => true,
+                "image" => "https://images.pexels.com/photos/1213710/pexels-photo-1213710.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
             ],
             [
                 "name" => "Pizza Margherita",
@@ -215,7 +223,7 @@ class PlateSeeder extends Seeder
             ],
             [
                 "name" => "Cotolette alla Milanese",
-                "description" => "Fette di carne impanate e fritte, croccanti fuori e morbide dentro, un piatto che incarna la tradizione della cucina italiana.",
+                "description" => "200g di fette di carne impanate e fritte, croccanti fuori e morbide dentro, un piatto che incarna la tradizione della cucina italiana.",
                 "ingredients" => "carne di vitello, pangrattato, uova, olio di semi",
                 "price" => 13.00,
                 "visibility" => true,
@@ -223,7 +231,7 @@ class PlateSeeder extends Seeder
             ],
             [
                 "name" => "Gamberi alla Griglia",
-                "description" => "Gamberi freschi grigliati, marinati con aglio, limone, olio d'oliva e prezzemolo, serviti con una leggera insalata mista.",
+                "description" => "10 pezzi di Gamberi freschi grigliati, marinati con aglio, limone, olio d'oliva e prezzemolo, serviti con una leggera insalata mista.",
                 "ingredients" => "gamberi, aglio, limone, olio d'oliva, prezzemolo, insalata mista",
                 "price" => 12.50,
                 "visibility" => true,
@@ -260,6 +268,46 @@ class PlateSeeder extends Seeder
                 "price" => 10.00,
                 "visibility" => true,
                 "image" => "https://images.pexels.com/photos/5474640/pexels-photo-5474640.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+            ],
+            [
+                "name" => "Sushi Misto",
+                "description" => "Un assortimento di 15 pezzi di sushi con pesce fresco, riso vinegare, alga nori e un po' di wasabi e salsa di soia per il condimento.",
+                "ingredients" => "riso sushi, pesce fresco, alga nori, wasabi, salsa di soia",
+                "price" => 15.00,
+                "visibility" => true,
+                "image" => "https://images.pexels.com/photos/248444/pexels-photo-248444.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+            ],
+            [
+                "name" => "Tempura di Gamberi",
+                "description" => "8 pezzi di Gamberi freschi impanati e fritti in una pastella leggera, serviti con una salsa di soia dolce e accompagnati da verdure fritte.",
+                "ingredients" => "gamberi, farina, uova, olio di semi, salsa di soia, verdure miste",
+                "price" => 8.80,
+                "visibility" => true,
+                "image" => "https://images.pexels.com/photos/23645834/pexels-photo-23645834/free-photo-of-piastre-fritto-fotografia-di-cibo-frutti-di-mare.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+            ],
+            [
+                "name" => "Ramen",
+                "description" => "Zuppa di noodle giapponesi servita in un brodo ricco, con carne di maiale, uova sode, cipollotto, germogli di bambù e alghe nori.",
+                "ingredients" => "noodles, brodo di carne, maiale, uovo sodo, cipollotto, germogli di bambù, alghe nori",
+                "price" => 13.00,
+                "visibility" => true,
+                "image" => "https://images.pexels.com/photos/2664216/pexels-photo-2664216.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+            ],
+            [
+                "name" => "Teriyaki di Pollo",
+                "description" => "200g di Pollo grigliato marinato in salsa teriyaki, servito con riso bianco e verdure grigliate.",
+                "ingredients" => "pollo, salsa teriyaki, riso bianco, verdure miste",
+                "price" => 14.00,
+                "visibility" => true,
+                "image" => "https://images.pexels.com/photos/15985538/pexels-photo-15985538/free-photo-of-pranzo-pollo-ciotola-natura-morta.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+            ],
+            [
+                "name" => "Maki Rolls",
+                "description" => "10 pezzi di rotolini di riso sushi con pesce crudo, avocado, cetriolo e alga nori, serviti con salsa di soia e wasabi.",
+                "ingredients" => "riso sushi, pesce crudo, avocado, cetriolo, alga nori, salsa di soia, wasabi",
+                "price" => 11.00,
+                "visibility" => true,
+                "image" => "https://images.pexels.com/photos/1893573/pexels-photo-1893573.jpeg"
             ],
             [
                 "name" => "Tiramisu",
