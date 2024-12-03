@@ -157,7 +157,54 @@ class PlateSeeder extends Seeder
                 "visibility" => true,
                 "image" => "https://images.pexels.com/photos/28293573/pexels-photo-28293573.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
             ],
-            
+            [
+                "name" => "Cotolette alla Milanese",
+                "description" => "Fette di carne impanate e fritte, croccanti fuori e morbide dentro, un piatto che incarna la tradizione della cucina italiana.",
+                "ingredients" => "carne di vitello, pangrattato, uova, olio di semi",
+                "price" => 13.00,
+                "visibility" => true,
+                "image" => "https://images.pexels.com/photos/19999942/pexels-photo-19999942/free-photo-of-pasto-carne-fresco-cestino.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+            ],
+            [
+                "name" => "Gamberi alla Griglia",
+                "description" => "Gamberi freschi grigliati, marinati con aglio, limone, olio d'oliva e prezzemolo, serviti con una leggera insalata mista.",
+                "ingredients" => "gamberi, aglio, limone, olio d'oliva, prezzemolo, insalata mista",
+                "price" => 12.50,
+                "visibility" => true,
+                "image" => "https://images.pexels.com/photos/20923043/pexels-photo-20923043/free-photo-of-piastre-pasto-tavolo-foglie.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+            ],
+            [
+                "name" => "Hamburger Classic",
+                "description" => "Un classico hamburger con carne di manzo, formaggio cheddar, lattuga, pomodoro, cipolla e maionese, servito con patatine fritte.",
+                "ingredients" => "panino, carne di manzo, cheddar, lattuga, pomodoro, cipolla, maionese, patatine fritte",
+                "price" => 9.50,
+                "visibility" => true,
+                "image" => "https://images.pexels.com/photos/3616956/pexels-photo-3616956.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+            ],
+            [
+                "name" => "Tiramisu",
+                "description" => "Il classico dolce italiano, preparato con strati di savoiardi imbevuti nel caffè, crema al mascarpone e una spolverata di cacao.",
+                "ingredients" => "savoiardi, mascarpone, caffè, zucchero, uova, cacao",
+                "price" => 5.50,
+                "visibility" => true,
+                "image" => "https://images.pexels.com/photos/26838689/pexels-photo-26838689/free-photo-of-cibo-piastre-cioccolato-dessert.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+            ],
+            [
+                "name" => "Panna Cotta",
+                "description" => "Un dolce cremoso e delicato, preparato con panna, zucchero e gelatina, servito con salsa ai frutti di bosco.",
+                "ingredients" => "panna, zucchero, gelatina, frutti di bosco, vaniglia",
+                "price" => 5.00,
+                "visibility" => true,
+                "image" => "https://images.pexels.com/photos/3301907/pexels-photo-3301907.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+            ],
+            [
+                "name" => "Cheesecake alla Fragola",
+                "description" => "Una cheesecake cremosa con una base di biscotti sbriciolati, ricoperta con una dolce salsa di fragole fresche.",
+                "ingredients" => "biscotti, crema di formaggio, zucchero, fragole, gelatina",
+                "price" => 6.00,
+                "visibility" => true,
+                "image" => "https://images.pexels.com/photos/19202780/pexels-photo-19202780/free-photo-of-frutta-dessert-delizioso-fotografia-di-cibo.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+            ],
 
         ];
 
