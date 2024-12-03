@@ -15,6 +15,7 @@ class PlateController extends Controller
     }
     public function create(){
         $plate = new Plate();
+        return view('admin.plates.create', compact('plate'));
     }
     public function store(){
 
