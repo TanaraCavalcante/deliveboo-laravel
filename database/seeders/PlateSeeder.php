@@ -12,6 +12,16 @@ class PlateSeeder extends Seeder
      */
     public function run(): void
     {
-        //
+        $plates = [
+            ["name" => "Carbonara",
+             "description" => "La carbonara è un piatto classico della cucina italiana, originario di Roma, ed è molto apprezzato per la sua semplicità e il suo sapore delizioso.",
+             "ingredients" => "spaghetti, guanciale, uova, peper, formaggio",
+             "price" => 8.90,
+             "visibility" => true,
+             "image" => "carbonara.image" //! image
+            ],
+        ];
+
+        
     }
 }
