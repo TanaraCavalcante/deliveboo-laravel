@@ -31,8 +31,10 @@ class PlateController extends Controller
     public function edit( Plate $plate){
         return view('admin.plates.edit', compact('plate'));
     }
-    public function update( UpdatePlateRequest $request){
-
+    public function update( UpdatePlateRequest $request, Plate $plate){
+        $data = $request->validated();
+        $plate->update($data);
+        return redirect()->route('admin.plates.show', $plate);
     }
     public function destroy(){
 
