@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
+use App\Http\Requests\StorePlateRequest;
 use App\Models\Plate;
 use Illuminate\Http\Request;
 
@@ -18,7 +19,7 @@ class PlateController extends Controller
         // manca inserire la parte delle relazioni
         return view('admin.plates.create', compact('plate'));
     }
-    public function store(){
+    public function store(StorePlateRequest $request){
 
     }
     public function show(){
