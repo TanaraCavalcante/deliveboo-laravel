@@ -1,6 +1,6 @@
 @extends("layouts.app")
 
-@section("page-title")
+@section("page-title", "Crea un nuovo piatto")
 
 @section("content")
 
@@ -8,15 +8,13 @@
       <div class="row justify-content-center">
       
 
-        <form class="col-12  card p-4" method="POST" enctype="multipart/form-data" action="{{route("admin.plates.store")}}">
+        <form class="col-12  card p-4" method="POST" action="{{route("admin.plates.store")}}">
             @csrf
-                <h1>Aggiungi un nuovo piatto!:</h1>
+                <h1>Aggiungi un nuovo piatto:</h1>
     
-             
-             
-    
+
                 <div class="mb-3">
-                    <label for="plate-title" class="form-label">Piatto</label>
+                    <label for="plate-title" class="form-label">Nome:</label>
                     <input type="text" class="form-control" id="plate-title" name="name" value="{{old('name')}}">
                     @error("name")
                     <div class="alert alert-danger">
@@ -24,8 +22,9 @@
                     </div>
                 @enderror
                 </div>
+
                 <div class="mb-3">
-                    <label for="plate-decription" class="form-label">Descrizione</label>
+                    <label for="plate-decription" class="form-label">Descrizione:</label>
                     <input type="text" class="form-control" id="plate-decription" name="decription" value="{{old('decription')}}">
                     @error("decription")
                     <div class="alert alert-danger">
@@ -33,10 +32,40 @@
                     </div>
                 @enderror
                 </div>
+
+                <div class="mb-3">
+                    <label for="plate-ingredients" class="form-label">Ingredienti:</label>
+                    <input type="text" class="form-control" id="plate-ingredients" name="ingredients" value="{{old('ingredients')}}">
+                    @error("ingredients")
+                    <div class="alert alert-danger">
+                        {{$message}}
+                    </div>
+                @enderror
+                </div>
+
+                <div class="mb-3">
+                    <label for="plate-price" class="form-label">Prezzo:</label>
+                    <input type="text" class="form-control" id="plate-price" name="price" value="{{old('price')}}">
+                    @error("price")
+                    <div class="alert alert-danger">
+                        {{$message}}
+                    </div>
+                @enderror
+                </div>
+
+                <div class="mb-3">
+                    <label for="plate-visibility" class="form-label">Disponibilità:</label>
+                    <input type="text" class="form-control" id="plate-visibility" name="visibility" value="{{old('visibility')}}">
+                    @error("visibility")
+                    <div class="alert alert-danger">
+                        {{$message}}
+                    </div>
+                @enderror
+                </div>
                 
-              <div class="mb-3">
-                <label for="plate-image" class="form-label">Inserisci l'immagine</label>
-                    <input type="file" name="image" id="plate-image" class="form-control">
+                <div class="mb-3">
+                    <label for="plate-image" class="form-label">Inserisci URL immagine:</label>
+                    <input type="text" class="form-control" id="plate-image" name="image" value="{{old('image')}}">
                     @error("image")
                     <div class="alert alert-danger">
                         {{$message}}
@@ -44,54 +73,10 @@
                 @enderror
                 </div>
 
-                <div class="mb-3">
-                    <label for="plate-url" class="form-label">Url</label>
-                    <input type="text" class="form-control" id="plate-url" name="url" value="{{old('url')}}">
-                    @error("url")
-                    <div class="alert alert-danger">
-                        {{$message}}
-                    </div>
-                @enderror
-                </div>
-                <div class="mb-3">
-                    <label for="post-type_id" class="form-label">Tipo:</label>
-                    <select name="type_id" id="post-type_id" class="form-control">
-                    
-                        @foreach ($types as $type)
-                            <option value="{{ $type->id }}"
-                          
-                                    @if($type->id == old("type_id", $type->type_id))
-                                        selected
-                                    @endif
-                                >
-                                {{ $type->name }}
-                            </option>
-                        @endforeach
-                    </select>
-
-                    @error("type_id")
-                        <div class="alert alert-warning">
-                            {{ $message }}
-                        </div>
-                    @enderror
-                </div>
-             <div class="mb-3">
-                <label for="plate-technology" class="form-label">Tecnologia</label>
-                
-                    @foreach ($technologies as $technology )
-                    <input type="checkbox" value="{{ $technology->id }}" name="technologies[]" id="checkbox-{{ $technology->id}}">
-                   
-               
-                         
-                   <label for="">{{ $technology->name }}</label> 
-                    @endforeach
-
-
-                
-             
+    
                
            <div class=" d-flex justify-content-center align-items-center">
-            <button type="submit" class="mb-3 btn btn-primary ">Crea il tuo nuovo progetto!</button>
+            <button type="submit" class="mb-3 btn btn-primary ">Crea il tuo nuovo Piatto</button>
             <button type="reset" class="mb-3 btn btn-danger">Pulisci i campi</button>
 
            </div>
