@@ -21,6 +21,8 @@ class PlateController extends Controller
     }
     public function store(StorePlateRequest $request){
         $data = $request->validated();
+        $plate = Plate::create($data);
+        return redirect()->route('admin.plates.index');
 
     }
     public function show(){
