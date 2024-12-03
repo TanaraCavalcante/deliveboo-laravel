@@ -23,10 +23,9 @@ class PlateController extends Controller
         $data = $request->validated();
         $plate = Plate::create($data);
         return redirect()->route('admin.plates.index');
-
     }
-    public function show(){
-
+    public function show(Plate $plate){
+        return view('admin.plates.show', compact('plate'));
     }
     public function edit(){
 
