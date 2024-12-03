@@ -21,3 +21,4 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 
 // Defined route to index and show
 Route::get('/plates',[PlateController::class,'index'])->name('api.plates.index');
+Route::get('/plates/{plate}',[PlateController::class,'show'])->name('api.plates.show');
