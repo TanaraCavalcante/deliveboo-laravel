@@ -14,7 +14,7 @@ class PlateController extends Controller
 
     }
     public function create(){
-
+        $plate = new Plate();
     }
     public function store(){
 
