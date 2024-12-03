@@ -11,7 +11,7 @@ class StorePlateRequest extends FormRequest
      */
     public function authorize(): bool
     {
-        return false;
+        return true;
     }
 
     /**
@@ -22,7 +22,13 @@ class StorePlateRequest extends FormRequest
     public function rules(): array
     {
         return [
-            //
+            'name' => ['required', 'string', 'min:3','max:255'],
+            'description' => ['required','min:10', 'max:500','string'],
+            'price' => ['required','decimal:2'],
+            'ingredients' => ['required', 'min:3','max:500','string'],
+            'visibility' => ['required', 'boolean'],
+            'image' =>['nullable', 'image','url', 'max:250'],
+            'restaurant_id' => ['required', 'numeric', 'integer', 'exist:restaurants,id']
         ];
     }
 }
