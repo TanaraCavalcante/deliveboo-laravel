@@ -27,8 +27,8 @@ class PlateController extends Controller
     public function show(Plate $plate){
         return view('admin.plates.show', compact('plate'));
     }
-    public function edit(){
-
+    public function edit( Plate $plate){
+        return view('admin.plates.edit', compact('plate'));
     }
     public function update(){
 
