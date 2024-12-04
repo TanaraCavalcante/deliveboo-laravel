@@ -13,7 +13,7 @@ class RestaurantController extends Controller
     public function index()
     {
         $restaurantes = Restaurant::all();
-        return view("", compact("restaurants")); //! view di andrea
+        return view("", compact("restaurants")); //! inserire la view di andrea
     }
 
     /**
@@ -21,7 +21,9 @@ class RestaurantController extends Controller
      */
     public function create()
     {
-        //
+        $restaurant = new Restaurant();
+        //TODO qui non dovrei mettere e relazioni anche dei piatti? esempio: $plates = Plate::all(); e poi agiungere anche nel compact ("plates")?
+        return view("", compact("restaurant"));
     }
 
     /**
