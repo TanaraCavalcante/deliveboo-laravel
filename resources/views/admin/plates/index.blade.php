@@ -12,7 +12,7 @@
 
         </div>
     <div class="table-responsive-sm">
-<table class="table table-hover table-striped "> 
+<table class="table  table-hover table-striped "> 
     
     <thead>
       <tr>
