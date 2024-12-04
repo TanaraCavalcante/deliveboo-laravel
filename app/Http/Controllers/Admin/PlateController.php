@@ -23,6 +23,7 @@ class PlateController extends Controller
     public function create(){
         $plate = new Plate();
         $restaurant = auth()->user()->restaurant;
+
         return view('admin.plates.create', compact('plate','restaurant'));
     }
     public function store(StorePlateRequest $request){
@@ -39,6 +40,7 @@ class PlateController extends Controller
             "image" => $data["image"],
             "restaurant_id" => $restaurantId,
         ]);
+        
         return redirect()->route('admin.plates.index');
     }
     public function show(Plate $plate){
