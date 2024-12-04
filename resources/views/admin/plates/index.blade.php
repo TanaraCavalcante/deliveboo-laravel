@@ -8,7 +8,7 @@
 <div class="row">
     <div class="col-12">
         <div class="mb-3">
-            <a href="{{route("admin.plates.create")}}" class="btn btn-sm btn-primary me-1 m-1">Crea un nuovo piatto!</a>
+            <a href="{{route("admin.plates.create")}}" class="btn btn-sm btn-outline-primary me-1 m-1">Crea un nuovo piatto!</a>
 
         </div>
     <div class="table-responsive-sm">
@@ -20,9 +20,9 @@
         <th scope="col">Piatto</th>
         <th scope="col" class="d-none d-lg-table-cell">Descrizione</th>
         <th scope="col">Prezzo</th>
-        <th scope="col"  class="d-none d-lg-table-cell">Ingredienti</th>
+        <th scope="col" class="d-none d-sm-table-cell">Ingredienti</th>
         <th scope="col">Disponibilità</th>
-        <th scope="col"  class="d-none d-lg-table-cell">Immagine</th>
+        <th scope="col" class="d-none d-lg-table-cell">Url immagine</th>
         <th scope="col">Azioni</th>
         
       </tr>
@@ -35,20 +35,20 @@
         <td>{{$plate->id}}</td>
         <td>{{$plate->name}}</td>
         <td class="d-none d-lg-table-cell">{{$plate->description}}</td>
-        <td>{{$plate->price}}</td>
-        <td  class="d-none d-lg-table-cell">{{$plate->ingredients}}</td>
+        <td>{{$plate->price}} </td>
+        <td  class="d-none d-sm-table-cell">{{$plate->ingredients}}</td>
         <td>{{$plate->visibility}}</td>
         <td  class="d-none d-lg-table-cell">{{$plate->image}}</td>
         
     
         <td>
-            <a href="{{route("admin.plates.show", $plate)}}" class="btn btn-sm btn-primary m-2 me-1 m-1">Mostra</a>
-              <a href="{{route("admin.plates.edit", $plate)}}" class="btn btn-sm btn-success m-2 me-1">Modifica</a>
+            <a href="{{route("admin.plates.show", $plate)}}" class="btn btn-sm btn-outline-info m-2 me-1">Mostra</a>
+              <a href="{{route("admin.plates.edit", $plate)}}" class="btn btn-sm btn-outline-success m-2 me-1">Modifica</a>
             <form action="{{route("admin.plates.delete", $plate)}}" method="POST" class="plate-destroyer" custom-data-name="{{$plate->name}}">
               @csrf
               @method("DELETE")
 
-            <button type="submit" class="btn btn-sm btn-warning m-2">Cancella</button>
+            <button type="submit" class="btn btn-sm btn-outline-warning m-2">Cancella</button>
             </form> 
           </td>
       </tr>
