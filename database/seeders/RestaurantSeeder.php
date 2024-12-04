@@ -15,7 +15,7 @@ class RestaurantSeeder extends Seeder
     {
         $restaurants = [
             [   "user_id" => 1,
-                "name" => "Pizza Italia",
+                "name" => "Italia Pizza",
                 "address" => "Via Roma, 132, Milano",
                 "PIva" => "15875624035",
                 "image" => "?" //! photo
