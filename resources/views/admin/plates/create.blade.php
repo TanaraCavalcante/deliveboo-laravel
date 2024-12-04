@@ -12,6 +12,15 @@
             @csrf
                 <h1>Aggiungi un nuovo piatto:</h1>
 
+                @dump($restaurant)
+
+                <div class="row mb-3">
+                    <label for="user_id" class="col-md-4 col-form-label text-md-end">Utente</label>
+
+                    <div class="col-md-6">
+                        <input id="user_id" type="text" class="form-control" name="user_id" required value="{{$user->restaurant->id}}" readonly>
+                    </div>
+                </div>
 
                 <div class="mb-3">
                     <label for="plate-title" class="form-label">Nome:</label>

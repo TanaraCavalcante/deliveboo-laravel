@@ -6,13 +6,13 @@
 
 <div class="container">
       <div class="row justify-content-center">
-      
+
 
         <form class="col-12 col-md-8 col-lg-6  card p-4" method="POST" action="{{route("admin.plates.update" , $plate->id)}}">
             @method('PUT')
             @csrf
                 <h1>Modifica {{ $plate->name }}</h1>
-    
+
 
                 <div class="mb-3">
                     <label for="plate-title" class="form-label">Nome:</label>
@@ -63,7 +63,7 @@
                     </div>
                 @enderror
                 </div>
-                
+
                 <div class="mb-3">
                     <label for="plate-image" class="form-label">Inserisci URL immagine:</label>
                     <input type="text" class="form-control" id="plate-image" name="image" value="{{old('image')}}">
@@ -74,19 +74,19 @@
                 @enderror
                 </div>
 
-    
-               
+
+
            <div class=" d-flex justify-content-center align-items-center gap-2">
             <button type="submit" class="mb-3 btn btn-outline-primary ">Modifica il piatto</button>
             <button type="reset" class="mb-3 btn btn-outline-danger">Pulisci i campi</button>
             <div class="mb-3">
                 <a href="{{route("admin.plates.index")}}" class="btn btn-outline-success">Torna alla lista dei piatti</a>
-        
+
             </div>
 
            </div>
         </form>
-          
+
 
     </div>
 
