@@ -14,14 +14,15 @@ class RestaurantController extends Controller
     //
     public function create () {
         $restaurant = new Restaurant();
-        $users = Auth::user();
-        return view('admin.restaurants.create', compact('restaurant', 'users'));
+        $user = Auth::user();
+        return view('admin.restaurants.create', compact('restaurant', 'user'));
     }
-
 
     public function store(Request $request){
 
         $formData = $request->all();
+        dd($formData);
+
         $newRestaurant = Restaurant::create($formData);
         return redirect()->route('/home');
     }
