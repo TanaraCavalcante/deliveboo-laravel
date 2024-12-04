@@ -7,9 +7,19 @@
 </div>
 
 <!-- Inizio informazioni ristorante -->
+@if ($errors->any())
+<div class="alert alert-danger">
+    <ul>
+        @foreach ($errors->all() as $error)
+            <li>{{ $error }}</li>
+        @endforeach
+    </ul>
+</div>
+@endif
 
 <form action="{{route('restaurant.store')}}" method="POST">
     @csrf
+
 
     {{-- @dump($user) --}}
 
@@ -30,6 +40,7 @@
         </div>
     </div>
 
+
     <div class="row mb-3">
         <label for="indirizzo-attività" class="col-md-4 col-form-label text-md-end">Indirizzo attività *</label>
 
@@ -45,6 +56,8 @@
             <input id="piva" type="text" class="form-control" name="piva" required>
         </div>
     </div>
+
+
 
     <div class="row text-center">
         <div class="col">
