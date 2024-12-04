@@ -34,14 +34,6 @@
         </div>
     </div>
 
-    <div class="row mb-3">
-        <label for="immagine-profilo" class="col-md-4 col-form-label text-md-end">Immagine Profilo</label>
-
-        <div class="col-md-6">
-            <input id="immagine-profilo" type="file" class="form-control" name="immagine-profilo">
-        </div>
-    </div>
-
     <div class="row text-center">
         <div class="col">
             <button type="submit" class="btn btn-primary">
