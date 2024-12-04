@@ -2,6 +2,7 @@
 
 namespace Database\Seeders;
 
+use App\Models\Restaurant;
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 
@@ -13,13 +14,17 @@ class RestaurantSeeder extends Seeder
     public function run(): void
     {
         $restaurants = [
-            [
+            [   "user_id" => 1,
                 "name" => "Pizza Italia",
                 "address" => "Via Roma, 132, Milano",
                 "Piva" => "15875624035",
-                "image" => "?" 
+                "image" => "?"
             ],
 
         ];
+
+        foreach ($restaurants as $restaurant){
+            $newRestaurant = Restaurant::create($restaurant);
+        }
     }
 }
