@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Admin\PlateController as AdminPlateController;
+use App\Http\Controllers\RestaurantController;
 use Illuminate\Support\Facades\Auth;
 
 /*
@@ -34,4 +35,15 @@ Route::middleware('auth')->controller(AdminPlateController::class)->prefix('/adm
     route::put('/plates/{plate}','update')->name('plates.update');
     route::delete('/plates/{plate}','destroy')->name('plates.delete');
 
+});
+
+
+Route::middleware("auth")->prefix("/admin")->name("admin")->group(function(){
+    route::get("/restaurant", [RestaurantController::class, 'index'])->name('restaurant.index');
+    route::get("/restaurant/create", [RestaurantController::class, 'create'])->name('restaurant.create');
+    route::get("/restaurant/{id}", [RestaurantController::class, 'show'])->name('restaurant.show');
+    route::post("/restaurant", [RestaurantController::class, 'store'])->name('restaurant.store');
+    route::get("/restaurant/{id}/edit", [RestaurantController::class, 'edit'])->name('restaurant.edit');
+    route::put("/restaurant/{id}", [RestaurantController::class, 'update'])->name('restaurant.update');
+    route::delete("/restaurant/{id}", [RestaurantController::class, 'destroy'])->name('restaurant.delete');
 });
