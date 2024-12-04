@@ -14,8 +14,8 @@ class PlateController extends Controller
     public function index(){
         // verififca che il piatto appartenga all'utente
         $userRestaurant = Auth::user()->restaurant;
-
-        $plates = $userRestaurant->plates;
+        // $plates =$userRestaurant->plates;
+        $plates = Plate::all();
         return view('admin.plates.index', compact('plates','userRestaurant'));
     }
     public function create(){
