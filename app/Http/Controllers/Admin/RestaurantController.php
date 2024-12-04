@@ -22,7 +22,6 @@ class RestaurantController extends Controller
     public function create()
     {
         $restaurant = new Restaurant();
-        //TODO qui non dovrei mettere e relazioni anche dei piatti? esempio: $plates = Plate::all(); e poi agiungere anche nel compact ("plates")?
         return view("", compact("restaurant"));
     }
 
@@ -31,7 +30,12 @@ class RestaurantController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        //manca la validation qui
+
+        $formData = $request->all();
+        $newRestaurant = Restaurant::create($formData);
+        return redirect()->route("", ["id"=>$newRestaurant->id]); //!indirizzare alla show
+
     }
 
     /**
@@ -39,7 +43,8 @@ class RestaurantController extends Controller
      */
     public function show(string $id)
     {
-        //
+        $restaurant = Restaurant::all()->findOrFail($id);
+        return view("", compact("restaurant"));
     }
 
     /**
