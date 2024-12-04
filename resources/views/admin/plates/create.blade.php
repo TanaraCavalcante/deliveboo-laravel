@@ -6,12 +6,12 @@
 
 <div class="container">
       <div class="row justify-content-center">
-      
+
 
         <form class="col-12 col-md-8 col-lg-6 card p-4" method="POST" action="{{route("admin.plates.store")}}">
             @csrf
                 <h1>Aggiungi un nuovo piatto:</h1>
-    
+
 
                 <div class="mb-3">
                     <label for="plate-title" class="form-label">Nome:</label>
@@ -24,9 +24,9 @@
                 </div>
 
                 <div class="mb-3">
-                    <label for="plate-decription" class="form-label">Descrizione:</label>
-                    <input type="text" class="form-control" id="plate-decription" name="decription" value="{{old('decription')}}">
-                    @error("decription")
+                    <label for="plate-description" class="form-label">Descrizione:</label>
+                    <input type="text" class="form-control" id="plate-description" name="description" value="{{old('description')}}">
+                    @error("description")
                     <div class="alert alert-danger">
                         {{$message}}
                     </div>
@@ -62,7 +62,7 @@
                     </div>
                 @enderror
                 </div>
-                
+
                 <div class="mb-3">
                     <label for="plate-image" class="form-label">Inserisci URL immagine:</label>
                     <input type="text" class="form-control" id="plate-image" name="image" value="{{old('image')}}">
@@ -73,15 +73,15 @@
                 @enderror
                 </div>
 
-    
-               
+
+
            <div class=" d-flex justify-content-center align-items-center">
             <button type="submit" class="mb-3 btn btn-primary ">Crea il tuo nuovo Piatto</button>
             <button type="reset" class="mb-3 btn btn-danger">Pulisci i campi</button>
 
            </div>
         </form>
-          
+
 
     </div>
 
