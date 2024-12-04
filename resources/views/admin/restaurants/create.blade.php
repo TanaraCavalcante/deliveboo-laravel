@@ -7,15 +7,7 @@
 </div>
 
 <!-- Inizio informazioni ristorante -->
-@if ($errors->any())
-<div class="alert alert-danger">
-    <ul>
-        @foreach ($errors->all() as $error)
-            <li>{{ $error }}</li>
-        @endforeach
-    </ul>
-</div>
-@endif
+
 
 <form action="{{route('restaurant.store')}}" method="POST">
     @csrf
@@ -23,7 +15,7 @@
 
     {{-- @dump($user) --}}
 
-    <div class="row mb-3">
+    <div class="row mb-3 d-none">
         <label for="user_id" class="col-md-4 col-form-label text-md-end">Utente</label>
 
         <div class="col-md-6">
@@ -37,8 +29,14 @@
 
         <div class="col-md-6">
             <input id="name" type="text" class="form-control" name="name" required>
+            @error("name")
+            <div class="alert alert-danger mt-3">
+                {{$message}}
+            </div>
+            @enderror
         </div>
     </div>
+
 
 
     <div class="row mb-3">
@@ -46,17 +44,27 @@
 
         <div class="col-md-6">
             <input id="indirizzo-attività" type="text" class="form-control" name="address" required>
+            @error("address")
+            <div class="alert alert-danger m-3">
+                {{$message}}
+            </div>
+            @enderror
         </div>
     </div>
+
 
     <div class="row mb-3">
         <label for="piva" class="col-md-4 col-form-label text-md-end">Partita IVA *</label>
 
         <div class="col-md-6">
             <input id="piva" type="text" class="form-control" name="piva" required>
+            @error("piva")
+            <div class="alert alert-danger mt-3">
+                {{$message}}
+            </div>
+            @enderror
         </div>
     </div>
-
 
 
     <div class="row text-center">
