@@ -25,7 +25,7 @@
 
                 <div class="mb-3">
                     <label for="plate-decription" class="form-label">Descrizione:</label>
-                    <input type="text" class="form-control" id="plate-decription" name="decription" value="{{old('decription')}}">
+                    <input type="text" class="form-control" id="plate-decription" name="decription" value="{{old('description')}}">
                     @error("decription")
                     <div class="alert alert-danger">
                         {{$message}}
