@@ -27,8 +27,8 @@ class StorePlateRequest extends FormRequest
             'price' => ['required','decimal:2'],
             'ingredients' => ['required', 'min:3','max:500','string'],
             'visibility' => ['required', 'boolean'],
-            'image' =>['nullable', 'image','url', 'max:250'],
-            'restaurant_id' => ['required', 'numeric', 'integer', 'exist:restaurants,id']
+            'image' =>['nullable','url', 'max:250'],
+            'restaurant_id' => ['required']
         ];
     }
 }
