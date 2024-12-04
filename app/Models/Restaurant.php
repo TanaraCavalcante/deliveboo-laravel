@@ -9,7 +9,19 @@ class Restaurant extends Model
 {
     use HasFactory;
 
-    //! Relation "one to Many" with Plate
+    protected $fillable = [
+        'user_id',
+        'name',
+        'Piva',
+        'address',
+        'image',
+    ];
+
+    public function user(){
+        return $this->belongsTo(user::class);
+    }
+
+  /*   //! Relation "one to Many" with Plate
     public function plate()
     {
         return $this->belongsTo(Plate::class);
@@ -19,5 +31,5 @@ class Restaurant extends Model
    public function types()
    {
        return $this->belongsToMany(Type::class);
-   }
+   } */
 }
