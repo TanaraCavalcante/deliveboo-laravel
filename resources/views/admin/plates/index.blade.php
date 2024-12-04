@@ -6,7 +6,7 @@
 <div class="container">
 
 <div class="row">
-    <div class="col-12 col-md-8 col-lg-6">
+    <div class="col-12">
         <div class="mb-3">
             <a href="{{route("admin.plates.create")}}" class="btn btn-sm btn-primary me-1 m-1">Crea un nuovo piatto!</a>
 
