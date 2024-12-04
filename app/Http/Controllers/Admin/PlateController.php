@@ -22,17 +22,23 @@ class PlateController extends Controller
     }
     public function create(){
         $plate = new Plate();
-        $user = Auth::user();
-        $restaurant = $user->restaurant->id;
-        return view('admin.plates.create', compact('plate','restaurant','user'));
+        $restaurant = auth()->user()->restaurant;
+        return view('admin.plates.create', compact('plate','restaurant'));
     }
     public function store(StorePlateRequest $request){
-        $restaurant = Auth::user();
-
         $data = $request->validated();
-        $data['restaurant_id'] = $restaurant;
 
-        $plate = Plate::create($data);
+        $restaurantId = auth()->user()->restaurant->id;
+
+        $plate = Plate::create([
+            "name" => $data["name"],
+            "description" => $data["description"],
+            "ingredients" => $data["ingredients"],
+            "price" => $data["price"],
+            "visibility" => $data["visibility"],
+            "image" => $data["image"],
+            "restaurant_id" => $restaurantId,
+        ]);
         return redirect()->route('admin.plates.index');
     }
     public function show(Plate $plate){
