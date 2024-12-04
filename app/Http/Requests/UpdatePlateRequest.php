@@ -31,7 +31,7 @@ class UpdatePlateRequest extends FormRequest
             'ingredients' => ['required', 'min:3','max:500','string'],
             'visibility' => ['required', 'boolean'],
             'image' =>['nullable','url', 'max:250'],
-            'restaurant_id' => ['required', 'numeric', 'integer', 'exist:restaurants,id']
+            'restaurant_id' => ['nullable', 'numeric', 'integer', 'exist:restaurants,id']
         ];
     }
 }
