@@ -13,9 +13,8 @@ class PlateController extends Controller
 {
     public function index(){
         // verififca che il piatto appartenga all'utente
-        // $userRestaurant = Auth::user()->restaurant;
-        // $plates =$userRestaurant->plates;
-        $plates = Plate::all();
+        $userRestaurant = Auth::user()->restaurant;
+        $plates = Plate::with('restaurant')->get();
         return view('admin.plates.index', compact('plates'));
     }
     public function create(){
@@ -28,7 +27,6 @@ class PlateController extends Controller
         $data = $request->validated();
         // $data['restaurant_id'] = $userRestaurant->id;
         $plate = Plate::create($data);
-        dd($plate);
         return redirect()->route('admin.plates.index');
     }
     public function show(Plate $plate){
