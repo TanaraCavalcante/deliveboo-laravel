@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Admin\PlateController as AdminPlateController;
+use App\Http\Controllers\Admin\RestaurantController;
 use Illuminate\Support\Facades\Auth;
 
 /*
@@ -24,6 +25,8 @@ Route::get('/home', function () {
 
 Auth::routes();
 
+Route::get('/restaurant/create', [RestaurantController::class, 'create'])->name('restaurant.create');
+route::post('/restaurant/store', [RestaurantController::class, 'store'])->name('restaurant.store');
 
 Route::middleware('auth')->controller(AdminPlateController::class)->prefix('/admin')->name('admin.')->group(function(){
     route::get('/plates','index')->name('plates.index');

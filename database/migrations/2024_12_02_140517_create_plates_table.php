@@ -13,8 +13,8 @@ return new class extends Migration
     {
         Schema::create('plates', function (Blueprint $table) {
             $table->id();
-            $table->unsignedBigInteger('restaurant_id'); //! tolto nullable una volta che ho collegato con i piatti
-            $table->foreign('restaurant_id')->references('id')->on('restaurants');
+            $table->unsignedBigInteger('restaurant_id')->nullable();
+            $table->foreign('restaurant_id')->references('id')->on('restaurants')->cascadeOnDelete();
             $table->string('name');
             $table->text('description');
             $table->decimal('price', 6, 2);
