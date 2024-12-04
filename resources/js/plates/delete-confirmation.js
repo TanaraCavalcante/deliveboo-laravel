@@ -7,8 +7,7 @@ deleteFormElements.forEach((formElement) => {
 
         const userChoice = window.confirm(
             `Sei sicuro di voler cancellare ${this.getAttribute(
-                "custom-data-name"
-            )}?`
+                "custom-data-name")}?`
         );
 
         if (userChoice === true) {
