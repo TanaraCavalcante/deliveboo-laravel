@@ -68,5 +68,5 @@
             </div> 
               @endsection
                   @section("additional-scripts")
-                      @vite("resources/js/posts/delete-confirmation.js");
+                      @vite("resources/js/plates/delete-confirmation.js");
                   @endsection
