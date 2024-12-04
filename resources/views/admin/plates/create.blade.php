@@ -78,16 +78,16 @@
 
 
 
-                <div class=" d-flex justify-content-center align-items-center">
-                    <button type="submit" class="mb-3 btn btn-primary ">Crea il tuo nuovo Piatto</button>
-                    <button type="reset" class="mb-3 btn btn-danger">Pulisci i campi</button>
+           <div class=" d-flex justify-content-center align-items-center">
+            <button type="submit" class="mb-3 btn btn-primary ">Crea il tuo nuovo Piatto</button>
+            <button type="reset" class="mb-3 btn btn-danger">Pulisci i campi</button>
 
                 </div>
             </form>
 
 
-        </div>
-
     </div>
+
+</div>
 
 @endsection
