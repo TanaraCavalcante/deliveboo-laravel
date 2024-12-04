@@ -9,6 +9,14 @@ class Restaurant extends Model
 {
     use HasFactory;
 
+    protected $fillable = [
+        'name',
+        'address',
+        'PIva',
+        'image',
+    ];
+
+
     //! Relation "one to Many" with Plate
     public function plate()
     {
