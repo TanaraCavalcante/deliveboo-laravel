@@ -18,7 +18,7 @@ class RestaurantController extends Controller
         return view('admin.restaurants.create', compact('restaurant', 'user'));
     }
 
-    public function store(Request $request){
+    public function store(StoreRestaurantRequest $request){
 
         $formData = $request->all();
         // dd($formData);
