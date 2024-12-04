@@ -14,7 +14,7 @@ class RestaurantSeeder extends Seeder
     public function run(): void
     {
         $restaurants = [
-            [   "user_id" => 1,
+            [   "user_id" => 1, //! questo Id deve essere uguale al ID em users
                 "name" => "Italia Pizza",
                 "address" => "Via Roma, 132, Milano",
                 "PIva" => "15875624035",
