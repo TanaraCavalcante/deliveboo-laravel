@@ -18,7 +18,7 @@ class RestaurantSeeder extends Seeder
                 "name" => "Italia Pizza",
                 "address" => "Via Roma, 132, Milano",
                 "PIva" => "15875624035",
-                "image" => "?" //! photo
+                "image" => "..." //! photo
             ],
 
         ];
