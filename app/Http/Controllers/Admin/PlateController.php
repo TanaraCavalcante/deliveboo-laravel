@@ -6,6 +6,8 @@ use App\Http\Controllers\Controller;
 use App\Http\Requests\StorePlateRequest;
 use App\Http\Requests\UpdatePlateRequest;
 use App\Models\Plate;
+use App\Models\Restaurant;
+use Error;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
@@ -13,19 +15,23 @@ class PlateController extends Controller
 {
     public function index(){
         // verififca che il piatto appartenga all'utente
-        $userRestaurant = Auth::user()->restaurant;
-        $plates = Plate::with('restaurant')->get();
-        return view('admin.plates.index', compact('plates'));
+        $restaurant = Auth::user();
+        $plates = Plate::where('restaurant_id', $restaurant->id)->get();
+        // $plates['restaurant_id'] = $user;
+        return view('admin.plates.index', compact('plates','restaurant'));
     }
     public function create(){
         $plate = new Plate();
-        return view('admin.plates.create', compact('plate'));
+        $user = Auth::user();
+        $restaurant = $user->restaurant->id;
+        return view('admin.plates.create', compact('plate','restaurant','user'));
     }
     public function store(StorePlateRequest $request){
-        // $userRestaurant = Auth::user()->restaurant;
+        $restaurant = Auth::user();
 
         $data = $request->validated();
-        // $data['restaurant_id'] = $userRestaurant->id;
+        $data['restaurant_id'] = $restaurant;
+
         $plate = Plate::create($data);
         return redirect()->route('admin.plates.index');
     }
