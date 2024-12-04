@@ -7,13 +7,14 @@ use App\Http\Requests\StoreRestaurantRequest;
 use App\Models\Restaurant;
 use App\Models\User;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class RestaurantController extends Controller
 {
     //
     public function create () {
         $restaurant = new Restaurant();
-        $users = User::all();
+        $users = Auth::user();
         return view('admin.restaurants.create', compact('restaurant', 'users'));
     }
 
