@@ -28,7 +28,7 @@
         <label for="nome-attività" class="col-md-4 col-form-label text-md-end">Nome Attività *</label>
 
         <div class="col-md-6">
-            <input id="name" type="text" class="form-control" name="name" value={{old("name")}} >
+            <input id="name" type="text" class="form-control" name="name" value="{{old("name")}}" >
             @error("name")
             <div class="alert alert-danger mt-3">
                 {{$message}}
@@ -42,7 +42,7 @@
         <label for="indirizzo-attività" class="col-md-4 col-form-label text-md-end">Indirizzo attività *</label>
 
         <div class="col-md-6">
-            <input id="indirizzo-attività" type="text" class="form-control" name="address" value={{old("address")}} >
+            <input id="indirizzo-attività" type="text" class="form-control" name="address" value="{{old("address")}}">
             @error("address")
             <div class="alert alert-danger m-3">
                 {{$message}}
@@ -56,7 +56,7 @@
         <label for="piva" class="col-md-4 col-form-label text-md-end">Partita IVA *</label>
 
         <div class="col-md-6">
-            <input id="piva" type="text" class="form-control" name="piva" value={{old("piva")}} >
+            <input id="piva" type="text" class="form-control" name="piva" value="{{old("piva")}}" >
             @error("piva")
             <div class="alert alert-danger mt-3">
                 {{$message}}
