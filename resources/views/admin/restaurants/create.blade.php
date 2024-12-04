@@ -11,11 +11,25 @@
 <form action="{{route('restaurant.store')}}" method="POST">
     @csrf
 
+<<<<<<< HEAD
+=======
+    {{-- @dump($user) --}}
+
+    <div class="row mb-3">
+        <label for="user_id" class="col-md-4 col-form-label text-md-end">Utente</label>
+
+        <div class="col-md-6">
+            <input id="user_id" type="text" class="form-control" name="user_id" required value="{{$user->id}}" readonly>
+        </div>
+    </div>
+
+
+>>>>>>> 772df02f68888a695a3f466b5a0e63eee5598dc0
     <div class="row mb-3">
         <label for="nome-attività" class="col-md-4 col-form-label text-md-end">Nome Attività *</label>
 
         <div class="col-md-6">
-            <input id="nome-attività" type="text" class="form-control" name="nome-attività" required>
+            <input id="name" type="text" class="form-control" name="name" required>
         </div>
     </div>
 
@@ -23,15 +37,15 @@
         <label for="indirizzo-attività" class="col-md-4 col-form-label text-md-end">Indirizzo attività *</label>
 
         <div class="col-md-6">
-            <input id="indirizzo-attività" type="text" class="form-control" name="indirizzo-attività" required>
+            <input id="indirizzo-attività" type="text" class="form-control" name="address" required>
         </div>
     </div>
 
     <div class="row mb-3">
-        <label for="partita-iva" class="col-md-4 col-form-label text-md-end">Partita IVA *</label>
+        <label for="piva" class="col-md-4 col-form-label text-md-end">Partita IVA *</label>
 
         <div class="col-md-6">
-            <input id="partita-iva" type="text" class="form-control" name="partita-iva" required>
+            <input id="piva" type="text" class="form-control" name="piva" required>
         </div>
     </div>
 

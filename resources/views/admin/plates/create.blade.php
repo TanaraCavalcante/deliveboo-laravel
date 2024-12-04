@@ -25,7 +25,7 @@
 
                 <div class="mb-3">
                     <label for="plate-decription" class="form-label">Descrizione:</label>
-                    <input type="text" class="form-control" id="plate-decription" name="decription" value="{{old('decription')}}">
+                    <input type="text" class="form-control" id="plate-decription" name="decription" value="{{old('description')}}">
                     @error("decription")
                     <div class="alert alert-danger">
                         {{$message}}
@@ -75,16 +75,20 @@
 
     
                
-           <div class=" d-flex justify-content-center align-items-center">
-            <button type="submit" class="mb-3 btn btn-primary ">Crea il tuo nuovo Piatto</button>
-            <button type="reset" class="mb-3 btn btn-danger">Pulisci i campi</button>
+           <div class=" d-flex justify-content-center align-items-center gap-2">
+            <button type="submit" class="mb-3 btn btn-outline-primary ">Crea il tuo nuovo Piatto</button>
+            <button type="reset" class="mb-3 btn btn-outline-danger">Pulisci i campi</button>
+            <div class="mb-3">
+                <a href="{{route("admin.plates.index")}}" class="btn btn-outline-success">Torna alla lista dei piatti</a>
+        
+            </div>
 
            </div>
         </form>
           
 
     </div>
-
+    
 </div>
 
 @endsection
