@@ -25,7 +25,7 @@ class StoreRestaurantRequest extends FormRequest
             //inserire regole validazione
             'user_id' => ['required'],
             'name' => ['required'],
-            'PIva' => ['required'],
+            'piva' => ['required'],
             'address' => ['required']
         ];
     }

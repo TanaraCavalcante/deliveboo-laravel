@@ -11,7 +11,7 @@
 <form action="{{route('restaurant.store')}}" method="POST">
     @csrf
 
-    @dump($user)
+    {{-- @dump($user) --}}
 
     <div class="row mb-3">
         <label for="user_id" class="col-md-4 col-form-label text-md-end">Utente</label>
@@ -26,7 +26,7 @@
         <label for="nome-attività" class="col-md-4 col-form-label text-md-end">Nome Attività *</label>
 
         <div class="col-md-6">
-            <input id="nome-attività" type="text" class="form-control" name="name" required>
+            <input id="name" type="text" class="form-control" name="name" required>
         </div>
     </div>
 
@@ -39,10 +39,10 @@
     </div>
 
     <div class="row mb-3">
-        <label for="partita-iva" class="col-md-4 col-form-label text-md-end">Partita IVA *</label>
+        <label for="piva" class="col-md-4 col-form-label text-md-end">Partita IVA *</label>
 
         <div class="col-md-6">
-            <input id="partita-iva" type="text" class="form-control" name="PIva" required>
+            <input id="piva" type="text" class="form-control" name="piva" required>
         </div>
     </div>
 
