@@ -21,13 +21,11 @@ class Restaurant extends Model
         return $this->belongsTo(User::class);
     }
 
-/*
-    public function plate()
-    {
-        return $this->belongsTo(Plate::class);
-    } */
+    public function plates(){
+        return $this->hasMany(Plate::class);
+    }
 
-   public function types(){
+    public function types(){
        return $this->belongsToMany(Type::class);
    }
 }
