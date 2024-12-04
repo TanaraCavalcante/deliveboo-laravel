@@ -30,7 +30,6 @@ class PlateController extends Controller
         $restaurant = Auth::user();
 
         $data = $request->validated();
-        $data['restaurant_id'] = $restaurant;
 
         $plate = Plate::create($data);
         return redirect()->route('admin.plates.index');
@@ -39,19 +38,14 @@ class PlateController extends Controller
         return view('admin.plates.show', compact('plate'));
     }
     public function edit( Plate $plate){
-        return view('admin.plates.edit', compact('plate'));
+        $user = Auth::user();
+        $restaurant = $user->restaurant->id;
+        return view('admin.plates.edit', compact('plate','restaurant','user'));
     }
-    public function update( UpdatePlateRequest $request, Plate $plate){
-        $userRestaurant = Auth::user()->restaurant;
-
-        if($plate->restaurant_id !== $userRestaurant->id){
-            abort(403);
-        }
-        // recupera dati
+    public function update(UpdatePlateRequest $request, Plate $plate){
         $data = $request->validated();
-        // aggiorna i dati
         $plate->update($data);
-        return redirect()->route('admin.plates.index');
+        return redirect()->route('admin.plates.index', $plate);
     }
     public function destroy(Plate $plate){
         $userRestaurant = Auth::user()->restaurant;

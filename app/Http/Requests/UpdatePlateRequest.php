@@ -3,8 +3,6 @@
 namespace App\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
-use Illuminate\Validation\Rule;
-
 class UpdatePlateRequest extends FormRequest
 {
     /**
@@ -23,15 +21,13 @@ class UpdatePlateRequest extends FormRequest
     public function rules(): array
     {
         return [
-            'name' => ['required', 'string', 'min:3','max:255',
-            Rule::unique('plates')->ignore($this->plate)
-            ],
+            'name' => ['required', 'string', 'min:3','max:255'],
             'description' => ['required','min:10', 'max:500','string'],
             'price' => ['required','decimal:2'],
             'ingredients' => ['required', 'min:3','max:500','string'],
             'visibility' => ['required', 'boolean'],
             'image' =>['nullable','url', 'max:250'],
-            'restaurant_id' => ['nullable', 'numeric', 'integer', 'exist:restaurants,id']
+            'restaurant_id' => ['required','numeric', 'integer', 'exists:restaurants,id'],
         ];
     }
 }
