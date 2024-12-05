@@ -70,8 +70,15 @@
 
                 <div class="mb-3">
                     <label for="plate-visibility" class="form-label">Disponibilità: *</label>
-                    <input type="text" class="form-control" id="plate-visibility" name="visibility"
-                        value="{{ old('visibility') }}">
+                    {{-- <input type="text" class="form-control" id="plate-visibility" name="visibility" value="{{ old('visibility') }}"> --}}
+
+                    <input type="radio" class="btn-check" name="visibility" id="success-outlined" value="1" autocomplete="off">
+                    <label class="btn btn-outline-success" for="success-outlined">Disponibile</label>
+
+                    <input type="radio" class="btn-check" name="visibility" id="danger-outlined" value="0" autocomplete="off">
+                    <label class="btn btn-outline-danger" for="danger-outlined">Non Disponibile</label>
+
+
                     @error('visibility')
                         <div class="alert alert-danger">
                             {{ $message }}

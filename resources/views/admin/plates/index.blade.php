@@ -39,7 +39,15 @@
                                         <td>{{ $plate->id }}</td>
                                         <td>{{ $plate->name }}</td>
                                         <td>{{ $plate->price }} </td>
-                                        <td>{{ $plate->visibility }}</td>
+                                        <td>
+                                            @if ( $plate->visibility)
+                                                Disponibile
+                                            @else
+                                                Non Disponibile
+                                            @endif
+                                        </td>
+
+
                                         <td class="d-flex">
                                             <a href="{{ route('admin.plates.show', $plate) }}"
                                                 class="btn btn-sm btn-outline-info m-2 me-1">Mostra</a>

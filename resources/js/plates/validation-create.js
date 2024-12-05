@@ -27,6 +27,8 @@ const errorDisplay = document.getElementById('input-errors');
 const errorCard = document.getElementById('error-card');
 // console.log(errorCard);
 
+// # Recupero i due radio btn
+
 let inputErrors = [];
 
 // TODO: Finire funzione di validazione
