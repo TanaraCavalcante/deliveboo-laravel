@@ -14,10 +14,8 @@ use Illuminate\Support\Facades\Auth;
 class PlateController extends Controller
 {
     public function index(){
-        // verififca che il piatto appartenga all'utente
         $restaurant = Auth::user();
         $plates = Plate::where('restaurant_id', $restaurant->id)->get();
-        // $plates['restaurant_id'] = $user;
         return view('admin.plates.index', compact('plates','restaurant'));
     }
     public function create(){
@@ -49,11 +47,6 @@ class PlateController extends Controller
     }
     public function destroy(Plate $plate){
         $userRestaurant = Auth::user()->restaurant;
-
-        if($plate->restaurant_id !== $userRestaurant->id){
-            abort(403);
-        }
-
         $plate->delete();
         return redirect()->route('admin.plates.index');
     }
