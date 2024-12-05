@@ -86,8 +86,8 @@ class RegisterController extends Controller
             'piva' => $data['piva']
         ]);
 
-        $userDetails = $userData.$restaurantData;
-        return $userDetails;
+        ;
+        return $userData;
 
     }
 }
