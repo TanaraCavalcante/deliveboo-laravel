@@ -103,6 +103,136 @@
                                 </div>
                             </div>
 
+                            {{--!Select per il tipo --}}
+                            <div class="row mb-3">
+                                <label for="tipo" class="col-md-4 col-form-label text-md-end">Tipo de Restaurante *</label>
+
+                                <div class="col-md-6">
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="checkbox" id="italiano" name="tipo[]">
+                                        <label class="form-check-label" for="italiano">
+                                            Italiano
+                                        </label>
+                                    </div>
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="checkbox" value="Cinese" id="cinese" name="tipo[]">
+                                        <label class="form-check-label" for="cinese">
+                                            Cinese
+                                        </label>
+                                    </div>
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="checkbox" value="Messicano" id="messicano" name="tipo[]">
+                                        <label class="form-check-label" for="messicano">
+                                            Messicano
+                                        </label>
+                                    </div>
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="checkbox" value="Indiano" id="indiano" name="tipo[]">
+                                        <label class="form-check-label" for="indiano">
+                                            Indiano
+                                        </label>
+                                    </div>
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="checkbox" value="Giapponese" id="giapponese" name="tipo[]">
+                                        <label class="form-check-label" for="giapponese">
+                                            Giapponese
+                                        </label>
+                                    </div>
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="checkbox" value="Vegetariano" id="vegetariano" name="tipo[]">
+                                        <label class="form-check-label" for="vegetariano">
+                                            Vegetariano
+                                        </label>
+                                    </div>
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="checkbox" value="Vegano" id="vegano" name="tipo[]">
+                                        <label class="form-check-label" for="vegano">
+                                            Vegano
+                                        </label>
+                                    </div>
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="checkbox" value="Fast Food" id="fast_food" name="tipo[]">
+                                        <label class="form-check-label" for="fast_food">
+                                            Fast Food
+                                        </label>
+                                    </div>
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="checkbox" value="Mediterraneo" id="mediterraneo" name="tipo[]">
+                                        <label class="form-check-label" for="mediterraneo">
+                                            Mediterrâneo
+                                        </label>
+                                    </div>
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="checkbox" value="Francese" id="francese" name="tipo[]">
+                                        <label class="form-check-label" for="francese">
+                                            Francês
+                                        </label>
+                                    </div>
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="checkbox" value="Americano" id="americano" name="tipo[]">
+                                        <label class="form-check-label" for="americano">
+                                            Americano
+                                        </label>
+                                    </div>
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="checkbox" value="Thailandese" id="thailandese" name="tipo[]">
+                                        <label class="form-check-label" for="thailandese">
+                                            Tailandês
+                                        </label>
+                                    </div>
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="checkbox" value="Spagnolo" id="spagnolo" name="tipo[]">
+                                        <label class="form-check-label" for="spagnolo">
+                                            Espanhol
+                                        </label>
+                                    </div>
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="checkbox" value="Tedesco" id="tedesco" name="tipo[]">
+                                        <label class="form-check-label" for="tedesco">
+                                            Alemão
+                                        </label>
+                                    </div>
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="checkbox" value="Fusion" id="fusion" name="tipo[]">
+                                        <label class="form-check-label" for="fusion">
+                                            Fusion
+                                        </label>
+                                    </div>
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="checkbox" value="Mediorientale" id="mediorientale" name="tipo[]">
+                                        <label class="form-check-label" for="mediorientale">
+                                            Médio Oriente
+                                        </label>
+                                    </div>
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="checkbox" value="Africano" id="africano" name="tipo[]">
+                                        <label class="form-check-label" for="africano">
+                                            Africano
+                                        </label>
+                                    </div>
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="checkbox" value="Coreano" id="coreano" name="tipo[]">
+                                        <label class="form-check-label" for="coreano">
+                                            Coreano
+                                        </label>
+                                    </div>
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="checkbox" value="Greco" id="greco" name="tipo[]">
+                                        <label class="form-check-label" for="greco">
+                                            Grego
+                                        </label>
+                                    </div>
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="checkbox" value="Brasiliano" id="brasiliano" name="tipo[]">
+                                        <label class="form-check-label" for="brasiliano">
+                                            Brasileiro
+                                        </label>
+                                    </div>
+
+                                </div>
+
+                            </div>
+
                             <div class="row mb-0">
                                 <div class="col-md-6 offset-md-4">
                                     <button type="submit" class="btn btn-primary">
