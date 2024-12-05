@@ -21,7 +21,7 @@ class PlateSeeder extends Seeder
                 "ingredients" => "pomodoro, mozzarella di bufala, basilico, olio d'oliva",
                 "price" => 7.50,
                 "visibility" => true,
-                "image" => "https://images.pexels.com/photos/29609013/pexels-photo-29609013/free-photo-of-autentica-pizza-napoletana-con-basilico-fresco.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+                "image" => "margherita.jpeg"
             ],
             [
                 "restaurant_id" => 1,
