@@ -25,7 +25,7 @@
 
                 <div class="mb-3">
                     <label for="plate-title" class="form-label">Nome:</label>
-                    <input type="text" class="form-control" id="plate-title" name="name" value="{{ old('name') }}">
+                    <input type="text" class="form-control" id="plate-title" name="name" value="{{ old('name', $plate->name) }}">
                     @error('name')
                         <div class="alert alert-danger">
                             {{ $message }}
@@ -36,7 +36,7 @@
                 <div class="mb-3">
                     <label for="plate-description" class="form-label">Descrizione:</label>
                     <input type="text" class="form-control" id="plate-description" name="description"
-                        value="{{ old('description') }}">
+                        value="{{ old('description', $plate->description) }}">
                     @error('description')
                         <div class="alert alert-danger">
                             {{ $message }}
@@ -47,7 +47,7 @@
                 <div class="mb-3">
                     <label for="plate-ingredients" class="form-label">Ingredienti:</label>
                     <input type="text" class="form-control" id="plate-ingredients" name="ingredients"
-                        value="{{ old('ingredients') }}">
+                        value="{{ old('ingredients', $plate->ingredients) }}">
                     @error('ingredients')
                         <div class="alert alert-danger">
                             {{ $message }}
@@ -57,7 +57,7 @@
 
                 <div class="mb-3">
                     <label for="plate-price" class="form-label">Prezzo:</label>
-                    <input type="text" class="form-control" id="plate-price" name="price" value="{{ old('price') }}">
+                    <input type="text" class="form-control" id="plate-price" name="price" value="{{ old('price', $plate->price) }}">
                     @error('price')
                         <div class="alert alert-danger">
                             {{ $message }}
@@ -68,7 +68,7 @@
                 <div class="mb-3">
                     <label for="plate-visibility" class="form-label">Disponibilità:</label>
                     <input type="text" class="form-control" id="plate-visibility" name="visibility"
-                        value="{{ old('visibility') }}">
+                        value="{{ old('visibility', $plate->visibility) }}">
                     @error('visibility')
                         <div class="alert alert-danger">
                             {{ $message }}
@@ -78,7 +78,7 @@
 
                 <div class="mb-3">
                     <label for="plate-image" class="form-label">Inserisci URL immagine:</label>
-                    <input type="text" class="form-control" id="plate-image" name="image" value="{{ old('image') }}">
+                    <input type="text" class="form-control" id="plate-image" name="image" value="{{ old('image', $plate->image) }}">
                     @error('image')
                         <div class="alert alert-danger">
                             {{ $message }}
