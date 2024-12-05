@@ -6,29 +6,18 @@
 <h1>{{$plate->name}}</h1>
 <div class="container">
     <div class="row justify-content-center">
-
-
-        <div class="card col-12 col-md-8 col-lg-6  p-4">
-
+        <div class="card col-12 col-md-8 col-lg-6 p-4 my-5">
             <div class="card-body">
 
+                <h1 class="card-title  fw-bold"> {{ $plate->name }}</h1>
 
+                <img src="{{$plate->image}}" alt="{{$plate->name}}">
 
-                    <h1 class="card-title  fw-bold">Piatto: {{ $plate->name }}</h1>
+                <p class="card-title">{{ $plate->description }}</p>
 
-                    <p class="card-title">Descrizione: {{ $plate->description }}</p>
-
-                <h6 class="card-title fw-bold">Prezzo:{{ $plate->price }}</h6>
-
-                <div>Link: <a href="{{ $plate->image }}" target="_blank">{{ $plate->image }}</a></div>
-
-
-
-
+                <p class="card-title ">Prezzo: <strong>€ {{ $plate->price }}</strong></p>
 
             </div>
-          </div>
-
         </div>
     </div>
 
