@@ -86,7 +86,7 @@
 
 
            <div class=" d-flex justify-content-center align-items-center">
-            <button type="submit" class="mb-3 btn btn-primary ">Crea il tuo nuovo Piatto</button>
+            <button type="submit" id="sub-btn" class="mb-3 btn btn-primary ">Crea il tuo nuovo Piatto</button>
             <button type="reset" class="mb-3 btn btn-danger">Pulisci i campi</button>
 
                 </div>
@@ -97,4 +97,8 @@
 
 </div>
 
+@endsection
+
+@section('additional-scripts')
+    @vite("resources/js/plates/validation-create.js");
 @endsection
