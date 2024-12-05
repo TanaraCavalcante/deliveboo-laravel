@@ -5,7 +5,8 @@
         <div class="row justify-content-center">
             <div class="card col-12 col-md-8 col-lg-6  p-4">
                 <div class="card-body">
-                    {{-- <img src="{{ $plate->image}}" class="card-img-top" alt="{{ $plate->name }}"> --}}
+                    {{-- manca gestire assenza img qui conun placeholder --}}
+                    <img src="{{ $plate->image}}" class="card-img-top" alt="{{ $plate->name }}">
                     <h1 class="card-title  fw-bold">
                         Piatto: {{ $plate->name }}
                     </h1>
