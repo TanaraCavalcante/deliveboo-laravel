@@ -13,30 +13,21 @@
                         piatto!</a>
                 </div>
                 <div class="table-responsive-sm">
-                    <table class="table  table-hover table-striped ">
+                    <table class="table table-hover table-striped ">
                         <thead>
                             <tr>
-                                <th scope="col">#</th>
                                 <th scope="col">Piatto</th>
-                                <th scope="col" class="d-none d-lg-table-cell">Descrizione</th>
                                 <th scope="col">Prezzo</th>
-                                <th scope="col" class="d-none d-sm-table-cell">Ingredienti</th>
                                 <th scope="col">Disponibilità</th>
-                                <th scope="col" class="d-none d-lg-table-cell">Url immagine</th>
                                 <th scope="col">Azioni</th>
                             </tr>
                         </thead>
                         <tbody>
                             @forelse ($plates as $index => $plate)
                                 <tr>
-                                    <td>{{ $plate->id }}</td>
                                     <td>{{ $plate->name }}</td>
-                                    <td class="d-none d-lg-table-cell">{{ $plate->description }}</td>
                                     <td>{{ $plate->price }} </td>
-                                    <td class="d-none d-sm-table-cell">{{ $plate->ingredients }}</td>
                                     <td>{{ $plate->visibility }}</td>
-                                    <td class="d-none d-lg-table-cell">{{ $plate->image }}</td>
-
                                     <td>
                                         <a href="{{ route('admin.plates.show', $plate) }}"
                                             class="btn btn-sm btn-outline-info m-2 me-1">Mostra</a>
