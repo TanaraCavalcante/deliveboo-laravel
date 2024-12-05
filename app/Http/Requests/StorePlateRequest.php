@@ -42,6 +42,7 @@ class StorePlateRequest extends FormRequest
             'description.max' => 'La descrizione puó contenere massimo 500 caratteri',
             'price.required' => 'Il prezzo è un parametro obbligatorio',
             'price.integer' => 'Il prezzo deve essere un numero',
+            'price.min'=>'Il prezzo non può essere minore di 0',
             'ingredients.required' => 'Gli ingredienti è un parametro obbligatorio',
             'ingredients.min' => 'Gli ingredienti deve contenere minimo 3 caratteri',
             'ingredients.max' => 'Gli ingredienti puó contenere massimo 500 caratteri',

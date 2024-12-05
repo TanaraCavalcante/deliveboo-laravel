@@ -21,7 +21,7 @@
                 </div>
 
                 <div class="mb-3">
-                    <label for="plate-title" class="form-label">Nome:</label>
+                    <label for="plate-title" class="form-label">Nome: *</label>
                     <input type="text" class="form-control" id="plate-title" name="name" value="{{ old('name') }}">
                     @error('name')
                         <div class="alert alert-danger">
@@ -61,7 +61,7 @@
                 </div>
 
                 <div class="mb-3">
-                    <label for="plate-visibility" class="form-label">Disponibilità:</label>
+                    <label for="plate-visibility" class="form-label">Disponibilità: *</label>
                     <input type="text" class="form-control" id="plate-visibility" name="visibility"
                         value="{{ old('visibility') }}">
                     @error('visibility')
