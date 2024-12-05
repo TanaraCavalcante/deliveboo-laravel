@@ -7,7 +7,7 @@
     <div class="container">
         <div class="row justify-content-center">
 
-            <div id="error-card" class="card text-white bg-danger mb-3 d-none">
+            <div id="error-card" class="col-12 col-md-7 card text-white bg-danger mb-3 d-none">
                 <div class="card-body">
                     <ol id="input-errors">
                         <!--Ci saranno gli errori-->
