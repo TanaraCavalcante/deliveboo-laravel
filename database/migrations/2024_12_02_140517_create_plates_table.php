@@ -19,7 +19,7 @@ return new class extends Migration
             $table->decimal('price', 6, 2);
             $table->text('ingredients');
             $table->boolean('visibility');
-            $table->string('image')->nullable();
+            $table->text('image')->nullable();
             $table->timestamps();
         });
     }

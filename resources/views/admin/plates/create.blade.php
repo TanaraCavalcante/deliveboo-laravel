@@ -7,7 +7,7 @@
     <div class="container">
         <div class="row justify-content-center">
 
-            <form class="col-12 col-md-8 col-lg-6 card p-4" method="POST" action="{{ route('admin.plates.store') }}">
+            <form class="col-12 col-md-8 col-lg-6 card p-4" method="POST" enctype="multipart/form-data" action="{{ route('admin.plates.store') }}">
                 @csrf
                 <h1>Aggiungi un nuovo piatto:</h1>
                 {{-- @dump($restaurant) --}}
@@ -21,7 +21,7 @@
                 </div>
 
                 <div class="mb-3">
-                    <label for="plate-title" class="form-label">Nome:</label>
+                    <label for="plate-title" class="form-label">Nome: *</label>
                     <input type="text" class="form-control" id="plate-title" name="name" value="{{ old('name') }}">
                     @error('name')
                         <div class="alert alert-danger">
@@ -30,10 +30,9 @@
                     @enderror
                 </div>
 
-                <div class="mb-3">
-                    <label for="plate-description" class="form-label">Descrizione:</label>
-                    <input type="text" class="form-control" id="plate-description" name="description"
-                        value="{{ old('description') }}">
+                <div class="mb-3 ">
+                    <label for="plate-description" class="form-label">Descrizione: *</label>
+                    <textarea  class="form-control" id="plate-description" name="description"  placeholder="Minimo 10 caratteri" style="height: 100px">{{ old('description') }}</textarea>
                     @error('description')
                         <div class="alert alert-danger">
                             {{ $message }}
@@ -42,9 +41,8 @@
                 </div>
 
                 <div class="mb-3">
-                    <label for="plate-ingredients" class="form-label">Ingredienti:</label>
-                    <input type="text" class="form-control" id="plate-ingredients" name="ingredients"
-                        value="{{ old('ingredients') }}">
+                    <label for="plate-ingredients" class="form-label">Ingredienti: *</label>
+                    <textarea type="text" class="form-control" id="plate-ingredients" name="ingredients" placeholder="Minimo 3 caratteri" style="height: 100px">{{ old('ingredients') }}</textarea>
                     @error('ingredients')
                         <div class="alert alert-danger">
                             {{ $message }}
@@ -53,7 +51,7 @@
                 </div>
 
                 <div class="mb-3">
-                    <label for="plate-price" class="form-label">Prezzo:</label>
+                    <label for="plate-price" class="form-label">Prezzo: *</label>
                     <input type="text" class="form-control" id="plate-price" name="price" value="{{ old('price') }}">
                     @error('price')
                         <div class="alert alert-danger">
@@ -63,7 +61,7 @@
                 </div>
 
                 <div class="mb-3">
-                    <label for="plate-visibility" class="form-label">Disponibilità:</label>
+                    <label for="plate-visibility" class="form-label">Disponibilità: *</label>
                     <input type="text" class="form-control" id="plate-visibility" name="visibility"
                         value="{{ old('visibility') }}">
                     @error('visibility')
@@ -74,8 +72,10 @@
                 </div>
 
                 <div class="mb-3">
-                    <label for="plate-image" class="form-label">Inserisci URL immagine:</label>
-                    <input type="text" class="form-control" id="plate-image" name="image" value="{{ old('image') }}">
+                    <label for="plate-image" class="form-label">Inserisci l'immagine:</label>
+                    <input type="file" class="form-control" id="plate-image" name="image" value="{{ old('image') }}">
+
+                    {{-- <input type="text" class="form-control" id="plate-image" name="image" value="{{ old('image') }}"> --}}
                     @error('image')
                         <div class="alert alert-danger">
                             {{ $message }}
