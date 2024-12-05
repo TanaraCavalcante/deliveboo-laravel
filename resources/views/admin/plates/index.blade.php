@@ -28,16 +28,13 @@
                                     <td>{{ $plate->name }}</td>
                                     <td>{{ $plate->price }} </td>
                                     <td>{{ $plate->visibility }}</td>
-                                    <td>
-                                        <a href="{{ route('admin.plates.show', $plate) }}"
-                                            class="btn btn-sm btn-outline-info m-2 me-1">Mostra</a>
-                                        <a href="{{ route('admin.plates.edit', $plate) }}"
-                                            class="btn btn-sm btn-outline-success m-2 me-1">Modifica</a>
+                                    <td class="d-flex">
+                                        <a href="{{ route('admin.plates.show', $plate) }}" class="btn btn-sm btn-outline-info m-2 me-1">Mostra Dettagli</a>
+                                        <a href="{{ route('admin.plates.edit', $plate) }}" class="btn btn-sm btn-outline-success m-2 me-1">Modifica</a>
                                         <form action="{{ route('admin.plates.delete', $plate) }}" method="POST"
                                             class="plate-destroyer" custom-data-name="{{ $plate->name }}">
                                             @csrf
                                             @method('DELETE')
-
                                             <button type="submit"
                                                 class="btn btn-sm btn-outline-warning m-2">Cancella</button>
                                         </form>
