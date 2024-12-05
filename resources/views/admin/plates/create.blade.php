@@ -91,18 +91,12 @@
                     @enderror
                 </div>
 
-
-
            <div class=" d-flex justify-content-center align-items-center">
-            <button type="submit" id="sub-btn" class="mb-3 btn btn-primary ">Crea il tuo nuovo Piatto</button>
-            <button type="reset" class="mb-3 btn btn-danger">Pulisci i campi</button>
-
-                </div>
-            </form>
-
-
+                <button type="submit" id="sub-btn" class="mb-3 btn btn-primary ">Crea il tuo nuovo Piatto</button>
+                <button type="reset" class="mb-3 btn btn-danger">Pulisci i campi</button>
+            </div>
+        </form>
     </div>
-
 </div>
 
 @endsection
