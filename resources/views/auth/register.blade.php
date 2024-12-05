@@ -105,7 +105,7 @@
 
                             {{--!Select per il tipo --}}
                             <div class="row mb-3">
-                                <label for="tipo" class="col-md-4 col-form-label text-md-end">Tipo de Restaurante *</label>
+                                <div for="tipo" class="col-md-4 col-form-label text-md-end">Tipo de Restaurante *</div>
 
                                 <div class="col-md-3">
                                     <div class="form-check">
