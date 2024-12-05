@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use App\Models\Restaurant;
 use App\Models\User;
 use Illuminate\Foundation\Auth\RegistersUsers;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Validator;
 
@@ -29,7 +30,7 @@ class RegisterController extends Controller
      *
      * @var string
      */
-    protected $redirectTo = '/restaurant/create';
+    protected $redirectTo = 'admin/plates';
 
     /**
      * Create a new controller instance.
@@ -53,6 +54,8 @@ class RegisterController extends Controller
             'name' => ['required', 'string', 'max:255'],
             'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
             'password' => ['required', 'string', 'min:8', 'confirmed'],
+            'piva' => ['required', 'string', 'numeric', 'digits:11'],
+            'address' => ['required', 'string', 'min:5', 'max:200' ]
         ]);
     }
 
@@ -64,10 +67,23 @@ class RegisterController extends Controller
      */
     protected function create(array $data)
     {
-        return User::create([
+
+        $userData = User::create([
             'name' => $data['name'],
             'email' => $data['email'],
             'password' => Hash::make($data['password']),
         ]);
+
+        $restaurantData = Restaurant::create([
+            'user_id' =>$userData->id,
+            'name' => $data['name'],
+            'email' => $data['email'],
+            'address' => $data['address'],
+            'piva' => $data['piva']
+        ]);
+
+        ;
+        return $userData;
+
     }
 }

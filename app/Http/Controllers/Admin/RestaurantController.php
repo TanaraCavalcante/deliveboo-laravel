@@ -12,7 +12,7 @@ use Illuminate\Support\Facades\Auth;
 class RestaurantController extends Controller
 {
     //
-    public function create () {
+/*     public function create () {
         $restaurant = new Restaurant();
         $user = Auth::user();
         return view('admin.restaurants.create', compact('restaurant', 'user'));
@@ -21,9 +21,8 @@ class RestaurantController extends Controller
     public function store(StoreRestaurantRequest $request){
 
         $formData = $request->all();
-        // dd($formData);
 
         $newRestaurant = Restaurant::create($formData);
         return redirect()->route('admin.plates.index');
-    }
+    } */
 }
