@@ -16,7 +16,8 @@
                     <label for="restaurant_id" class="col-md-4 col-form-label text-md-end">Utente</label>
 
                     <div class="col-md-6">
-                        <input id="restaurant_id" type="text" class="form-control" name="restaurant_id" required value="{{$restaurant}}" readonly>
+                        <input id="restaurant_id" type="text" class="form-control" name="restaurant_id" required
+                            value="{{ $restaurant }}" readonly>
                     </div>
                 </div>
 
@@ -64,8 +65,13 @@
 
                 <div class="mb-3">
                     <label for="plate-visibility" class="form-label">Disponibilità:</label>
-                    <input type="text" class="form-control" id="plate-visibility" name="visibility"
-                        value="{{ old('visibility') }}">
+                    <select name="visibility" class="form-control" id="plate-visibility">
+                        <option value="">-- Seleziona disponibilità --</option>
+                        <option value="available" {{ old('visibility') == 'available' ? 'selected' : '' }}>Disponibile
+                        </option>
+                        <option value="unavailable" {{ old('visibility') == 'unavailable' ? 'selected' : '' }}>Non
+                            disponibile</option>
+                    </select>
                     @error('visibility')
                         <div class="alert alert-danger">
                             {{ $message }}
@@ -85,16 +91,16 @@
 
 
 
-           <div class=" d-flex justify-content-center align-items-center">
-            <button type="submit" class="mb-3 btn btn-primary ">Crea il tuo nuovo Piatto</button>
-            <button type="reset" class="mb-3 btn btn-danger">Pulisci i campi</button>
+                <div class=" d-flex justify-content-center align-items-center">
+                    <button type="submit" class="mb-3 btn btn-outline-primary ">Crea il tuo nuovo Piatto</button>
+                    <button type="reset" class="mb-3 btn btn-outline-danger">Pulisci i campi</button>
 
                 </div>
             </form>
 
 
-    </div>
+        </div>
 
-</div>
+    </div>
 
 @endsection
