@@ -25,9 +25,6 @@ Route::get('/home', function () {
 
 Auth::routes();
 
-Route::get('/restaurant/create', [RestaurantController::class, 'create'])->name('restaurant.create');
-route::post('/restaurant/store', [RestaurantController::class, 'store'])->name('restaurant.store');
-
 Route::middleware('auth')->controller(AdminPlateController::class)->prefix('/admin')->name('admin.')->group(function(){
     route::get('/plates','index')->name('plates.index');
     route::get('/plates/create','create')->name('plates.create');
