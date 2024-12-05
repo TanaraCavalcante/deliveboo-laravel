@@ -36,9 +36,6 @@ subBtn.addEventListener('click', function (e) {
     errorCard.classList.add('d-none');
     errorDisplay.innerHTML = "";
 
-
-    // creo variabile per inserire tutti gli errori in un solo posto
-
     // ! Validazione per nome
     let nameValue = nameInput.value;
     if (nameValue.length === 0 || nameValue.length < 3 || nameValue.length > 255) {

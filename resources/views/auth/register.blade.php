@@ -3,6 +3,14 @@
 @section('content')
     <div class="container">
         <div class="row justify-content-center">
+            <div id="error-card" class="col-12 col-md-8 card text-white bg-danger mb-3 d-none">
+                <div class="card-body">
+                    <ol id="input-errors">
+                        <!--Ci saranno gli errori-->
+                    </ol>
+                </div>
+              </div>
+
             <div class="col-md-8">
                 <div class="card">
                     <div class="card-header">{{ __('Registrati') }}</div>
@@ -105,7 +113,7 @@
 
                             <div class="row mb-0">
                                 <div class="col-md-6 offset-md-4">
-                                    <button type="submit" class="btn btn-primary">
+                                    <button type="submit" id="submit-btn" class="btn btn-primary">
                                         {{ __('Registrati') }}
                                     </button>
                                 </div>
@@ -116,4 +124,8 @@
             </div>
         </div>
     </div>
+@endsection
+
+@section('additional-scripts')
+    @vite('resources/js/registration/validation.js')
 @endsection
