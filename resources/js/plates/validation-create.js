@@ -46,14 +46,16 @@ subBtn.addEventListener('click', function (e) {
     let ingredientsValue = ingredientsInput.value;
     if (ingredientsValue.length === 0 || ingredientsValue.length < 3 || ingredientsValue.length > 500) {
         e.preventDefault();
-        console.log('Gli ingredienti devono avere un lunghezza compresa tra 3 e 500 caratteri');
-    }
+        // console.log('Gli ingredienti devono avere un lunghezza compresa tra 3 e 500 caratteri');
+        inputErrors.push('Gli ingredienti devono avere un lunghezza compresa tra 3 e 500 caratteri');
+    };
 
     // ! Validazione per prezzo
     let priceValue = priceInput.value;
     if (isNaN(priceValue) || priceValue.length === 0) {
         e.preventDefault();
-        console.log('Il prezzo DEVE essere un numero');
+        // console.log('Il prezzo DEVE essere un numero');
+        inputErrors.push('Il prezzo DEVE essere un numero');
     };
 
     console.log(inputErrors);
