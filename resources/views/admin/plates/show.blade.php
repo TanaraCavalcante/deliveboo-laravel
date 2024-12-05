@@ -11,21 +11,19 @@
                         Piatto: {{ $plate->name }}
                     </h1>
                     <p class="card-text">
-                        Descrizione: {{ $plate->description }}
+                        Descrizione piatto: {{ $plate->description }}
                     </p>
                     <p class="card-text">
                         Ingredienti: {{ $plate->ingredients }}
                     </p>
                     <p class="card-text">
-                        Descrizione: {{ $plate->visibility }}
+                        Disponibilità del piatto: {{ $plate->visibility }}
                     </p>
                     <h6 class="card-text fw-bold">
                         Prezzo:{{ $plate->price }}
                     </h6>
                     @if (!empty($plate->image))
-                        <div>
-                            <a href="{{ $plate->image }}" target="_blank">{{ $plate->image }}</a>
-                        </div>
+                      
                     @else
                         <div>
                             {{-- valutare insieme se inserire una img placeholder --}}
