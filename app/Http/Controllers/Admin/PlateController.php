@@ -30,7 +30,7 @@ class PlateController extends Controller
         $restaurant = Auth::user();
 
         $data = $request->validated();
-
+        $data['price'] = number_format($data['price'], '2' ,'.');
         $plate = Plate::create($data);
         return redirect()->route('admin.plates.index');
     }
