@@ -32,7 +32,7 @@
 
                 <div class="mb-3 ">
                     <label for="plate-description" class="form-label">Descrizione: *</label>
-                    <textarea  class="form-control" id="plate-description" name="description" style="height: 100px"  placeholder="Minimo 10 carattere">{{ old('description') }}</textarea>
+                    <textarea  class="form-control" id="plate-description" name="description"  placeholder="Minimo 10 caratteri" style="height: 100px">{{ old('description') }}</textarea>
                     @error('description')
                         <div class="alert alert-danger">
                             {{ $message }}
@@ -42,8 +42,7 @@
 
                 <div class="mb-3">
                     <label for="plate-ingredients" class="form-label">Ingredienti: *</label>
-                    <input type="text" class="form-control" id="plate-ingredients" name="ingredients"
-                        value="{{ old('ingredients') }}">
+                    <textarea type="text" class="form-control" id="plate-ingredients" name="ingredients" placeholder="Minimo 3 caratteri" style="height: 100px">{{ old('ingredients') }}</textarea>
                     @error('ingredients')
                         <div class="alert alert-danger">
                             {{ $message }}
