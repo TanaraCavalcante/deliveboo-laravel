@@ -38,10 +38,10 @@
                     @auth
                         <a href="{{ url('/home') }}" class="fs-1 fw-bold">Home</a>
                     @else
-                        <a href="{{ route('login') }}" class="me-2 fs-1 fw-bold">Log in</a>
+                        <a href="{{ route('login') }}" class="me-2 fs-1 fw-bold">Accedi</a>
 
                         @if (Route::has('register'))
-                            <a href="{{ route('register') }}" class="fs-1 fw-bold">Register</a>
+                            <a href="{{ route('register') }}" class="fs-1 fw-bold">Registrati</a>
                         @endif
                     @endauth
                 </div>
