@@ -36,6 +36,8 @@ class PlateController extends Controller
         //implemento l'imagine
         $filePath = Storage::disk("public")->put("img/plates" , $request->image);
 
+        $data["image"] = $filePath;
+
         $plate = Plate::create($data);
         return redirect()->route('admin.plates.index');
     }
