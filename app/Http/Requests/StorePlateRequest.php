@@ -24,11 +24,31 @@ class StorePlateRequest extends FormRequest
         return [
             'name' => ['required', 'string', 'min:3','max:255'],
             'description' => ['required','min:10', 'max:500','string'],
-            'price' => ['required','decimal:2'],
+            'price' => ['required','integer','numeric'],
             'ingredients' => ['required', 'min:3','max:500','string'],
             'visibility' => ['required', 'boolean'],
             'image' =>['nullable','url', 'max:250'],
-            'restaurant_id' => ['required']
+            'restaurant_id' => ['required','numeric', 'integer', 'exists:restaurants,id'],
+        ];
+    }
+    public function messages(){
+        return[
+            'name.required' => 'Il nome è un parametro obbligatorio',
+            'name.alpha' => 'Il nome deve contenere solo caratteri',
+            'name.min' => 'Il nome deve contenere minimo tre caratteri',
+            'name.max' => 'Il nome deve contenere massimo tre caratteri',
+            'description.required' => 'La descrizione è un parametro obbligatorio',
+            'description.min' => 'La descrizione deve contenere minimo 10 caratteri',
+            'description.max' => 'La descrizione puó contenere massimo 500 caratteri',
+            'price.required' => 'Il prezzo è un parametro obbligatorio',
+            'price.integer' => 'Il prezzo deve essere un numero',
+            'ingredients.required' => 'Gli ingredienti è un parametro obbligatorio',
+            'ingredients.min' => 'Gli ingredienti deve contenere minimo 3 caratteri',
+            'ingredients.max' => 'Gli ingredienti puó contenere massimo 500 caratteri',
+            'visibility.required' => 'La disponibilità è un parametro obbligatorio',
         ];
     }
 }
+
+
+
