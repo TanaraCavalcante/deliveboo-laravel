@@ -7,9 +7,13 @@
     <div class="container">
         <div class="row justify-content-center">
 
-            <div class="input-errors">
+            <div id="error-card" class="card text-white bg-danger mb-3 d-none">
+                <div class="card-body">
+                    <ol id="input-errors">
 
-            </div>
+                    </ol>
+                </div>
+              </div>
 
             <form class="col-12 col-md-8 col-lg-6 card p-4" method="POST" action="{{ route('admin.plates.store') }}">
                 @csrf

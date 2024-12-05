@@ -19,10 +19,23 @@ const ingredientsInput = document.getElementById('plate-ingredients');
 const priceInput = document.getElementById('plate-price');
 // console.log(priceInput);
 
+// # Recupero la lista dove saranno inserito gli errori
+const errorDisplay = document.getElementById('input-errors');
+// console.log(errorDisplay);
+
+// # Recuupero la card per eseguire il toggle della classe
+const errorCard = document.getElementById('error-card');
+// console.log(errorCard);
+
 let inputErrors = [];
 
 // TODO: Finire funzione di validazione
 subBtn.addEventListener('click', function (e) {
+    //Azzero tutto
+    inputErrors = [];
+    errorCard.classList.add('d-none');
+    errorDisplay.innerHTML = "";
+
 
     // creo variabile per inserire tutti gli errori in un solo posto
 
@@ -59,5 +72,13 @@ subBtn.addEventListener('click', function (e) {
         inputErrors.push('Il prezzo DEVE essere un numero');
     };
 
-    console.log(inputErrors);
-})
+    // console.log(inputErrors);
+    if (inputErrors.length) {
+        errorCard.classList.remove('d-none');
+    };
+
+    inputErrors.forEach((error) => {
+        errorDisplay.innerHTML += `<li>${error}</li>`;
+    });
+});
+
