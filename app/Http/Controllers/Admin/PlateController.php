@@ -14,47 +14,45 @@ use Illuminate\Support\Facades\Auth;
 class PlateController extends Controller
 {
     public function index(){
-        // verififca che il piatto appartenga all'utente
         $restaurant = Auth::user();
         $plates = Plate::where('restaurant_id', $restaurant->id)->get();
-        // $plates['restaurant_id'] = $user;
         return view('admin.plates.index', compact('plates','restaurant'));
     }
     public function create(){
         $plate = new Plate();
         $user = Auth::user();
         $restaurant = $user->restaurant->id;
+
         return view('admin.plates.create', compact('plate','restaurant','user'));
     }
     public function store(StorePlateRequest $request){
+
         $restaurant = Auth::user();
-
         $data = $request->validated();
-
         $plate = Plate::create($data);
+
         return redirect()->route('admin.plates.index');
     }
     public function show(Plate $plate){
+
         return view('admin.plates.show', compact('plate'));
     }
     public function edit( Plate $plate){
         $user = Auth::user();
         $restaurant = $user->restaurant->id;
+
         return view('admin.plates.edit', compact('plate','restaurant','user'));
     }
     public function update(UpdatePlateRequest $request, Plate $plate){
         $data = $request->validated();
         $plate->update($data);
+
         return redirect()->route('admin.plates.index', $plate);
     }
     public function destroy(Plate $plate){
         $userRestaurant = Auth::user()->restaurant;
-
-        if($plate->restaurant_id !== $userRestaurant->id){
-            abort(403);
-        }
-
         $plate->delete();
+        
         return redirect()->route('admin.plates.index');
     }
 }
