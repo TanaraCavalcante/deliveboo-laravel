@@ -9,7 +9,11 @@
             </div>
             <div>
                 @if (count($plates === 0))
-                    <
+                    <div>
+                        <h3>Benvenuto nel tuo pannello di controllo</h3>
+                        <p>Inserisci i tuoi piatti cliccando nel tasto qui sotto</p>
+
+                    </div>
                 @else
 
                 @endif
