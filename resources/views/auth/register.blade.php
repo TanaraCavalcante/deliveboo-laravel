@@ -107,7 +107,7 @@
                             <div class="row mb-3">
                                 <label for="tipo" class="col-md-4 col-form-label text-md-end">Tipo de Restaurante *</label>
 
-                                <div class="col-md-6">
+                                <div class="col-md-3">
                                     <div class="form-check">
                                         <input class="form-check-input" type="checkbox" id="italiano" name="tipo[]">
                                         <label class="form-check-label" for="italiano">
@@ -168,6 +168,8 @@
                                             Francese
                                         </label>
                                     </div>
+                                </div>
+                                <div class="col-md-3">
                                     <div class="form-check">
                                         <input class="form-check-input" type="checkbox" value="Mediterraneo" id="mediterraneo" name="tipo[]">
                                         <label class="form-check-label" for="mediterraneo">
@@ -228,7 +230,7 @@
                                             Brasiliano
                                         </label>
                                     </div>
-
+                                </div>
 
                                 </div>
 
