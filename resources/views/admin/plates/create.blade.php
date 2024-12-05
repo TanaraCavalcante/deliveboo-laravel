@@ -7,7 +7,7 @@
     <div class="container">
         <div class="row justify-content-center">
 
-            <form class="col-12 col-md-8 col-lg-6 card p-4" method="POST" action="{{ route('admin.plates.store') }}">
+            <form class="col-12 col-md-8 col-lg-6 card p-4" method="POST" enctype="multipart/form-data" action="{{ route('admin.plates.store') }}">
                 @csrf
                 <h1>Aggiungi un nuovo piatto:</h1>
                 {{-- @dump($restaurant) --}}
