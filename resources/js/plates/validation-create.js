@@ -69,6 +69,11 @@ subBtn.addEventListener('click', function (e) {
         inputErrors.push('Il prezzo DEVE essere un numero');
     };
 
+    if (priceValue <= 0) {
+        e.preventDefault();
+        inputErrors.push('Il prezzo non può avere valori negativi o essere pari a zero')
+    }
+
     // console.log(inputErrors);
     if (inputErrors.length) {
         errorCard.classList.remove('d-none');
