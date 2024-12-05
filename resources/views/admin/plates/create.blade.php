@@ -72,8 +72,10 @@
                 </div>
 
                 <div class="mb-3">
-                    <label for="plate-image" class="form-label">Inserisci URL immagine:</label>
-                    <input type="text" class="form-control" id="plate-image" name="image" value="{{ old('image') }}">
+                    <label for="plate-image" class="form-label">Inserisci l'immagine:</label>
+                    <input type="file" class="form-control" id="plate-image" name="image" value="{{ old('image') }}">
+
+                    {{-- <input type="text" class="form-control" id="plate-image" name="image" value="{{ old('image') }}"> --}}
                     @error('image')
                         <div class="alert alert-danger">
                             {{ $message }}
