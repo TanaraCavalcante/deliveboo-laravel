@@ -10,7 +10,7 @@
             <div id="error-card" class="card text-white bg-danger mb-3 d-none">
                 <div class="card-body">
                     <ol id="input-errors">
-
+                        <!--Ci saranno gli errori-->
                     </ol>
                 </div>
               </div>
