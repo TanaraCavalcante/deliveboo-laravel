@@ -35,11 +35,10 @@ class TypeSeeder extends Seeder
             ['name' => 'Greco', 'description' => "Cucina greca con moussaka, souvlaki, tzatziki e un’ampia selezione di piatti a base di pesce e verdure fresche."],
             ['name' => 'Brasiliano', 'description' => "Cucina brasiliana con specialità come churrasco, feijoada, pão de queijo e cocktail a base di frutta tropicale."],
         ];
-
-        foreach($typesNames as $typeName){
+        foreach ($typesNames as $typeName) {
             $newType = new Type();
-            $newType->name = $typeName;
-            $newType->description = $typeName;
+            $newType->name = $typeName['name'];
+            $newType->description = $typeName['description'];
             $newType->save();
         }
     }
