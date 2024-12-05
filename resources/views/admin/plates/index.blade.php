@@ -2,9 +2,11 @@
 @section('page-title', 'Lista dei piatti')
 
 @section('content')
-    <h1 class="m-3">Lista dei piatti:</h1>
     <div class="container">
         <div class="row">
+            <div class="col-12 text-center">
+                <h1 class="m-3">Lista dei piatti:</h1>
+            </div>
             <div class="col-12">
                 <div class="mb-3">
                     <a href="{{ route('admin.plates.create') }}" class="btn btn-sm btn-outline-primary me-1 m-1">Crea un nuovo
