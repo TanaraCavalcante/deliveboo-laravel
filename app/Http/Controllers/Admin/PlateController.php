@@ -33,10 +33,12 @@ class PlateController extends Controller
         $data = $request->validated();
 
         $data['price'] = number_format($data['price'], '2' ,'.');
-        //implemento l'imagine
-        $filePath = Storage::disk("public")->put("img/plates" , $request->image);
 
-        $data["image"] = $filePath;
+        //! implemento l'imagine
+        if($request->hasFile("image")){
+            $filePath = Storage::disk("public")->put("img/plates" , $request->image);
+            $data["image"] = $filePath;
+        }
 
         $plate = Plate::create($data);
         return redirect()->route('admin.plates.index');
@@ -51,6 +53,16 @@ class PlateController extends Controller
     }
     public function update(UpdatePlateRequest $request, Plate $plate){
         $data = $request->validated();
+
+        //! inserimento dell'imagine
+        if($request->hasFile("image")){
+            if($plate->image){
+                Storage::delete($plate->image);
+            }
+            $filePath = Storage::disk("public")->put("img/plates" , $request->image);
+            $data["image"] = $filePath;
+        }
+
         $plate->update($data);
         return redirect()->route('admin.plates.index', $plate);
     }
