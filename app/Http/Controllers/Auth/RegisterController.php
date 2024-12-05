@@ -30,7 +30,7 @@ class RegisterController extends Controller
      *
      * @var string
      */
-    protected $redirectTo = '/restaurant/create';
+    protected $redirectTo = 'admin/plates';
 
     /**
      * Create a new controller instance.
@@ -54,6 +54,8 @@ class RegisterController extends Controller
             'name' => ['required', 'string', 'max:255'],
             'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
             'password' => ['required', 'string', 'min:8', 'confirmed'],
+            'piva' => ['required', 'string', 'numeric', 'digits:11'],
+            'address' => ['required', 'string', 'min:5', 'max:200' ]
         ]);
     }
 
