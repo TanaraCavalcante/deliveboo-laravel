@@ -9,12 +9,14 @@
             </div>
             <div>
                 @if (count($plates) === 0)
-                    <div>
+                    <div class=" alert alert-success text-center">
                         <h3>Benvenuto nel tuo pannello di controllo</h3>
                         <p>Inserisci i tuoi piatti cliccando nel tasto qui sotto</p>
                         <a href="{{ route('admin.plates.create') }}" class="btn btn-sm btn-outline-primary me-1 m-1">Crea un
                             nuovo piatto!</a>
                     </div>
+                    @dump($plates)
+
                 @else
                     <div class="col-12">
                         <div class="mb-3">
@@ -32,7 +34,7 @@
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    @forelse ($plates as $index => $plate)
+                                    @foreach ($plates as $index => $plate)
                                         <tr>
                                             <td>{{ $plate->name }}</td>
                                             <td>{{ $plate->price }} </td>
@@ -51,12 +53,7 @@
                                                 </form>
                                             </td>
                                         </tr>
-                                    @empty
-                                        <tr>
-                                            <td colspan="11">Non ci sono piatti disponibili al momento...
-                                            </td>
-                                        </tr>
-                                    @endforelse
+                                    @endforeach
                                 </tbody>
                             </table>
                         </div>
