@@ -12,7 +12,7 @@
                     <div>
                         <h3>Benvenuto nel tuo pannello di controllo</h3>
                         <p>Inserisci i tuoi piatti cliccando nel tasto qui sotto</p>
-
+                        <a href="{{ route('admin.plates.create') }}" class="btn btn-sm btn-outline-primary me-1 m-1">Crea un nuovo piatto!</a>
                     </div>
                 @else
 
@@ -20,8 +20,7 @@
             </div>
             <div class="col-12">
                 <div class="mb-3">
-                    <a href="{{ route('admin.plates.create') }}" class="btn btn-sm btn-outline-primary me-1 m-1">Crea un nuovo
-                        piatto!</a>
+                    <a href="{{ route('admin.plates.create') }}" class="btn btn-sm btn-outline-primary me-1 m-1">Crea un nuovo piatto!</a>
                 </div>
                 <div class="table-responsive-sm">
                     <table class="table table-hover table-striped ">
