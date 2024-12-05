@@ -29,15 +29,17 @@ subBtn.addEventListener('click', function (e) {
     let nameValue = nameInput.value;
     if (nameValue.length === 0 || nameValue.length < 3 || nameValue.length > 255) {
         e.preventDefault();
-        console.log('Il nome deve avere avere una lunghezza compresa tra 3 e 255 caratteri');
+        // console.log('Il nome deve avere avere una lunghezza compresa tra 3 e 255 caratteri');
         // console.log(nameValue);
+        inputErrors.push('Il nome deve avere avere una lunghezza compresa tra 3 e 255 caratteri');
     };
 
     // ! Validazione per descrizione
     let descriptionValue = descriptionInput.value;
     if (descriptionValue.length === 0 || descriptionValue.length < 10 || descriptionValue.length > 500) {
         e.preventDefault();
-        console.log('La descrizione deve avere una lunghezza compresa tra 10 e 500 caratteri');
+        // console.log('La descrizione deve avere una lunghezza compresa tra 10 e 500 caratteri');
+        inputErrors.push('La descrizione deve avere una lunghezza compresa tra 10 e 500 caratteri');
     };
 
     // ! Validazione per ingredienti
@@ -53,4 +55,6 @@ subBtn.addEventListener('click', function (e) {
         e.preventDefault();
         console.log('Il prezzo DEVE essere un numero');
     };
+
+    console.log(inputErrors);
 })
