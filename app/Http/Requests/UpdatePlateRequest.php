@@ -23,10 +23,10 @@ class UpdatePlateRequest extends FormRequest
         return [
             'name' => ['required', 'string', 'min:3','max:255'],
             'description' => ['required','min:10', 'max:500','string'],
-            'price' => ['required','numeric'],
+            'price' => ['required','numeric','min:0'],
             'ingredients' => ['required', 'min:3','max:500','string'],
             'visibility' => ['required', 'boolean'],
-            'image' =>['nullable','url', 'max:250'],
+            'image' =>['nullable','image', 'max:250'],
             'restaurant_id' => ['required','numeric', 'integer', 'exists:restaurants,id'],
         ];
     }
@@ -41,6 +41,7 @@ class UpdatePlateRequest extends FormRequest
             'description.max' => 'La descrizione puó contenere massimo 500 caratteri',
             'price.required' => 'Il prezzo è un parametro obbligatorio',
             'price.integer' => 'Il prezzo deve essere un numero',
+            'price.min'=>'Il prezzo non può essere minore di 0',
             'ingredients.required' => 'Gli ingredienti è un parametro obbligatorio',
             'ingredients.min' => 'Gli ingredienti deve contenere minimo 3 caratteri',
             'ingredients.max' => 'Gli ingredienti puó contenere massimo 500 caratteri',

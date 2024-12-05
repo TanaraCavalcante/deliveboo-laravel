@@ -2,14 +2,15 @@
 
 namespace App\Http\Controllers\Admin;
 
-use App\Http\Controllers\Controller;
-use App\Http\Requests\StorePlateRequest;
-use App\Http\Requests\UpdatePlateRequest;
+use Error;
 use App\Models\Plate;
 use App\Models\Restaurant;
-use Error;
 use Illuminate\Http\Request;
+use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Storage;
+use App\Http\Requests\StorePlateRequest;
+use App\Http\Requests\UpdatePlateRequest;
 
 class PlateController extends Controller
 {
@@ -28,7 +29,15 @@ class PlateController extends Controller
         $restaurant = Auth::user();
 
         $data = $request->validated();
+
         $data['price'] = number_format($data['price'], '2' ,'.');
+
+        //! implemento l'imagine
+        if($request->hasFile("image")){
+            $filePath = Storage::disk("public")->put("img/plates" , $request->image);
+            $data["image"] = $filePath;
+        }
+
         $plate = Plate::create($data);
         return redirect()->route('admin.plates.index');
     }
@@ -42,6 +51,16 @@ class PlateController extends Controller
     }
     public function update(UpdatePlateRequest $request, Plate $plate){
         $data = $request->validated();
+
+        //! inserimento dell'imagine
+        if($request->hasFile("image")){
+            if($plate->image){
+                Storage::delete($plate->image);
+            }
+            $filePath = Storage::disk("public")->put("img/plates" , $request->image);
+            $data["image"] = $filePath;
+        }
+
         $plate->update($data);
         return redirect()->route('admin.plates.index', $plate);
     }
