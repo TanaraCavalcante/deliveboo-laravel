@@ -2,19 +2,18 @@
 @section('page-title', 'Lista dei piatti')
 
 @section('content')
-    <h1 class="m-3">Lista dei piatti:</h1>
-    <div class="container-fluid">
-
+    <div class="container">
         <div class="row">
+            <div class="col-12">
+                <h1 class="m-3">Lista dei piatti:</h1>
+            </div>
             <div class="col-12">
                 <div class="mb-3">
                     <a href="{{ route('admin.plates.create') }}" class="btn btn-sm btn-outline-primary me-1 m-1">Crea un nuovo
                         piatto!</a>
-
                 </div>
                 <div class="table-responsive-sm">
                     <table class="table  table-hover table-striped ">
-
                         <thead>
                             <tr>
                                 <th scope="col">#</th>
@@ -25,7 +24,6 @@
                                 <th scope="col">Disponibilità</th>
                                 <th scope="col" class="d-none d-lg-table-cell">Url immagine</th>
                                 <th scope="col">Azioni</th>
-
                             </tr>
                         </thead>
                         <tbody>
@@ -38,7 +36,6 @@
                                     <td class="d-none d-sm-table-cell">{{ $plate->ingredients }}</td>
                                     <td>{{ $plate->visibility }}</td>
                                     <td class="d-none d-lg-table-cell">{{ $plate->image }}</td>
-
 
                                     <td>
                                         <a href="{{ route('admin.plates.show', $plate) }}"
@@ -55,7 +52,6 @@
                                         </form>
                                     </td>
                                 </tr>
-
                             @empty
                                 <tr>
                                     <td colspan="11">Non ci sono piatti disponibili al momento...
