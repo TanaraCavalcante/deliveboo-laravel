@@ -2,6 +2,7 @@
 
 namespace Database\Seeders;
 
+use App\Models\Type;
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 
@@ -35,5 +36,11 @@ class TypeSeeder extends Seeder
             ['name' => 'Brasiliano', 'description' => "Cucina brasiliana con specialità come churrasco, feijoada, pão de queijo e cocktail a base di frutta tropicale."],
         ];
 
+        foreach($typesNames as $typeName){
+            $newType = new Type();
+            $newType->name = $typeName;
+            $newType->description = $typeName;
+            $newType->save();
+        }
     }
 }
