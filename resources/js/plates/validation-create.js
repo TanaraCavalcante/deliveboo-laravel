@@ -19,11 +19,12 @@ const ingredientsInput = document.getElementById('plate-ingredients');
 const priceInput = document.getElementById('plate-price');
 // console.log(priceInput);
 
+let inputErrors = [];
+
 // TODO: Finire funzione di validazione
 subBtn.addEventListener('click', function (e) {
 
     // creo variabile per inserire tutti gli errori in un solo posto
-    let inputErrors = [];
 
     // ! Validazione per nome
     let nameValue = nameInput.value;
