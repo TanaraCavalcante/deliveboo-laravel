@@ -4,8 +4,8 @@
 @section('content')
     <div class="container">
         <div class="row">
-            <div class="col-12">
-                <h1 class="m-3">Lista dei piatti:</h1>
+            <div class="col-12 text-center">
+                <h1 class="m-3">Menù:</h1>
             </div>
             <div class="col-12">
                 <div class="mb-3">
