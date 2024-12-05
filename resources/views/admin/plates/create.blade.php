@@ -30,10 +30,9 @@
                     @enderror
                 </div>
 
-                <div class="mb-3">
+                <div class="mb-3 ">
                     <label for="plate-description" class="form-label">Descrizione: *</label>
-                    <input type="text" class="form-control" id="plate-description" name="description"
-                        value="{{ old('description') }}">
+                    <textarea  class="form-control" id="plate-description" name="description" style="height: 100px"  placeholder="Minimo 10 carattere">{{ old('description') }}</textarea>
                     @error('description')
                         <div class="alert alert-danger">
                             {{ $message }}

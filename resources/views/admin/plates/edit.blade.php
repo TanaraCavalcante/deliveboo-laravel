@@ -35,8 +35,7 @@
 
                 <div class="mb-3">
                     <label for="plate-description" class="form-label">Descrizione:</label>
-                    <input type="text" class="form-control" id="plate-description" name="description"
-                        value="{{ old('description', $plate->description) }}">
+                    <textarea type="text" class="form-control" id="plate-description" name="description" style="height: 100px">{{ old('description', $plate->description) }}</textarea>
                     @error('description')
                         <div class="alert alert-danger">
                             {{ $message }}
