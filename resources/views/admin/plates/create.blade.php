@@ -10,7 +10,6 @@
             <form class="col-12 col-md-8 col-lg-6 card p-4" method="POST" enctype="multipart/form-data" action="{{ route('admin.plates.store') }}">
                 @csrf
                 <h1>Aggiungi un nuovo piatto:</h1>
-                {{-- @dump($restaurant) --}}
 
                 <div class="row mb-3 d-none">
                     <label for="restaurant_id" class="col-md-4 col-form-label text-md-end">Utente</label>
