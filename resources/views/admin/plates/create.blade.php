@@ -31,7 +31,7 @@
                 </div>
 
                 <div class="mb-3">
-                    <label for="plate-description" class="form-label">Descrizione:</label>
+                    <label for="plate-description" class="form-label">Descrizione: *</label>
                     <input type="text" class="form-control" id="plate-description" name="description"
                         value="{{ old('description') }}">
                     @error('description')
@@ -42,7 +42,7 @@
                 </div>
 
                 <div class="mb-3">
-                    <label for="plate-ingredients" class="form-label">Ingredienti:</label>
+                    <label for="plate-ingredients" class="form-label">Ingredienti: *</label>
                     <input type="text" class="form-control" id="plate-ingredients" name="ingredients"
                         value="{{ old('ingredients') }}">
                     @error('ingredients')
@@ -53,7 +53,7 @@
                 </div>
 
                 <div class="mb-3">
-                    <label for="plate-price" class="form-label">Prezzo:</label>
+                    <label for="plate-price" class="form-label">Prezzo: *</label>
                     <input type="text" class="form-control" id="plate-price" name="price" value="{{ old('price') }}">
                     @error('price')
                         <div class="alert alert-danger">

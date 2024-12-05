@@ -24,7 +24,7 @@ class StorePlateRequest extends FormRequest
         return [
             'name' => ['required', 'string', 'min:3','max:255'],
             'description' => ['required','min:10', 'max:500','string'],
-            'price' => ['required','numeric'],
+            'price' => ['required','numeric', 'min:0'],
             'ingredients' => ['required', 'min:3','max:500','string'],
             'visibility' => ['required', 'boolean'],
             'image' =>['nullable','url', 'max:250'],
@@ -49,6 +49,3 @@ class StorePlateRequest extends FormRequest
         ];
     }
 }
-
-
-
