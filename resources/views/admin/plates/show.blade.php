@@ -18,9 +18,10 @@
                     <p class="card-text">
                         Disponibilità del piatto: {{ $plate->visibility }}
                     </p>
-                    <h6 class="card-text fw-bold">
+                    <p class="card-text fw-bold">
                         Prezzo: <strong>€ {{ $plate->price }}
-                    </h6>
+                    </p>
+                    <a href="{{ route('admin.plates.index') }}" class="btn btn-primary">Torna indietro</a>
                 </div>
             </div>
         </div>
