@@ -34,7 +34,7 @@
                                 </tr>
                             </thead>
                             <tbody>
-                                @foreach ($plates as $index => $plate)
+                                @forelse ($plates as $index => $plate)
                                     <tr>
                                         <td>{{ $plate->id }}</td>
                                         <td>{{ $plate->name }}</td>
@@ -59,7 +59,7 @@
                                     <tr>
                                         <td colspan="8" class="text-center">Non ci sono piatti disponibili al momento...</td>
                                     </tr>
-                                @endforeach
+                                @endforelse
                             </tbody>
                         </table>
                     </div>
