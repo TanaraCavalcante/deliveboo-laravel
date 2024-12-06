@@ -27,11 +27,13 @@ const errorDisplay = document.getElementById('input-errors');
 const errorCard = document.getElementById('error-card');
 // console.log(errorCard);
 
-// # Recupero i due radio btn
+// # Recupero il valore dell'immagine
+const imgInput = document.getElementById('plate-image');
+
 
 let inputErrors = [];
 
-// TODO: Finire funzione di validazione
+
 subBtn.addEventListener('click', function (e) {
     //Azzero tutto
     inputErrors = [];
@@ -74,6 +76,17 @@ subBtn.addEventListener('click', function (e) {
     if (priceValue <= 0) {
         e.preventDefault();
         inputErrors.push('Il prezzo non può avere valori negativi o essere pari a zero')
+    }
+
+    // ! Validazione per immagine caricata
+    let imgValue = imgInput.value;
+    // console.log(imgValue);
+    if (!(imgValue.length === 0)) {
+        var re = /(\.jpg|\.jpeg|\.bmp|\.png)$/i;
+        if (!re.exec(imgValue)) {
+            inputErrors.push(`L'estensione del file non è supportata! Per favore inserisci un file che sia di uno di questi tipi:
+                .jpg, .jpeg, .bmp, .png`);
+        }
     }
 
     // console.log(inputErrors);
