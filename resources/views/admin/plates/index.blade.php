@@ -47,27 +47,21 @@
                                             @endif
                                         </td>
                                        {{-- *Inizia qui --}}
-                                    <td>
-                                        <a href="{{ route('admin.plates.show', $plate) }}"
-                                            class="btn btn-sm btn-outline-success m-2 me-1">Mostra</a>
-                                        <a href="{{ route('admin.plates.edit', $plate) }}"
-                                            class="btn btn-sm btn-outline-warning m-2 me-1">Modifica</a>
-
-
-                                        <button type="button" class="btn btn-sm btn-outline-danger delete"
-                                            data-id="{{ $plate->id }}" data-name="{{ $plate->name }}"
-                                            data-bs-toggle="modal" data-bs-target="#deleteModal">
-                                            Cancella
-                                        </button>
-                                    </td>
-                                </tr>
-                            @empty
-                                <tr>
-                                    <td colspan="8" class="text-center">Non ci sono piatti disponibili al momento...</td>
-                                </tr>
-                            @endforelse
-                        </tbody>
-                    </table>
+                                        <td>
+                                            <a href="{{ route('admin.plates.show', $plate) }}" class="btn btn-sm btn-outline-success m-2 me-1">Mostra</a>
+                                            <a href="{{ route('admin.plates.edit', $plate) }}" class="btn btn-sm btn-outline-warning m-2 me-1">Modifica</a>
+                                            <button type="button" class="btn btn-sm btn-outline-danger delete" data-id="{{ $plate->id }}" data-name="{{ $plate->name }}" data-bs-toggle="modal" data-bs-target="#deleteModal">
+                                                Cancella
+                                            </button>
+                                        </td>
+                                    </tr>
+                                @empty
+                                    <tr>
+                                        <td colspan="8" class="text-center">Non ci sono piatti disponibili al momento...</td>
+                                    </tr>
+                                @endforelse
+                            </tbody>
+                        </table>
                 </div>
             </div>
         </div>
