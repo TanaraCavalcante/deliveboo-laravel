@@ -8,7 +8,7 @@
         <div class="row justify-content-center">
 
 
-            <form class="col-12 col-md-8 col-lg-6  card p-4" method="POST" enctype="multipart/form-data" action="{{ route('admin.plates.update', $plate) }}">
+            <form class="col-12 col-md-8 col-lg-6  card p-4" method="POST" enctype="multipart/form-data" action="{{ route('admin.plates.update', $plate) }}" autocomplete="off">
                 @method('PUT')
                 @csrf
                 <h1>Modifica {{ $plate->name }}</h1>
