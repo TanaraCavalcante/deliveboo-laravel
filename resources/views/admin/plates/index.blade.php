@@ -51,8 +51,8 @@
                                                 class="btn btn-sm btn-outline-success m-2 me-1">Mostra</a>
                                             <a href="{{ route('admin.plates.edit', $plate) }}"
                                                 class="btn btn-sm btn-outline-warning m-2 me-1">Modifica</a>
-
-
+    
+    
                                             <button type="button" class="btn btn-sm btn-outline-danger delete"
                                                 data-id="{{ $plate->id }}" data-name="{{ $plate->name }}"
                                                 data-bs-toggle="modal" data-bs-target="#deleteModal">
@@ -60,19 +60,18 @@
                                             </button>
                                         </td>
                                     </tr>
-                                    @empty
-                                        <tr>
-                                            <td colspan="8" class="text-center">Non ci sono piatti disponibili al momento...
-                                            </td>
-                                        </tr>
-                                    @endforelse
-                                </tbody>
-                            </table>
-                        </div>
+                                @empty
+                                    <tr>
+                                        <td colspan="8" class="text-center">Non ci sono piatti disponibili al momento...</td>
+                                    </tr>
+                                @endforelse
+                            </tbody>
+                        </table>
+                    </div>
                 </div>
             </div>
         </div>
-
+    
         {{-- !Modale di conferma di cancellazione --}}
         <div class="modal fade" id="deleteModal" tabindex="-1" aria-labelledby="deleteModalLabel" aria-hidden="true">
             <div class="modal-dialog">
@@ -96,8 +95,8 @@
                 </div>
             </div>
         </div>
-
-        {{-- !Fine modale di conferma di cancellazione --}}
+    
+        {{-- !Fine modale di conferma di cancellazione --}}                
 @endsection
 
 
