@@ -1,19 +1,27 @@
 @extends('layouts.app')
 
-
-
-@section("content")
-<h1>{{$plate->name}}</h1>
-<div class="container">
-    <div class="row justify-content-center">
-        <div class="card col-12 col-md-8 col-lg-6 p-4 my-5">
-            <div class="card-body">
-                <h1 class="card-title  fw-bold"> {{ $plate->name }}</h1>
-                <div class="card" style="width: 18rem;">
-                <img src="{{asset("/storage/" . $plate->image)}}" alt="{{$plate->name}}" class="card-img-top">
+@section('content')
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="card col-12 col-md-8 col-lg-6  p-4">
+                <div class="card-body">
+                    <img src="{{asset("/storage/" . $plate->image)}}" class="card-img-top" alt="{{ $plate->name }}">
+                    <h1 class="card-title  fw-bold">
+                        Piatto: {{ $plate->name }}
+                    </h1>
+                    <p class="card-text">
+                        Descrizione piatto: {{ $plate->description }}
+                    </p>
+                    <p class="card-text">
+                        Ingredienti: {{ $plate->ingredients }}
+                    </p>
+                    <p class="card-text">
+                        Disponibilità del piatto: {{ $plate->visibility }}
+                    </p>
+                    <h6 class="card-text fw-bold">
+                        Prezzo:Prezzo: <strong>€ {{ $plate->price }}
+                    </h6>
                 </div>
-                <p class="card-title">{{ $plate->description }}</p>
-                <p class="card-title ">Prezzo: <strong>€ {{ $plate->price }}</strong></p>
             </div>
         </div>
     </div>
