@@ -46,7 +46,7 @@
                                         <a href="{{ route('admin.plates.edit', $plate) }}"
                                             class="btn btn-sm btn-outline-warning m-2 me-1">Modifica</a>
 
-                                        <!-- Pulsante per il modal -->
+
                                         <button type="button" class="btn btn-sm btn-outline-danger delete"
                                             data-id="{{ $plate->id }}" data-name="{{ $plate->name }}"
                                             data-bs-toggle="modal" data-bs-target="#deleteModal">
@@ -71,7 +71,7 @@
         <div class="modal-dialog">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h5 class="modal-title" id="deleteModalLabel">Conferma cancellazione</h5>
+                    <h5 class="modal-title" id="deleteModalLabel">Conferma di cancellazione</h5>
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Chiudi"></button>
                 </div>
                 <div class="modal-body">
