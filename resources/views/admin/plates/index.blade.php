@@ -46,25 +46,29 @@
                                                 Non Disponibile
                                             @endif
                                         </td>
-                                        <td class="d-flex">
-                                            <a href="{{ route('admin.plates.show', $plate) }}"
-                                                class="btn btn-sm btn-outline-info m-2 me-1">Mostra</a>
-                                            <a href="{{ route('admin.plates.edit', $plate) }}"
-                                                class="btn btn-sm btn-outline-success m-2 me-1">Modifica</a>
-                                            <form action="{{ route('admin.plates.delete', $plate) }}" method="POST"
-                                                class="plate-destroyer" custom-data-name="{{ $plate->name }}">
-                                                @csrf
-                                                @method('DELETE')
-                                                <button type="submit"
-                                                    class="btn btn-sm btn-outline-warning m-2">Cancella</button>
-                                            </form>
-                                        </td>
-                                    </tr>
-                                @endforeach
-                            </tbody>
-                        </table>
-                    </div>
-                @endif
+                                       {{-- *Inizia qui --}}
+                                    <td>
+                                        <a href="{{ route('admin.plates.show', $plate) }}"
+                                            class="btn btn-sm btn-outline-success m-2 me-1">Mostra</a>
+                                        <a href="{{ route('admin.plates.edit', $plate) }}"
+                                            class="btn btn-sm btn-outline-warning m-2 me-1">Modifica</a>
+
+
+                                        <button type="button" class="btn btn-sm btn-outline-danger delete"
+                                            data-id="{{ $plate->id }}" data-name="{{ $plate->name }}"
+                                            data-bs-toggle="modal" data-bs-target="#deleteModal">
+                                            Cancella
+                                        </button>
+                                    </td>
+                                </tr>
+                            @empty
+                                <tr>
+                                    <td colspan="8" class="text-center">Non ci sono piatti disponibili al momento...</td>
+                                </tr>
+                            @endforelse
+                        </tbody>
+                    </table>
+                </div>
             </div>
         </div>
     </div>
