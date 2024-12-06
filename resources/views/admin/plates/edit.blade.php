@@ -97,8 +97,8 @@
                 </div>
 
                 <div class=" d-flex justify-content-center align-items-center gap-2">
-                    <button type="submit" id="sub-btn" class="mb-3 btn btn-primary ">Modifica il piatto</button>
-                    <button type="reset" class="mb-3 btn btn-danger">Pulisci i campi</button>
+                    <button type="submit" id="sub-btn" class="mb-3 btn btn-outline-primary ">Modifica il piatto</button>
+                    <button type="reset" class="mb-3 btn btn-outline-danger">Pulisci i campi</button>
                     <div class="mb-3">
                         <a href="{{ route('admin.plates.index') }}" class="btn btn-outline-success">Torna alla lista dei
                             piatti
