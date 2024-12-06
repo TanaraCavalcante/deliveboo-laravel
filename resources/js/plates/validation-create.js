@@ -90,7 +90,7 @@ subBtn.addEventListener('click', function (e) {
         };
 
         let imgSize = imgInput.files[0].size;
-        const imgMbSize = imgSize / 1024 / 1024;
+        const imgMbSize = imgSize / 2 / 2;
         if (imgMbSize > 5) {
             e.preventDefault();
             inputErrors.push(`L'immagine è troppo grande per essere inserita! Non deve superare i 5 MB di grandezza`)

@@ -117,7 +117,7 @@
                                      <div class="col-md-3">
                                          {{-- @foreach ($types as $type)
                                         <div class="form-check">
-                                            <input class="form-check-input" type="checkbox" id="tipo_{{ $type->id }}" name="tipo[]" value="{{ $type->id }}">
+                                            <input class="form-check-input" type="checkbox" id="tipo_{{ $type->id }}" name="tipo[]">
                                             <label class="form-check-label" for="tipo_{{ $type->id }}">
                                                 {{ $type->name }}
                                             </label>
