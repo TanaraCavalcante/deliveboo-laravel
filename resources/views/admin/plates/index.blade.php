@@ -39,7 +39,7 @@
                                     <td>{{ $plate->visibility }}</td>
                                     <td class="d-none d-lg-table-cell">{{ $plate->image }}</td>
 
-
+{{-- *Inizia qui --}}
                                     <td>
                                         <a href="{{ route('admin.plates.show', $plate) }}"
                                             class="btn btn-sm btn-outline-success m-2 me-1">Mostra</a>
@@ -91,6 +91,8 @@
     </div>
 
     {{-- !Fine modale di conferma di cancellazione --}}
+
+    {{-- *finisce qui --}}
 @endsection
 
 
