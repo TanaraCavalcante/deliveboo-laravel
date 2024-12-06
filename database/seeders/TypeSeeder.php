@@ -13,7 +13,7 @@ class TypeSeeder extends Seeder
      */
     public function run(): void
     {
-        $typesNames = [
+        $types = [
             ['name' => 'Italiano', 'description' => "La cucina italiana è una delle tradizioni gastronomiche più amate al mondo, caratterizzata da una grande varietà di piatti regionali e dall'uso di ingredienti freschi e di qualità.",'logo'=>''],
             ['name' => 'Cinese', 'description' => "La cucina cinese è ricca e variegata, con piatti iconici come riso fritto, ravioli al vapore, anatra alla pechinese e zuppe speziate.",'logo'=>''],
             ['name' => 'Messicano', 'description' => "La cucina messicana offre sapori vivaci e speziati con tacos, burritos, enchiladas e guacamole fresco.",'logo'=>''],
@@ -36,10 +36,10 @@ class TypeSeeder extends Seeder
             ['name' => 'Brasiliano', 'description' => "La cucina brasiliana propone specialità come churrasco, feijoada e pão de queijo, spesso accompagnate da cocktail tropicali.",'logo'=>''],
             ['name' => 'Gluten-free', 'description' => "La cucina senza glutine offre piatti sani e gustosi, adatti a chi ha intolleranze alimentari o preferisce alternative leggere.",'logo'=>'']
         ];
-        foreach ($typesNames as $typeName) {
+        foreach ($types as $type) {
             $newType = new Type();
-            $newType->name = $typeName['name'];
-            $newType->description = $typeName['description'];
+            $newType->name = $type['name'];
+            $newType->description = $type['description'];
             // $newType->description = $typeName['logo'];
             $newType->save();
         }

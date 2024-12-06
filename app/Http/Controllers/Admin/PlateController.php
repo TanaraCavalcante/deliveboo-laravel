@@ -22,7 +22,7 @@ class PlateController extends Controller
     public function create(){
         $plate = new Plate();
         $user = Auth::user();
-        $restaurant = $user->restaurant->id;
+
         return view('admin.plates.create', compact('plate','restaurant','user'));
     }
     public function store(StorePlateRequest $request){
