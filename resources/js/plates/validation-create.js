@@ -86,6 +86,12 @@ subBtn.addEventListener('click', function (e) {
         if (!re.exec(imgValue)) {
             inputErrors.push(`L'estensione del file non è supportata! Per favore inserisci un file che sia di uno di questi tipi:
                 .jpg, .jpeg, .bmp, .png`);
+        };
+
+        let imgSize = imgInput.files[0].size;
+        const imgMbSize = imgSize / 1024 / 1024;
+        if (imgMbSize > 5) {
+            inputErrors.push(`L'immagine è troppo grande per essere inserita! Non deve superare i 5 MB di grandezza`)
         }
     }
 
