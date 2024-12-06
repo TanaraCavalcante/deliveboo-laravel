@@ -47,14 +47,18 @@ class PlateController extends Controller
         $plate->update($data);
         return redirect()->route('admin.plates.index', $plate);
     }
-    public function destroy(Plate $plate){
+    public function destroy(Request $request, Plate $plate)
+    {
         $userRestaurant = Auth::user()->restaurant;
-
-        if($plate->restaurant_id !== $userRestaurant->id){
-            abort(403);
+    
+        if ($plate->restaurant_id !== $userRestaurant->id) {
+            abort(403, 'Non autorizzato');
         }
-
+    
         $plate->delete();
-        return redirect()->route('admin.plates.index');
+    
+        return redirect()->route('admin.plates.index')
+                         ->with('message', 'Piatto eliminato con successo!');
     }
+    
 }

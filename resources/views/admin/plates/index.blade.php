@@ -46,42 +46,17 @@
                                         <a href="{{ route('admin.plates.edit', $plate) }}"
                                             class="btn btn-sm btn-outline-warning m-2 me-1">Modifica</a>
 
-                                        {{-- !Modal_delete_confirmation --}}
-                                        <div class="modal" tabindex="-1">
-                                            <div class="modal-dialog">
-                                                <div class="modal-content">
-                                                    <div class="modal-header">
-                                                        <h5 class="modal-title">Modal title</h5>
-                                                        <button type="button" class="btn-close" data-bs-dismiss="modal"
-                                                            aria-label="Close"></button>
-                                                    </div>
-                                                    <div class="modal-body">
-                                                        <p>Modal body text goes here.</p>
-                                                    </div>
-                                                    <div class="modal-footer">
-                                                        <button type="button" class="btn btn-secondary"
-                                                            data-bs-dismiss="modal">Close</button>
-                                                        <button type="button" class="btn btn-primary">Save changes</button>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-
-                                        <form action="{{ route('admin.plates.delete', $plate, 'id') }}" method="POST"
-                                            class="plate-destroyer" custom-data-name="{{ $plate->name }}">
-                                            @csrf
-                                            @method('DELETE')
-
-                                            <button type="submit"
-                                                class="btn btn-sm btn-outline-danger delete-plate-btn m-2">Cancella</button>
-                                        </form>
+                                        <!-- Pulsante per il modal -->
+                                        <button type="button" class="btn btn-sm btn-outline-danger delete"
+                                            data-id="{{ $plate->id }}" data-name="{{ $plate->name }}"
+                                            data-bs-toggle="modal" data-bs-target="#deleteModal">
+                                            Cancella
+                                        </button>
                                     </td>
                                 </tr>
-
                             @empty
                                 <tr>
-                                    <td colspan="11">Non ci sono piatti disponibili al momento...
-                                    </td>
+                                    <td colspan="8" class="text-center">Non ci sono piatti disponibili al momento...</td>
                                 </tr>
                             @endforelse
                         </tbody>
@@ -90,9 +65,51 @@
             </div>
         </div>
     </div>
+
+    <!-- Modal di conferma cancellazione -->
+    <div class="modal fade" id="deleteModal" tabindex="-1" aria-labelledby="deleteModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="deleteModalLabel">Conferma cancellazione</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Chiudi"></button>
+                </div>
+                <div class="modal-body">
+                    <p>Sei sicuro di voler eliminare il piatto <strong id="plateName"></strong>?</p>
+                    <form id="deleteForm" method="POST">
+                        @csrf
+                        @method('DELETE')
+                        <input type="hidden" name="id" id="plateId">
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Annulla</button>
+                    <button type="submit" class="btn btn-danger" form="deleteForm">Elimina</button>
+                </div>
+            </div>
+        </div>
+    </div>
 @endsection
 
 @section('additional-scripts')
-    @vite('resources/js/plates/delete-confirmation.js');
-    <script></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const deleteButtons = document.querySelectorAll('.delete');
+            const plateNameElement = document.getElementById('plateName');
+            const plateIdInput = document.getElementById('plateId');
+            const deleteForm = document.getElementById('deleteForm');
+
+            deleteButtons.forEach(button => {
+                button.addEventListener('click', () => {
+                    const plateId = button.getAttribute('data-id');
+                    const plateName = button.getAttribute('data-name');
+                    plateNameElement.textContent = plateName;
+                    plateIdInput.value = plateId;
+
+                    // Aggiorna l'azione del form
+                    deleteForm.action = `/admin/plates/${plateId}`;
+                });
+            });
+        });
+    </script>
 @endsection
