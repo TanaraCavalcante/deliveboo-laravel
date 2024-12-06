@@ -45,13 +45,35 @@
                                             class="btn btn-sm btn-outline-success m-2 me-1">Mostra</a>
                                         <a href="{{ route('admin.plates.edit', $plate) }}"
                                             class="btn btn-sm btn-outline-warning m-2 me-1">Modifica</a>
-                                        <form action="{{ route('admin.plates.delete', $plate) }}" method="POST"
+
+                                        {{-- !Modal_delete_confirmation --}}
+                                        <div class="modal" tabindex="-1">
+                                            <div class="modal-dialog">
+                                                <div class="modal-content">
+                                                    <div class="modal-header">
+                                                        <h5 class="modal-title">Modal title</h5>
+                                                        <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                                            aria-label="Close"></button>
+                                                    </div>
+                                                    <div class="modal-body">
+                                                        <p>Modal body text goes here.</p>
+                                                    </div>
+                                                    <div class="modal-footer">
+                                                        <button type="button" class="btn btn-secondary"
+                                                            data-bs-dismiss="modal">Close</button>
+                                                        <button type="button" class="btn btn-primary">Save changes</button>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <form action="{{ route('admin.plates.delete', $plate, 'id') }}" method="POST"
                                             class="plate-destroyer" custom-data-name="{{ $plate->name }}">
                                             @csrf
                                             @method('DELETE')
 
                                             <button type="submit"
-                                                class="btn btn-sm btn-outline-danger m-2">Cancella</button>
+                                                class="btn btn-sm btn-outline-danger delete-plate-btn m-2">Cancella</button>
                                         </form>
                                     </td>
                                 </tr>
@@ -72,4 +94,5 @@
 
 @section('additional-scripts')
     @vite('resources/js/plates/delete-confirmation.js');
+    <script></script>
 @endsection
