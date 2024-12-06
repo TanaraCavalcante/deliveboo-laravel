@@ -17,11 +17,11 @@ class RestaurantTypeSeeder extends Seeder
             /**
      * Run the database seeds.
      */
-        $restaurants = Restaurant::all()->pluck('id');
-        $types = Type::all()->pluck('id');
+        $restaurants = Restaurant::all();
+        $typesId = Type::all()->pluck('id');
 
         foreach ($restaurants as $restaurant) {
-        $restaurant->types()->sync($types);
+        $restaurant->types()->sync($typesId);
     }
 
     }
