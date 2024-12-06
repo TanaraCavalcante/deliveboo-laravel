@@ -84,6 +84,7 @@ subBtn.addEventListener('click', function (e) {
     if (!(imgValue.length === 0)) {
         var re = /(\.jpg|\.jpeg|\.bmp|\.png)$/i;
         if (!re.exec(imgValue)) {
+            e.preventDefault();
             inputErrors.push(`L'estensione del file non è supportata! Per favore inserisci un file che sia di uno di questi tipi:
                 .jpg, .jpeg, .bmp, .png`);
         };
@@ -91,6 +92,7 @@ subBtn.addEventListener('click', function (e) {
         let imgSize = imgInput.files[0].size;
         const imgMbSize = imgSize / 1024 / 1024;
         if (imgMbSize > 5) {
+            e.preventDefault();
             inputErrors.push(`L'immagine è troppo grande per essere inserita! Non deve superare i 5 MB di grandezza`)
         }
     }
