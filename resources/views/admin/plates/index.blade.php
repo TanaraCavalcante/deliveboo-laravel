@@ -7,7 +7,7 @@
             <div class="col-12 text-center">
                 <h1 class="m-3">Lista dei piatti:</h1>
             </div>
-            <div class="col-12">
+            <div class="col-12 text-center">
                 @if (count($plates) === 0)
                     <div class="alert alert-success tex-center">
                         <h3>Benvenuto nel tuo pannello di controllo</h3>
