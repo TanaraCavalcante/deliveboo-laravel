@@ -74,16 +74,17 @@
                 </div>
                 <div class="modal-body">
                     <p>Sei sicuro di voler eliminare il piatto <strong id="plateName"></strong>?</p>
-                    <form id="deleteForm" method="POST">
+                    <form action={{ route ('admin.plates.delete', $plate) }} id="deleteForm" method="POST">
                         @csrf
                         @method('DELETE')
                         <input type="hidden" name="id" id="plateId">
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-outline-success" data-bs-dismiss="modal">Annulla</button>
+                            <button type="submit" class="btn btn-danger" form="deleteForm">Elimina</button>
+                        </div>
                     </form>
                 </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-outline-success" data-bs-dismiss="modal">Annulla</button>
-                    <button type="submit" class="btn btn-danger" form="deleteForm">Elimina</button>
-                </div>
+               
             </div>
         </div>
     </div>
