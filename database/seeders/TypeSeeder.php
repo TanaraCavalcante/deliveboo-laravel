@@ -29,7 +29,7 @@ class TypeSeeder extends Seeder
             ['name' => 'Pinsa', 'description' => "La pinsa è una variante della pizza italiana, con un impasto leggero e croccante, condito con ingredienti freschi.",'logo'=>'/types-logo/pinsa.jpg'],
             ['name' => 'Panini', 'description' => "I panini italiani sono farciti con salumi, formaggi e verdure fresche, ideali per uno spuntino pratico e saporito.",'logo'=>'/types-logo/panini.jpg'],
             ['name' => 'Kebab', 'description' => "Il kebab offre carne speziata e grigliata, servita con verdure e salse in pane pita o piatti combinati.",'logo'=>'/types-logo/kebab.jpg'],
-            ['name' => 'Poke', 'description' => "La cucina hawaiana del poke combina pesce fresco marinato, riso e ingredienti colorati per un pasto leggero e nutriente.",'logo'=>'public\types-logo\poke.jpg'],
+            ['name' => 'Poke', 'description' => "La cucina hawaiana del poke combina pesce fresco marinato, riso e ingredienti colorati per un pasto leggero e nutriente.",'logo'=>'/types-logo/poke.jpg'],
             ['name' => 'Dolci', 'description' => "I dolci tradizionali spaziano da torte e biscotti a dessert al cucchiaio come tiramisù e panna cotta.",'logo'=>'/types-logo/dolci.jpg'],
             ['name' => 'Pollo', 'description' => "La cucina a base di pollo offre piatti saporiti e versatili, come pollo arrosto, fritto o speziato.",'logo'=>'/types-logo/pollo.jpg'],
             ['name' => 'Piadine', 'description' => "Le piadine italiane sono sottili e farcite con ingredienti freschi, perfette per pasti veloci e gustosi.",'logo'=>'/types-logo/piadina.jpg'],
@@ -40,6 +40,7 @@ class TypeSeeder extends Seeder
             $newType = new Type();
             $newType->name = $typeName['name'];
             $newType->description = $typeName['description'];
+            $newType->logo = $typeName['logo'];
             $newType->save();
         }
     }

@@ -11,6 +11,9 @@ use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Storage;
 use App\Http\Requests\StorePlateRequest;
 use App\Http\Requests\UpdatePlateRequest;
+use App\Models\Type;
+
+use function PHPSTORM_META\type;
 
 class PlateController extends Controller
 {
