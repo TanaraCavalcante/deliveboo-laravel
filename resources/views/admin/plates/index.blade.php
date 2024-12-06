@@ -66,7 +66,7 @@
         </div>
     </div>
 
-    <!-- Modal di conferma cancellazione -->
+    {{-- !Modale di conferma di cancellazione --}}
     <div class="modal fade" id="deleteModal" tabindex="-1" aria-labelledby="deleteModalLabel" aria-hidden="true">
         <div class="modal-dialog">
             <div class="modal-content">
@@ -83,13 +83,16 @@
                     </form>
                 </div>
                 <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Annulla</button>
+                    <button type="button" class="btn btn-outline-success" data-bs-dismiss="modal">Annulla</button>
                     <button type="submit" class="btn btn-danger" form="deleteForm">Elimina</button>
                 </div>
             </div>
         </div>
     </div>
+
+    {{-- !Fine modale di conferma di cancellazione --}}
 @endsection
+
 
 @section('additional-scripts')
     <script>
@@ -106,7 +109,7 @@
                     plateNameElement.textContent = plateName;
                     plateIdInput.value = plateId;
 
-                    // Aggiorna l'azione del form
+
                     deleteForm.action = `/admin/plates/${plateId}`;
                 });
             });
