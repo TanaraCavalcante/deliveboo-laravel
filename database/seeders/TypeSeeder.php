@@ -40,6 +40,7 @@ class TypeSeeder extends Seeder
             $newType = new Type();
             $newType->name = $typeName['name'];
             $newType->description = $typeName['description'];
+            // $newType->description = $typeName['logo'];
             $newType->save();
         }
     }
