@@ -103,16 +103,18 @@
                                 </div>
                             </div>
 
-                            {{--!Select per il tipo --}}
+                            {{--!Checkbox per il tipo --}}
                             <div class="row mb-3">
                                 <div for="tipo" class="col-md-4 col-form-label text-md-end">Tipo de Restaurante *</div>
                                      <div class="col-md-3">
+                                        {{-- @foreach ($types as $type)
                                         <div class="form-check">
-                                            <input class="form-check-input" type="checkbox" id="italiano" name="tipo[]">
-                                            <label class="form-check-label" for="italiano">
-                                            Italiano
+                                            <input class="form-check-input" type="checkbox" id="tipo_{{ $type->id }}" name="tipo[]" value="{{ $type->id }}">
+                                            <label class="form-check-label" for="tipo_{{ $type->id }}">
+                                                {{ $type->name }}
                                             </label>
                                         </div>
+                                        @endforeach --}}
                                     </div>
                                 </div>
                             </div>
