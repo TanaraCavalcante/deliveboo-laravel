@@ -59,7 +59,7 @@
                                     <tr>
                                         <td colspan="8" class="text-center">Non ci sono piatti disponibili al momento...</td>
                                     </tr>
-                                @endforelse
+                                @endforeach
                             </tbody>
                         </table>
                     </div>
