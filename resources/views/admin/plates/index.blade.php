@@ -37,7 +37,7 @@
                                     <td>{{ $plate->visibility }}</td>
                                     <td class="d-none d-lg-table-cell">{{ $plate->image }}</td>
 
-{{-- *Inizia qui --}}
+                                    {{-- *Inizia qui --}}
                                     <td>
                                         <a href="{{ route('admin.plates.show', $plate) }}"
                                             class="btn btn-sm btn-outline-success m-2 me-1">Mostra</a>
@@ -50,6 +50,40 @@
                                             data-bs-toggle="modal" data-bs-target="#deleteModal">
                                             Cancella
                                         </button>
+
+                                        {{-- !Modale di conferma di cancellazione --}}
+                                        <div class="modal fade" id="deleteModal" tabindex="-1"
+                                            aria-labelledby="deleteModalLabel" aria-hidden="true">
+                                            <div class="modal-dialog">
+                                                <div class="modal-content">
+                                                    <div class="modal-header">
+                                                        <h5 class="modal-title" id="deleteModalLabel">Conferma di
+                                                            cancellazione</h5>
+                                                        <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                                            aria-label="Chiudi"></button>
+                                                    </div>
+                                                    <div class="modal-body">
+                                                        <p>Sei sicuro di voler eliminare il piatto <strong
+                                                                id="plateName"></strong>?</p>
+                                                        <form action="{{ route('admin.plates.delete', $plate) }}"
+                                                            id="deleteForm" method="POST">
+                                                            @csrf
+                                                            @method('DELETE')
+                                                            <input type="hidden" name="id" id="plateId">
+                                                            <div class="modal-footer">
+                                                                <button type="button" class="btn btn-outline-success"
+                                                                    data-bs-dismiss="modal">Annulla</button>
+                                                                <button type="submit" class="btn btn-danger"
+                                                                    form="deleteForm">Elimina</button>
+                                                            </div>
+                                                        </form>
+                                                    </div>
+
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        {{-- !Fine modale di conferma di cancellazione --}}
                                     </td>
                                 </tr>
                             @empty
@@ -64,37 +98,12 @@
         </div>
     </div>
 
-    {{-- !Modale di conferma di cancellazione --}}
-    <div class="modal fade" id="deleteModal" tabindex="-1" aria-labelledby="deleteModalLabel" aria-hidden="true">
-        <div class="modal-dialog">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title" id="deleteModalLabel">Conferma di cancellazione</h5>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Chiudi"></button>
-                </div>
-                <div class="modal-body">
-                    <p>Sei sicuro di voler eliminare il piatto <strong id="plateName"></strong>?</p>
-                    <form action={{ route ('admin.plates.delete', $plate) }} id="deleteForm" method="POST">
-                        @csrf
-                        @method('DELETE')
-                        <input type="hidden" name="id" id="plateId">
-                        <div class="modal-footer">
-                            <button type="button" class="btn btn-outline-success" data-bs-dismiss="modal">Annulla</button>
-                            <button type="submit" class="btn btn-danger" form="deleteForm">Elimina</button>
-                        </div>
-                    </form>
-                </div>
-               
-            </div>
-        </div>
-    </div>
 
-    {{-- !Fine modale di conferma di cancellazione --}}
 
     {{-- *finisce qui --}}
 @endsection
 
 
 @section('additional-scripts')
-    @vite('resources/js/posts/delete-confirmation.js');
+    @vite('resources/js/plates/delete-confirmation.js');
 @endsection
