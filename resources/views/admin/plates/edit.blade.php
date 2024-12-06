@@ -13,9 +13,10 @@
                         <!--Ci saranno gli errori-->
                     </ol>
                 </div>
-              </div>
+            </div>
 
-            <form class="col-12 col-md-8 col-lg-6  card p-4" method="POST" enctype="multipart/form-data" action="{{ route('admin.plates.update', $plate) }}" autocomplete="off">
+            <form class="col-12 col-md-8 col-lg-6  card p-4" method="POST" enctype="multipart/form-data"
+                action="{{ route('admin.plates.update', $plate) }}" autocomplete="off">
                 @method('PUT')
                 @csrf
                 <h1>Modifica {{ $plate->name }}</h1>
@@ -31,7 +32,8 @@
 
                 <div class="mb-3">
                     <label for="plate-title" class="form-label">Nome: *</label>
-                    <input type="text" class="form-control" id="plate-title" name="name" value="{{ old('name', $plate->name) }}">
+                    <input type="text" class="form-control" id="plate-title" name="name"
+                        value="{{ old('name', $plate->name) }}">
                     @error('name')
                         <div class="alert alert-danger">
                             {{ $message }}
@@ -61,7 +63,8 @@
 
                 <div class="mb-3">
                     <label for="plate-price" class="form-label">Prezzo: *</label>
-                    <input type="text" class="form-control" id="plate-price" name="price" value="{{ old('price', $plate->price) }}">
+                    <input type="text" class="form-control" id="plate-price" name="price"
+                        value="{{ old('price', $plate->price) }}">
                     @error('price')
                         <div class="alert alert-danger">
                             {{ $message }}
@@ -73,10 +76,12 @@
                     <label for="plate-visibility" class="form-label">Disponibilità: *</label>
                     {{-- <input type="text" class="form-control" id="plate-visibility" name="visibility"
                         value="{{ old('visibility', $plate->visibility) }}"> --}}
-                        <input type="radio" class="btn-check" name="visibility" id="success-outlined" value="1" autocomplete="off">
+                    <input type="radio" class="btn-check" name="visibility" id="success-outlined" value="1"
+                        autocomplete="off">
                     <label class="btn btn-outline-success" for="success-outlined">Disponibile</label>
 
-                    <input type="radio" class="btn-check" name="visibility" id="danger-outlined" value="0" autocomplete="off">
+                    <input type="radio" class="btn-check" name="visibility" id="danger-outlined" value="0"
+                        autocomplete="off">
                     <label class="btn btn-outline-danger" for="danger-outlined">Non Disponibile</label>
                     @error('visibility')
                         <div class="alert alert-danger">
@@ -87,7 +92,8 @@
 
                 <div class="mb-3">
                     <label for="plate-image" class="form-label">Inserisci URL immagine:</label>
-                    <input type="file" class="form-control" id="plate-image" name="image" value="{{ old('image', $plate->image) }}">
+                    <input type="file" class="form-control" id="plate-image" name="image"
+                        value="{{ old('image', $plate->image) }}">
                     {{-- <input type="text" class="form-control" id="plate-image" name="image" value="{{ old('image', $plate->image) }}"> --}}
                     @error('image')
                         <div class="alert alert-danger">
@@ -97,8 +103,8 @@
                 </div>
 
                 <div class=" d-flex justify-content-center align-items-center gap-2">
-                    <button type="submit" id="sub-btn" class="mb-3 btn btn-primary ">Modifica il piatto</button>
-                    <button type="reset" class="mb-3 btn btn-danger">Pulisci i campi</button>
+                    <button type="submit" id="sub-btn" class="mb-3 btn btn-outline-primary ">Modifica il piatto</button>
+                    <button type="reset" class="mb-3 btn btn-outline-danger">Pulisci i campi</button>
                     <div class="mb-3">
                         <a href="{{ route('admin.plates.index') }}" class="btn btn-outline-success">Torna alla lista dei
                             piatti
@@ -111,5 +117,5 @@
 @endsection
 
 @section('additional-scripts')
-    @vite("resources/js/plates/validation-create.js");
+    @vite('resources/js/plates/validation-create.js');
 @endsection

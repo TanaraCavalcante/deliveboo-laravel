@@ -12,7 +12,7 @@
                         <!--Ci saranno gli errori-->
                     </ol>
                 </div>
-              </div>
+            </div>
 
             <form class="col-12 col-md-8 col-lg-6 card p-4" method="POST" action="{{ route('admin.plates.store') }}">
                 @csrf
@@ -20,6 +20,8 @@
                     <label for="restaurant_id" class="col-md-4 col-form-label text-md-end">Utente</label>
 
                     <div class="col-md-6">
+                        <input id="restaurant_id" type="text" class="form-control" name="restaurant_id" required
+                            value="{{ $restaurant }}" readonly>
                         <input id="restaurant_id" type="text" class="form-control" name="restaurant_id" required
                             value="{{ $restaurant }}" readonly>
                     </div>
@@ -66,10 +68,12 @@
                     <label for="plate-visibility" class="form-label">Disponibilità: *</label>
                     {{-- <input type="text" class="form-control" id="plate-visibility" name="visibility" value="{{ old('visibility') }}"> --}}
 
-                    <input type="radio" class="btn-check" name="visibility" id="success-outlined" value="1" autocomplete="off">
+                    <input type="radio" class="btn-check" name="visibility" id="success-outlined" value="1"
+                        autocomplete="off">
                     <label class="btn btn-outline-success" for="success-outlined">Disponibile</label>
 
-                    <input type="radio" class="btn-check" name="visibility" id="danger-outlined" value="0" autocomplete="off">
+                    <input type="radio" class="btn-check" name="visibility" id="danger-outlined" value="0"
+                        autocomplete="off">
                     <label class="btn btn-outline-danger" for="danger-outlined">Non Disponibile</label>
 
 
@@ -89,16 +93,20 @@
                     @enderror
                 </div>
 
-           <div class=" d-flex justify-content-center align-items-center">
-                <button type="submit" id="sub-btn" class="mb-3 btn btn-primary ">Crea il tuo nuovo Piatto</button>
-                <button type="reset" class="mb-3 btn btn-danger">Pulisci i campi</button>
-            </div>
-        </form>
+                <div class=" d-flex justify-content-center align-items-center gap-2">
+                    <button type="submit" id="sub-btn" class="mb-3 btn btn-outline-primary ">Crea il tuo nuovo
+                        Piatto</button>
+                    <button type="reset" class="mb-3 btn btn-outline-danger">Pulisci i campi</button>
+                    <div class="mb-3">
+                        <a href="{{ route('admin.plates.index') }}" class="btn btn-outline-success">Torna alla lista dei
+                            piatti</a>
+                    </div>
+            </form>
+        </div>
     </div>
-</div>
 
 @endsection
 
 @section('additional-scripts')
-    @vite("resources/js/plates/validation-create.js");
+    @vite('resources/js/plates/validation-create.js');
 @endsection

@@ -40,7 +40,7 @@
                                         <td>{{ $plate->name }}</td>
                                         <td>{{ $plate->price }} </td>
                                         <td>
-                                            @if ( $plate->visibility)
+                                            @if ($plate->visibility)
                                                 Disponibile
                                             @else
                                                 Non Disponibile
@@ -68,8 +68,35 @@
             </div>
         </div>
     </div>
+
+    {{-- !Modale di conferma di cancellazione --}}
+    <div class="modal fade" id="deleteModal" tabindex="-1" aria-labelledby="deleteModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="deleteModalLabel">Conferma di cancellazione</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Chiudi"></button>
+                </div>
+                <div class="modal-body">
+                    <p>Sei sicuro di voler eliminare il piatto <strong id="plateName"></strong>?</p>
+                    <form id="deleteForm" method="POST">
+                        @csrf
+                        @method('DELETE')
+                        <input type="hidden" name="id" id="plateId">
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-outline-success" data-bs-dismiss="modal">Annulla</button>
+                    <button type="submit" class="btn btn-danger" form="deleteForm">Elimina</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    {{-- !Fine modale di conferma di cancellazione --}}
 @endsection
 
+
 @section('additional-scripts')
-    @vite('resources/js/plates/delete-confirmation.js');
+    @vite('resources/js/posts/delete-confirmation.js');
 @endsection

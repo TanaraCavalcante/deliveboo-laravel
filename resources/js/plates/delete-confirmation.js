@@ -1,17 +1,18 @@
-const deleteFormElements = document.querySelectorAll("form.plate-destroyer");
-// console.log(deleteFormElements);
+document.addEventListener('DOMContentLoaded', () => {
+    const deleteButtons = document.querySelectorAll('.delete');
+    const plateNameElement = document.getElementById('plateName');
+    const plateIdInput = document.getElementById('plateId');
+    const deleteForm = document.getElementById('deleteForm');
 
-deleteFormElements.forEach((formElement) => {
-    formElement.addEventListener("submit", function (event) {
-        event.preventDefault();
+    deleteButtons.forEach(button => {
+        button.addEventListener('click', () => {
+            const plateId = button.getAttribute('data-id');
+            const plateName = button.getAttribute('data-name');
+            plateNameElement.textContent = plateName;
+            plateIdInput.value = plateId;
 
-        const userChoice = window.confirm(
-            `Sei sicuro di voler cancellare ${this.getAttribute(
-                "custom-data-name")}?`
-        );
 
-        if (userChoice === true) {
-            this.submit();
-        }
+            deleteForm.action = `/admin/plates/${plateId}`;
+        });
     });
 });
