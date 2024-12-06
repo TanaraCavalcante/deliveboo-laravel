@@ -6,7 +6,7 @@
             <div class="card col-12 col-md-8 col-lg-6 p-4">
                 <div class="card-body">
                     <img src="{{asset("/storage/" . $plate->image)}}" class="card-img-top" alt="{{ $plate->name }}">
-                    <h1 class="card-title text-center fw-bold">
+                    <h1 class="card-title text-center fw-bold mt-2">
                         Piatto: {{ $plate->name }}
                     </h1>
                     <p class="card-text">
