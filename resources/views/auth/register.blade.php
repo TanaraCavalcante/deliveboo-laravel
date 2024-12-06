@@ -3,6 +3,14 @@
 @section('content')
     <div class="container">
         <div class="row justify-content-center">
+            <div id="error-card" class="col-12 col-md-8 card text-white bg-danger mb-3 d-none">
+                <div class="card-body">
+                    <ol id="input-errors">
+                        <!--Ci saranno gli errori-->
+                    </ol>
+                </div>
+            </div>
+
             <div class="col-md-8">
                 <div class="card">
                     <div class="card-header">{{ __('Registrati') }}</div>
@@ -103,161 +111,25 @@
                                 </div>
                             </div>
 
-                            {{-- !Select per il tipo --}}
+                            {{-- !Checkbox per il tipo --}}
                             <div class="row mb-3">
                                 <div for="tipo" class="col-md-4 col-form-label text-md-end">Tipo de Restaurante *</div>
-
                                 <div class="col-md-3">
-                                    <div class="form-check">
-                                        <input class="form-check-input" type="checkbox" id="italiano" name="tipo[]">
-                                        <label class="form-check-label" for="italiano">
-                                            Italiano
-                                        </label>
-                                    </div>
-                                    <div class="form-check">
-                                        <input class="form-check-input" type="checkbox" value="Cinese" id="cinese"
-                                            name="tipo[]">
-                                        <label class="form-check-label" for="cinese">
-                                            Cinese
-                                        </label>
-                                    </div>
-                                    <div class="form-check">
-                                        <input class="form-check-input" type="checkbox" value="Messicano" id="messicano"
-                                            name="tipo[]">
-                                        <label class="form-check-label" for="messicano">
-                                            Messicano
-                                        </label>
-                                    </div>
-                                    <div class="form-check">
-                                        <input class="form-check-input" type="checkbox" value="Indiano" id="indiano"
-                                            name="tipo[]">
-                                        <label class="form-check-label" for="indiano">
-                                            Indiano
-                                        </label>
-                                    </div>
-                                    <div class="form-check">
-                                        <input class="form-check-input" type="checkbox" value="Giapponese"
-                                            id="giapponese" name="tipo[]">
-                                        <label class="form-check-label" for="giapponese">
-                                            Giapponese
-                                        </label>
-                                    </div>
-                                    <div class="form-check">
-                                        <input class="form-check-input" type="checkbox" value="Vegetariano"
-                                            id="vegetariano" name="tipo[]">
-                                        <label class="form-check-label" for="vegetariano">
-                                            Vegetariano
-                                        </label>
-                                    </div>
-                                    <div class="form-check">
-                                        <input class="form-check-input" type="checkbox" value="Vegano" id="vegano"
-                                            name="tipo[]">
-                                        <label class="form-check-label" for="vegano">
-                                            Vegano
-                                        </label>
-                                    </div>
-                                    <div class="form-check">
-                                        <input class="form-check-input" type="checkbox" value="Fast Food" id="fast_food"
-                                            name="tipo[]">
-                                        <label class="form-check-label" for="fast_food">
-                                            Fast Food
-                                        </label>
-                                    </div>
-                                    <div class="form-check">
-                                        <input class="form-check-input" type="checkbox" value="Mediterraneo"
-                                            id="mediterraneo" name="tipo[]">
-                                        <label class="form-check-label" for="mediterraneo">
-                                            Mediterrâneo
-                                        </label>
-                                    </div>
-                                    <div class="form-check">
-                                        <input class="form-check-input" type="checkbox" value="Mediterraneo"
-                                            id="mediterraneo" name="tipo[]">
-                                        <label class="form-check-label" for="mediterraneo">
-                                            Francese
-                                        </label>
-                                    </div>
+                                    {{-- @foreach ($types as $type)
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="checkbox" id="tipo_{{ $type->id }}" name="tipo[]">
+                                            <label class="form-check-label" for="tipo_{{ $type->id }}">
+                                                {{ $type->name }}
+                                            </label>
+                                        </div>
+                                        @endforeach --}}
                                 </div>
-                                <div class="col-md-3">
-                                    <div class="form-check">
-                                        <input class="form-check-input" type="checkbox" value="Mediterraneo"
-                                            id="mediterraneo" name="tipo[]">
-                                        <label class="form-check-label" for="mediterraneo">
-                                            Americano
-                                        </label>
-                                    </div>
-                                    <div class="form-check">
-                                        <input class="form-check-input" type="checkbox" value="Mediterraneo"
-                                            id="mediterraneo" name="tipo[]">
-                                        <label class="form-check-label" for="mediterraneo">
-                                            Thailandese
-                                        </label>
-                                    </div>
-                                    <div class="form-check">
-                                        <input class="form-check-input" type="checkbox" value="Mediterraneo"
-                                            id="mediterraneo" name="tipo[]">
-                                        <label class="form-check-label" for="mediterraneo">
-                                            Spagnolo
-                                        </label>
-                                    </div>
-                                    <div class="form-check">
-                                        <input class="form-check-input" type="checkbox" value="Mediterraneo"
-                                            id="mediterraneo" name="tipo[]">
-                                        <label class="form-check-label" for="mediterraneo">
-                                            Tedesco
-                                        </label>
-                                    </div>
-                                    <div class="form-check">
-                                        <input class="form-check-input" type="checkbox" value="Mediterraneo"
-                                            id="mediterraneo" name="tipo[]">
-                                        <label class="form-check-label" for="mediterraneo">
-                                            Fusion
-                                        </label>
-                                    </div>
-                                    <div class="form-check">
-                                        <input class="form-check-input" type="checkbox" value="Mediterraneo"
-                                            id="mediterraneo" name="tipo[]">
-                                        <label class="form-check-label" for="mediterraneo">
-                                            Mediorientale
-                                        </label>
-                                    </div>
-                                    <div class="form-check">
-                                        <input class="form-check-input" type="checkbox" value="Mediterraneo"
-                                            id="mediterraneo" name="tipo[]">
-                                        <label class="form-check-label" for="mediterraneo">
-                                            Africano
-                                        </label>
-                                    </div>
-                                    <div class="form-check">
-                                        <input class="form-check-input" type="checkbox" value="Mediterraneo"
-                                            id="mediterraneo" name="tipo[]">
-                                        <label class="form-check-label" for="mediterraneo">
-                                            Coreano
-                                        </label>
-                                    </div>
-                                    <div class="form-check">
-                                        <input class="form-check-input" type="checkbox" value="Mediterraneo"
-                                            id="mediterraneo" name="tipo[]">
-                                        <label class="form-check-label" for="mediterraneo">
-                                            Greco
-                                        </label>
-                                    </div>
-                                    <div class="form-check">
-                                        <input class="form-check-input" type="checkbox" value="Mediterraneo"
-                                            id="mediterraneo" name="tipo[]">
-                                        <label class="form-check-label" for="mediterraneo">
-                                            Brasiliano
-                                        </label>
-                                    </div>
-                                </div>
-
                             </div>
-
                     </div>
 
                     <div class="row mb-0">
                         <div class="col-md-6 offset-md-4">
-                            <button type="submit" class="btn btn-primary">
+                            <button type="submit" id="submit-btn" class="btn btn-primary">
                                 {{ __('Registrati') }}
                             </button>
                         </div>
@@ -268,4 +140,8 @@
         </div>
     </div>
     </div>
+@endsection
+
+@section('additional-scripts')
+    @vite('resources/js/registration/validation.js')
 @endsection

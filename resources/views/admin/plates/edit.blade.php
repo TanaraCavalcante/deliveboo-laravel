@@ -7,6 +7,13 @@
     <div class="container">
         <div class="row justify-content-center">
 
+            <div id="error-card" class="col-12 col-md-7 card text-white bg-danger mb-3 d-none">
+                <div class="card-body">
+                    <ol id="input-errors">
+                        <!--Ci saranno gli errori-->
+                    </ol>
+                </div>
+              </div>
 
             <form class="col-12 col-md-8 col-lg-6  card p-4" method="POST" enctype="multipart/form-data" action="{{ route('admin.plates.update', $plate) }}">
                 @method('PUT')
@@ -64,8 +71,13 @@
 
                 <div class="mb-3">
                     <label for="plate-visibility" class="form-label">Disponibilità: *</label>
-                    <input type="text" class="form-control" id="plate-visibility" name="visibility"
-                        value="{{ old('visibility', $plate->visibility) }}">
+                    {{-- <input type="text" class="form-control" id="plate-visibility" name="visibility"
+                        value="{{ old('visibility', $plate->visibility) }}"> --}}
+                        <input type="radio" class="btn-check" name="visibility" id="success-outlined" value="1" autocomplete="off">
+                    <label class="btn btn-outline-success" for="success-outlined">Disponibile</label>
+
+                    <input type="radio" class="btn-check" name="visibility" id="danger-outlined" value="0" autocomplete="off">
+                    <label class="btn btn-outline-danger" for="danger-outlined">Non Disponibile</label>
                     @error('visibility')
                         <div class="alert alert-danger">
                             {{ $message }}
@@ -84,23 +96,20 @@
                     @enderror
                 </div>
 
-
-
                 <div class=" d-flex justify-content-center align-items-center gap-2">
-                    <button type="submit" class="mb-3 btn btn-primary ">Modifica il piatto</button>
+                    <button type="submit" id="sub-btn" class="mb-3 btn btn-primary ">Modifica il piatto</button>
                     <button type="reset" class="mb-3 btn btn-danger">Pulisci i campi</button>
                     <div class="mb-3">
                         <a href="{{ route('admin.plates.index') }}" class="btn btn-outline-success">Torna alla lista dei
-                            piatti</a>
-
+                            piatti
+                        </a>
                     </div>
-
                 </div>
             </form>
-
-
         </div>
-
     </div>
+@endsection
 
+@section('additional-scripts')
+    @vite("resources/js/plates/validation-create.js");
 @endsection
