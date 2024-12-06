@@ -88,8 +88,8 @@ class RegisterController extends Controller
             'address' => $data['address'],
             'piva' => $data['piva']
         ]);
+        $restaurantData->types()->sync($data['type']);
 
-        ;
         return $userData;
 
     }

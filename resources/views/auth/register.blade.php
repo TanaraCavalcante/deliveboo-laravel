@@ -14,7 +14,7 @@
             <div class="col-md-8">
                 <div class="card">
                     <div class="card-header">{{ __('Registrati') }}</div>
-                    @dd($types)
+
 
                     <div class="card-body">
                         <form method="POST" action="{{ route('register') }}">
@@ -113,16 +113,17 @@
 
                             {{-- !Checkbox per il tipo --}}
                             <div class="row mb-3">
-                                <div for="tipo" class="col-md-4 col-form-label text-md-end">Tipo de Restaurante *</div>
+                                <div for="tipo" class="col-md-4 col-form-label text-md-end">Tipo di Ristorante *</div>
                                 <div class="col-md-3">
-                                    {{-- @foreach ($types as $type)
+                                    @foreach ($types as $type)
                                         <div class="form-check">
-                                            <input class="form-check-input" type="checkbox" id="tipo_{{ $type->id }}" name="tipo[]">
-                                            <label class="form-check-label" for="tipo_{{ $type->id }}">
+                                            <input class="form-check-input" type="checkbox" id="type_{{ $type->id }}"
+                                                name="type[]" value="{{ $type->id }}">
+                                            <label class="form-check-label" for="type_{{ $type->id }}">
                                                 {{ $type->name }}
                                             </label>
                                         </div>
-                                        @endforeach --}}
+                                    @endforeach
                                 </div>
                             </div>
                     </div>
