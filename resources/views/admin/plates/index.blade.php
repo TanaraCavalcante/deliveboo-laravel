@@ -26,7 +26,6 @@
                         <table class="table  table-hover table-striped ">
                             <thead>
                                 <tr>
-                                    <th scope="col">#</th>
                                     <th scope="col">Piatto</th>
                                     <th scope="col">Prezzo</th>
                                     <th scope="col">Disponibilità</th>
@@ -36,9 +35,8 @@
                             <tbody>
                                 @foreach ($plates as $index => $plate)
                                     <tr>
-                                        <td>{{ $plate->id }}</td>
                                         <td>{{ $plate->name }}</td>
-                                        <td>{{ $plate->price }} </td>
+                                        <td> <strong>€ {{ $plate->price }} </td>
                                         <td>
                                             @if ( $plate->visibility)
                                                 Disponibile
@@ -46,7 +44,7 @@
                                                 Non Disponibile
                                             @endif
                                         </td>
-                                        <td class="d-flex">
+                                        <td class="d-flex justify-content-center">
                                             <a href="{{ route('admin.plates.show', $plate) }}"
                                                 class="btn btn-sm btn-outline-info m-2 me-1">Mostra</a>
                                             <a href="{{ route('admin.plates.edit', $plate) }}"
