@@ -6,16 +6,16 @@
             <div class="card col-12 col-md-8 col-lg-6 p-4">
 
                 <div class="card-body ">
-                    <h1 class="card-title text-center fw-bold mt-2">
-                        Piatto: {{ $plate->name }}
-                    </h1>
-                    <div class="card mb-2" style="width: 18rem;">
+
                     @if ($plate->image)
                         <img src="{{ asset('/storage/' . $plate->image) }}" class="card-img-top" alt="{{ $plate->name }}">
                     @else
                         <img src="{{ asset('images/placeholder-plate.png') }}" class="card-img-top" alt="Placeholder">
                     @endif
-                    </div>
+
+                    <h1 class="card-title text-center fw-bold mt-2">
+                        Piatto: {{ $plate->name }}
+                    </h1>
                     <p class="card-text">
                         Descrizione Piatto: {{ $plate->description }}
                     </p>
