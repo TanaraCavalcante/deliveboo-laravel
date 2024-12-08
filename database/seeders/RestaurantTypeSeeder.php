@@ -21,7 +21,7 @@ class RestaurantTypeSeeder extends Seeder
         $typesId = Type::all()->pluck('id');
 
         foreach ($restaurants as $restaurant) {
-        $restaurant->types()->sync($typesId);
+        // $restaurant->types()->sync($typesId);
     }
 
     }
