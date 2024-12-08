@@ -87,8 +87,13 @@
 
                 <div class="mb-3">
                     <label for="plate-image" class="form-label">Inserisci URL immagine:</label>
-                    <input type="file" class="form-control" id="plate-image" name="image" value="{{ old('image', $plate->image) }}">
-                    {{-- <input type="text" class="form-control" id="plate-image" name="image" value="{{ old('image', $plate->image) }}"> --}}
+                    <input type="file" class="form-control" id="plate-image" name="image">
+                    @if($plate->image)
+                    <div class="mt-2">
+                        <p>Immagine corrente:</p>
+                        <img src="{{ asset('storage/'.$plate->image) }}" alt="{{ old('name', $plate->name) }}" style="max-width: 100px;">
+                    </div>
+                    @endif
                     @error('image')
                         <div class="alert alert-danger">
                             {{ $message }}
