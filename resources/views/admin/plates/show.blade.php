@@ -20,7 +20,12 @@
                         Ingredienti: {{ $plate->ingredients }}
                     </p>
                     <p class="card-text">
-                        Disponibilità del piatto: {{ $plate->visibility }}
+                        Disponibilità del piatto:
+                        @if ($plate->visibility)
+                            Disponibile
+                        @else
+                            Non Disponibile
+                        @endif
                     </p>
                     <p class="card-text fw-bold">
                         Prezzo: <strong>€ {{ $plate->price }}
