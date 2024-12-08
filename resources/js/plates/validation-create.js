@@ -93,7 +93,7 @@ subBtn.addEventListener('click', function (e) {
         const imgKbSize = imgSize / 1024; //!Conversione di bytes per kb, cosi si uguala al back
         if (imgKbSize > 250) {
             e.preventDefault();
-            inputErrors.push(`L'immagine è troppo grande per essere inserita! Non deve superare i 5 MB di grandezza`)
+            inputErrors.push(`L'immagine è troppo grande per essere inserita! Non deve superare i 250Kb di grandezza`)
         }
     }
 
