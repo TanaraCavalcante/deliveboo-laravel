@@ -70,12 +70,12 @@
                 </div>
 
                 <div class="mb-3">
-                    <label for="plate-visibility" class="form-label">Disponibilità: *</label>
+                    <label for="plate-visibility" class="form-label">Visibile: *</label>
                         <input type="radio" class="btn-check" name="visibility" id="success-outlined" value="1" autocomplete="off"  @if(old('visibility', $plate->visibility) == 1) checked @endif>
-                    <label class="btn btn-outline-success" for="success-outlined">Disponibile</label>
+                    <label class="btn btn-outline-success" for="success-outlined">Si</label>
 
                     <input type="radio" class="btn-check" name="visibility" id="danger-outlined" value="0" autocomplete="off"  @if(old('visibility', $plate->visibility) == 0) checked @endif>
-                    <label class="btn btn-outline-danger" for="danger-outlined">Non Disponibile</label>
+                    <label class="btn btn-outline-danger" for="danger-outlined">No</label>
                     @error('visibility')
                         <div class="alert alert-danger">
                             {{ $message }}
