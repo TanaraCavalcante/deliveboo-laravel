@@ -16,7 +16,7 @@ return new class extends Migration
             $table->foreignId('restaurant_id')->constrained()->cascadeOnDelete();
             $table->string('name');
             $table->text('description');
-            $table->decimal('price', 6, 2);
+            $table->decimal('price', 6, 2)->unsigned();
             $table->text('ingredients');
             $table->boolean('visibility');
             $table->text('image')->nullable();
