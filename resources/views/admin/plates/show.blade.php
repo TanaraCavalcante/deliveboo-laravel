@@ -19,9 +19,6 @@
                     <p class="card-text">
                         Ingredienti: {{ $plate->ingredients }}
                     </p>
-                    <p class="card-text">
-                        Disponibilità del piatto: {{ $plate->visibility }}
-                    </p>
                     <p class="card-text fw-bold">
                         Prezzo: <strong>€ {{ $plate->price }}
                     </p>
