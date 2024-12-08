@@ -1,0 +1,41 @@
+name,user_id,address,piva,types
+Ristorante La Tavola Italiana,1,Via Roma 12,12345678901,Italiano
+Cina D’Oro,2,Salita delle Orchidee 24,23456789012,Cinese
+Taco Fiesta,3,Via Veracruz 10,34567890123,Messicano
+Curry Garden,4,Via Gandhi 17,45678901234,Indiano
+Sushiko,5,Via Peschiera 8,56789012345,Sushi-Giapponese
+Veggie Garden,6,Via Verde 6,67890123456,Vegetariano
+Vegan Delight,7,Via Solare 5,78901234567,Vegano
+Burger Kingpin,8,Via dei Fritti 2,89012345678,Hamburger
+Pizza Per Te,9,Via Napoli 21,90123456789,Pizza
+Focaccia Heaven,10,Via Ligure 18,51234567890,Focacce
+American Dream Grill,11,Via dei Grigliati 33,11223344556,Americano
+Thai Spice,12,Via Bangkok 9,22334455667,Thailandese
+Pinsa & Co.,13,Via della Pinsa 14,33445566778,Pinsa
+Panino House,14,Via Panineria 23,44556677889,Panini
+Kebab Time,15,Via Orientale 17,55667788990,Kebab
+Poke Bowl Paradise,16,Via Hawaii 3,66778899001,Poke
+Dolce Vita,17,Via dei Dolci 8,77889900112,Dolci
+Pollo Grigliato,18,Via Gallina 12,88990011223,Pollo
+Piadina Express,19,Via Emilia 25,99001122334,Piadine
+Churrasco Brazilian BBQ,20,Via Rio 27,10011223345,Brasiliano
+Gluten-Free Gourmet,21,Via Libera 4,11022334456,Gluten-free
+Happy Days,22,Corso L. Roma 12,21012345678,"Pizza ,Hamburger"
+La cucina di Giuditta,23,Via Milano 45,32023456789,"Vegetariano ,Vegano"
+Mr.Chen,24,Via Torino 87,43034567890,"Cinese , Thai"
+Coco restaurant,25,Via Napoli 23,54045678901,"Indiano , Messicano"
+Poke and Bowl Broadside,26,Corso Firenze 56,65056789012,"Sushi-Giapponese, Poke"
+Pizza e sbrano,27,Via Venezia 34,76067890123,"Focacce, Panini"
+Mr.Kebab ,28,Via Genova 89,87078901234,"Kebab,Pollo"
+Bella Vida,29,Via Bologna 12,98089012345,"Americano,Brasiliano"
+Manuelina,30,Via Palermo 67,39090123456,"Pizza, Pinsa"
+Focaccino's Bakery,31,Corso Catania 90,10111223344,"Gluten-free, Dolci"
+Fornarina,32,Via Battisti 10,12122334455,"Pizza, Pinsa, Focacce, Panini"
+La Muraglia,33,Piazza Merani 2,14133445566,"Cinese, Thai, Indiano ,Sushi-Giapponese"
+Life,34,Via liri 8,16144556677,"Vegetariano, Vegano, Gluten-free ,Dolci"
+Ghandi Kebab,35,Piazza Savonarola 6,18155667788,"Americano, Hamburger, Pollo ,Kebab"
+Chiplote,36,Vico S.Bernardo 5,20166778899,"Messicano, Brasiliano, Poke ,Tacos"
+MoroMare,37,Piazza delle Erbe 7,22177889900,"Pizza, Pinsa, Focacce, Panini"
+Yama,38,Via XX Settembre 6,24188990011,"Cinese, Thai, Sushi-Giapponese, Poke"
+Mamacita's Fusion,39,Via XII Ottobre 2,26199001122,"Indiano, Messicano, Kebab, Pollo"
+America's,40,Via S.Lorenzo 8,28110011233,"Americano, Hamburger, Brasiliano, Pizza"
