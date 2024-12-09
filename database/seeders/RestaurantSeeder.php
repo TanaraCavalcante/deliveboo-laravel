@@ -17,6 +17,7 @@ class RestaurantSeeder extends Seeder
     {
         //vado a prendere i dati dal mio csv euso il metodo creato per aprirlo in lettura
         $restaurantData = Helpers::getCsv(__DIR__ . '/seeder_ristorante.csv');
+        
         foreach ($restaurantData as $indice => $riga) {
             if ($indice != 0) {
 
@@ -28,7 +29,7 @@ class RestaurantSeeder extends Seeder
                     $cleanedType = trim($rawType);
                     // per vedere in console cosa fa il seeder
                     $this->command->comment('Looking for Type ' . $cleanedType);
-                    
+
                     $type = Type::where('name', '=', $cleanedType)->firstOrFail();
                     $typesToBeAssociated[] = $type;
                 }
