@@ -9,7 +9,7 @@ use Illuminate\Http\Request;
 class PlateController extends Controller
 {
     public function index(){
-        $plates = Plate::paginate(15);
+        $plates = Plate::all();
         return response()->json(
             [
                 "success" => true,
