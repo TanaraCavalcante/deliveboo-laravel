@@ -26,15 +26,6 @@ Route::controller(PlateController::class)->name('api.')->group(function(){
     Route::get('plates/{plate}','show')->name('plates.show');
 });
 
-
-
-
-
-
-
-
-
-
 Route::controller(RestaurantController::class)->name('api.')->group(function(){
     Route::get('restaurants','index')->name('restaurants.index');
     Route::get('restaurants/{restaurant}','show')->name('restaurants.show');
