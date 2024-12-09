@@ -87,9 +87,10 @@
                     <label for="plate-image" class="form-label">Inserisci URL immagine:</label>
                     <input type="file" class="form-control" id="plate-image" name="image">
                     @if($plate->image)
-                    <div class="mt-2">
+                    <div class="mt-2" id="hide_img">
                         <p>Immagine corrente:</p>
                         <img src="{{ asset('storage/'.$plate->image) }}" alt="{{ old('name', $plate->name) }}" style="max-width: 100px;">
+                        <button type="button" class="btn btn-danger mt-2" onclick="removeImage()">Rimuovi immagine</button>
                     </div>
                     @endif
                     @error('image')
@@ -98,6 +99,13 @@
                         </div>
                     @enderror
                 </div>
+                {{-- !funòao para botao, ver como encaixar em js --}}
+                <script>
+                    function removeImage() {
+                        document.getElementById('plate-image').value = ''; // Limpa o campo de input de imagem
+                        document.querySelector('#hide_img').style.display = 'none'; // Esconde a div da imagem atual
+                    }
+                </script>
 
                 <div class=" d-flex justify-content-center align-items-center gap-2">
                     <button type="submit" id="sub-btn" class="mb-3 btn btn-primary ">Modifica il piatto</button>
