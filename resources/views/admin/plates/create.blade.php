@@ -14,7 +14,7 @@
                 </div>
             </div>
 
-            <form class="col-12 col-md-8 col-lg-6 card p-4" method="POST" action="{{ route('admin.plates.store') }}">
+            <form class="col-12 col-md-8 col-lg-6 card p-4" method="POST" enctype="multipart/form-data" action="{{ route('admin.plates.store') }}" autocomplete="off">
                 @csrf
                 <div class="row mb-3 d-none">
                     <label for="restaurant_id" class="col-md-4 col-form-label text-md-end">Utente</label>
@@ -65,16 +65,16 @@
                     @enderror
                 </div>
                 <div class="mb-3">
-                    <label for="plate-visibility" class="form-label">Disponibilità: *</label>
+                    <label for="plate-visibility" class="form-label">Visibile: *</label>
                     {{-- <input type="text" class="form-control" id="plate-visibility" name="visibility" value="{{ old('visibility') }}"> --}}
 
                     <input type="radio" class="btn-check" name="visibility" id="success-outlined" value="1"
                         autocomplete="off">
-                    <label class="btn btn-outline-success" for="success-outlined">Disponibile</label>
+                    <label class="btn btn-outline-success" for="success-outlined">Si</label>
 
                     <input type="radio" class="btn-check" name="visibility" id="danger-outlined" value="0"
                         autocomplete="off">
-                    <label class="btn btn-outline-danger" for="danger-outlined">Non Disponibile</label>
+                    <label class="btn btn-outline-danger" for="danger-outlined">No</label>
 
 
                     @error('visibility')

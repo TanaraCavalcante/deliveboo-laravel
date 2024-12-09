@@ -70,14 +70,12 @@
                 </div>
 
                 <div class="mb-3">
-                    <label for="plate-visibility" class="form-label">Disponibilità: *</label>
-                    {{-- <input type="text" class="form-control" id="plate-visibility" name="visibility"
-                        value="{{ old('visibility', $plate->visibility) }}"> --}}
-                        <input type="radio" class="btn-check" name="visibility" id="success-outlined" value="1" autocomplete="off">
-                    <label class="btn btn-outline-success" for="success-outlined">Disponibile</label>
+                    <label for="plate-visibility" class="form-label">Visibile: *</label>
+                        <input type="radio" class="btn-check" name="visibility" id="success-outlined" value="1" autocomplete="off"  @if(old('visibility', $plate->visibility) == 1) checked @endif>
+                    <label class="btn btn-outline-success" for="success-outlined">Si</label>
 
-                    <input type="radio" class="btn-check" name="visibility" id="danger-outlined" value="0" autocomplete="off">
-                    <label class="btn btn-outline-danger" for="danger-outlined">Non Disponibile</label>
+                    <input type="radio" class="btn-check" name="visibility" id="danger-outlined" value="0" autocomplete="off"  @if(old('visibility', $plate->visibility) == 0) checked @endif>
+                    <label class="btn btn-outline-danger" for="danger-outlined">No</label>
                     @error('visibility')
                         <div class="alert alert-danger">
                             {{ $message }}
@@ -87,14 +85,27 @@
 
                 <div class="mb-3">
                     <label for="plate-image" class="form-label">Inserisci URL immagine:</label>
-                    <input type="file" class="form-control" id="plate-image" name="image" value="{{ old('image', $plate->image) }}">
-                    {{-- <input type="text" class="form-control" id="plate-image" name="image" value="{{ old('image', $plate->image) }}"> --}}
+                    <input type="file" class="form-control" id="plate-image" name="image">
+                    @if($plate->image)
+                    <div class="mt-2" id="hide_img">
+                        <p>Immagine corrente:</p>
+                        <img src="{{ asset('storage/'.$plate->image) }}" alt="{{ old('name', $plate->name) }}" style="max-width: 100px;">
+                        <button type="button" class="btn btn-danger mt-2" onclick="removeImage()">Rimuovi immagine</button>
+                    </div>
+                    @endif
                     @error('image')
                         <div class="alert alert-danger">
                             {{ $message }}
                         </div>
                     @enderror
                 </div>
+                {{-- !funòao para botao, ver como encaixar em js --}}
+                <script>
+                    function removeImage() {
+                        document.getElementById('plate-image').value = ''; // Limpa o campo de input de imagem
+                        document.querySelector('#hide_img').style.display = 'none'; // Esconde a div da imagem atual
+                    }
+                </script>
 
                 <div class=" d-flex justify-content-center align-items-center gap-2">
                     <button type="submit" id="sub-btn" class="mb-3 btn btn-outline-primary ">Modifica il piatto</button>
