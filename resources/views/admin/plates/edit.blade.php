@@ -61,7 +61,7 @@
 
                 <div class="mb-3">
                     <label for="plate-price" class="form-label">Prezzo: *</label>
-                    <input type="number" min="0" class="form-control" id="plate-price" name="price" value="{{ old('price', $plate->price) }}">
+                    <input type="text" class="form-control" id="plate-price" name="price" value="{{ old('price', $plate->price) }}">
                     @error('price')
                         <div class="alert alert-danger">
                             {{ $message }}
