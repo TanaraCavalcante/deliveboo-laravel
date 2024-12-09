@@ -22,6 +22,8 @@
                     <div class="col-md-6">
                         <input id="restaurant_id" type="text" class="form-control" name="restaurant_id" required
                             value="{{ $restaurant }}" readonly>
+                        <input id="restaurant_id" type="text" class="form-control" name="restaurant_id" required
+                            value="{{ $restaurant }}" readonly>
                     </div>
                 </div>
                 <div class="mb-3">
@@ -91,11 +93,16 @@
                     @enderror
                 </div>
 
-                <div class=" d-flex justify-content-center align-items-center">
-                    <button type="submit" id="sub-btn" class="mb-3 btn btn-primary ">Crea il tuo nuovo Piatto</button>
-                    <button type="reset" class="mb-3 btn btn-danger">Pulisci i campi</button>
-                </div>
+                <div class=" d-flex justify-content-center align-items-center gap-2">
+                    <button type="submit" id="sub-btn" class="mb-3 btn btn-outline-primary ">Crea il tuo nuovo
+                        Piatto</button>
+                    <button type="reset" class="mb-3 btn btn-outline-danger">Pulisci i campi</button>
+                    <div class="mb-3">
+                        <a href="{{ route('admin.plates.index') }}" class="btn btn-outline-success">Torna alla lista dei
+                            piatti</a>
+                    </div>
             </form>
+
         </div>
     </div>
 
