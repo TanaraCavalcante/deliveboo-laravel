@@ -10,6 +10,10 @@ class TypeController extends Controller
 {
     public function index(){
         $types = Type::all();
+        // Per ogni tipo, aggiorna il percorso del logo con l'URL completo
+        foreach ($types as $type) {
+            $type->logo = asset('types-logo/' . $type->logo); 
+        }
         return response()->json(
             [
                 "success" => true,
