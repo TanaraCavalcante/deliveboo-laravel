@@ -18,8 +18,11 @@ use function PHPSTORM_META\type;
 class PlateController extends Controller
 {
     public function index(){
-        $restaurant = Auth::user();
+        $user = Auth::user();
+        // Recupera il ristorante associato all'utente
+        $restaurant = $user->restaurant;
         $plates = Plate::where('restaurant_id', $restaurant->id)->get();
+        
         return view('admin.plates.index', compact('plates','restaurant'));
     }
     public function create(){
