@@ -49,7 +49,7 @@ class PlateController extends Controller
             $data["image"] = $filePath;
         }
 
-        $data['restaurant_id'] = $restaurant->id; //TODO   -Adiciono o Id do resturante ao prato
+        $data['restaurant_id'] = $restaurant->id; //TODO -Aggiungi l'ID del ristorante al piatto
 
         Plate::create($data);
         return redirect()->route('admin.plates.index');
