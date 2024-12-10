@@ -10,6 +10,9 @@ class TypeController extends Controller
 {
     public function index(){
         $types = Type::all();
+        foreach ($types as $type) {
+            $type->logo = asset('types-logo/' . basename($type->logo)); // usa apenas o nome da imagem
+        }
         return response()->json(
             [
                 "success" => true,
