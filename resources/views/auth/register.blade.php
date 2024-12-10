@@ -2,7 +2,9 @@
 
 @section('content')
     <div class="container">
-        <div class="row justify-content-center">
+        <div class="row justify-content-center">'
+            <!--ERRORI JS-->
+
             <div id="error-card" class="col-12 col-md-8 card text-white bg-danger mb-3 d-none">
                 <div class="card-body">
                     <ol id="input-errors">
