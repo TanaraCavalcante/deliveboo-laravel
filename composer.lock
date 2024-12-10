@@ -4,8 +4,67 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "8fac62fa000557439a1027c0c1519c98",
+    "content-hash": "09d502aca609e1847dc917e3468c3743",
     "packages": [
+        {
+            "name": "abbasudo/laravel-purity",
+            "version": "v3.3.7",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/abbasudo/laravel-purity.git",
+                "reference": "5d9fe8d4ea07c0a8fe1387752159d1c50c719018"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/abbasudo/laravel-purity/zipball/5d9fe8d4ea07c0a8fe1387752159d1c50c719018",
+                "reference": "5d9fe8d4ea07c0a8fe1387752159d1c50c719018",
+                "shasum": ""
+            },
+            "require": {
+                "laravel/framework": "^11.0|^10.0|^9.0|^8.0",
+                "php": "^8.0"
+            },
+            "require-dev": {
+                "orchestra/testbench": "^9.0|^8.0",
+                "phpunit/phpunit": "^10.0"
+            },
+            "type": "library",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "Abbasudo\\Purity\\PurityServiceProvider"
+                    ]
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Abbasudo\\Purity\\": "src"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "abbas mkhzomi",
+                    "email": "amkhzomi@gmail.com",
+                    "role": "developer"
+                }
+            ],
+            "description": "elegant way to add filter and sort in laravel",
+            "support": {
+                "issues": "https://github.com/abbasudo/laravel-purity/issues",
+                "source": "https://github.com/abbasudo/laravel-purity/tree/v3.3.7"
+            },
+            "funding": [
+                {
+                    "url": "https://www.patreon.com/abbasudo",
+                    "type": "patreon"
+                }
+            ],
+            "time": "2024-10-29T18:33:18+00:00"
+        },
         {
             "name": "brick/math",
             "version": "0.12.1",
@@ -1577,16 +1636,16 @@
         },
         {
             "name": "league/commonmark",
-            "version": "2.5.3",
+            "version": "2.6.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/thephpleague/commonmark.git",
-                "reference": "b650144166dfa7703e62a22e493b853b58d874b0"
+                "reference": "d150f911e0079e90ae3c106734c93137c184f932"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/thephpleague/commonmark/zipball/b650144166dfa7703e62a22e493b853b58d874b0",
-                "reference": "b650144166dfa7703e62a22e493b853b58d874b0",
+                "url": "https://api.github.com/repos/thephpleague/commonmark/zipball/d150f911e0079e90ae3c106734c93137c184f932",
+                "reference": "d150f911e0079e90ae3c106734c93137c184f932",
                 "shasum": ""
             },
             "require": {
@@ -1611,8 +1670,9 @@
                 "phpstan/phpstan": "^1.8.2",
                 "phpunit/phpunit": "^9.5.21 || ^10.5.9 || ^11.0.0",
                 "scrutinizer/ocular": "^1.8.1",
-                "symfony/finder": "^5.3 | ^6.0 || ^7.0",
-                "symfony/yaml": "^2.3 | ^3.0 | ^4.0 | ^5.0 | ^6.0 || ^7.0",
+                "symfony/finder": "^5.3 | ^6.0 | ^7.0",
+                "symfony/process": "^5.4 | ^6.0 | ^7.0",
+                "symfony/yaml": "^2.3 | ^3.0 | ^4.0 | ^5.0 | ^6.0 | ^7.0",
                 "unleashedtech/php-coding-standard": "^3.1.1",
                 "vimeo/psalm": "^4.24.0 || ^5.0.0"
             },
@@ -1622,7 +1682,7 @@
             "type": "library",
             "extra": {
                 "branch-alias": {
-                    "dev-main": "2.6-dev"
+                    "dev-main": "2.7-dev"
                 }
             },
             "autoload": {
@@ -1679,7 +1739,7 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2024-08-16T11:46:16+00:00"
+            "time": "2024-12-07T15:34:16+00:00"
         },
         {
             "name": "league/config",
@@ -8187,12 +8247,12 @@
     ],
     "aliases": [],
     "minimum-stability": "stable",
-    "stability-flags": [],
+    "stability-flags": {},
     "prefer-stable": true,
     "prefer-lowest": false,
     "platform": {
         "php": "^8.1"
     },
-    "platform-dev": [],
+    "platform-dev": {},
     "plugin-api-version": "2.6.0"
 }

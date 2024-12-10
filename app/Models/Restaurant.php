@@ -4,10 +4,12 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Abbasudo\Purity\Traits\Filterable;
 
 class Restaurant extends Model
 {
     use HasFactory;
+    use Filterable;
 
     protected $fillable = [
         'user_id',
@@ -16,6 +18,13 @@ class Restaurant extends Model
         'piva',
         'image',
     ];
+
+
+    protected $filterFields = [
+        'types',
+        'plates',
+         // relation
+      ];
 
     public function user(){
         return $this->belongsTo(User::class);
