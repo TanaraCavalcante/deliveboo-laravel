@@ -18,7 +18,13 @@ use function PHPSTORM_META\type;
 class PlateController extends Controller
 {
     public function index(){
-        $restaurant = Auth::user();
+        $user = Auth::user();
+        $restaurant = $user->restaurant; // Recupera il ristorante associato all'utente
+
+        if (!$restaurant) {
+            abort(403, 'Non hai un ristorante associato.');
+        }
+
         $plates = Plate::where('restaurant_id', $restaurant->id)->get();
         return view('admin.plates.index', compact('plates','restaurant'));
     }
@@ -70,15 +76,15 @@ class PlateController extends Controller
     public function destroy(Request $request, Plate $plate)
     {
         $userRestaurant = Auth::user()->restaurant;
-    
+
         if ($plate->restaurant_id !== $userRestaurant->id) {
             abort(403, 'Non autorizzato');
         }
-    
+
         $plate->delete();
-    
+
         return redirect()->route('admin.plates.index')
                          ->with('message', 'Piatto eliminato con successo!');
     }
-    
+
 }
