@@ -3,15 +3,6 @@
 @section('content')
     <div class="container">
         <div class="row justify-content-center">'
-            <!--ERRORI JS-->
-
-            {{-- <div id="error-card" class="col-12 col-md-8 card text-white bg-danger mb-3 d-none">
-                <div class="card-body">
-                    <ol id="input-errors">
-                        <!--Ci saranno gli errori-->
-                    </ol>
-                </div>
-            </div> --}}
 
             <div class="col-md-8">
                 <div class="card">
@@ -30,14 +21,14 @@
                                         class="form-control @error('name') is-invalid @enderror" name="name"
                                         value="{{ old('name') }}" required>
 
-                                        <!-- Sezione Errori Specifica -->
-                                        <div id="error-name" class="card text-white bg-danger my-3 d-none">
-                                            <div class="card-body">
-                                                <ol id="input-name">
-                                                    <!--Ci saranno gli errori-->
-                                                </ol>
-                                            </div>
+                                    <!-- Sezione Errori Specifica -->
+                                    <div id="error-name" class="card text-white bg-danger my-3 d-none">
+                                        <div class="card-body">
+                                            <ol id="input-name">
+                                                <!--Ci saranno gli errori-->
+                                            </ol>
                                         </div>
+                                    </div>
 
                                     @error('name')
                                         <span class="invalid-feedback" role="alert">
@@ -57,6 +48,15 @@
                                         class="form-control @error('email') is-invalid @enderror" name="email"
                                         value="{{ old('email') }}" required>
 
+                                    <!-- Sezione Errori Specifica -->
+                                    <div id="error-email" class="card text-white bg-danger my-3 d-none">
+                                        <div class="card-body">
+                                            <ol id="input-email">
+                                                <!--Ci saranno gli errori-->
+                                            </ol>
+                                        </div>
+                                    </div>
+
                                     @error('email')
                                         <span class="invalid-feedback" role="alert">
                                             <strong>{{ $message }}</strong>
@@ -74,6 +74,15 @@
                                         class="form-control @error('password') is-invalid @enderror" name="password"
                                         required autocomplete="new-password">
 
+                                    <!-- Sezione Errori Specifica -->
+                                    <div id="error-password" class="card text-white bg-danger my-3 d-none">
+                                        <div class="card-body">
+                                            <ol id="input-password">
+                                                <!--Ci saranno gli errori-->
+                                            </ol>
+                                        </div>
+                                    </div>
+
                                     @error('password')
                                         <span class="invalid-feedback" role="alert">
                                             <strong>{{ $message }}</strong>
@@ -89,6 +98,15 @@
                                 <div class="col-md-6">
                                     <input id="password-confirm" type="password" class="form-control"
                                         name="password_confirmation" required autocomplete="new-password">
+
+                                    <!-- Sezione Errori Specifica -->
+                                    <div id="error-confirm" class="card text-white bg-danger my-3 d-none">
+                                        <div class="card-body">
+                                            <ol id="input-confirm">
+                                                <!--Ci saranno gli errori-->
+                                            </ol>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
 
@@ -99,6 +117,16 @@
                                 <div class="col-md-6">
                                     <input id="indirizzo-attività" type="text" class="form-control" name="address"
                                         required value="{{ old('address') }}">
+
+                                    <!-- Sezione Errori Specifica -->
+                                    <div id="error-address" class="card text-white bg-danger my-3 d-none">
+                                        <div class="card-body">
+                                            <ol id="input-address">
+                                                <!--Ci saranno gli errori-->
+                                            </ol>
+                                        </div>
+                                    </div>
+
                                     @error('address')
                                         <div class="alert alert-danger m-3">
                                             {{ $message }}
@@ -114,6 +142,16 @@
                                 <div class="col-md-6">
                                     <input id="piva" type="text" class="form-control" name="piva" required
                                         value="{{ old('piva') }}">
+
+                                    <!-- Sezione Errori Specifica -->
+                                    <div id="error-piva" class="card text-white bg-danger my-3 d-none">
+                                        <div class="card-body">
+                                            <ol id="input-piva">
+                                                <!--Ci saranno gli errori-->
+                                            </ol>
+                                        </div>
+                                    </div>
+
                                     @error('piva')
                                         <div class="alert alert-danger mt-3">
                                             {{ $message }}
