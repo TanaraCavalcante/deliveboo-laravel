@@ -22,7 +22,7 @@ class PlateController extends Controller
         // Recupera il ristorante associato all'utente
         $restaurant = $user->restaurant;
         $plates = Plate::where('restaurant_id', $restaurant->id)->get();
-        
+
         return view('admin.plates.index', compact('plates','restaurant'));
     }
     public function create(){
@@ -33,7 +33,9 @@ class PlateController extends Controller
     }
     public function store(StorePlateRequest $request){
         $restaurant = Auth::user()->restaurant;
-
+        if (!$restaurant) {
+            abort(403, 'Non hai un ristorante associato.');
+        }
         $data = $request->validated();
 
         $data['price'] = number_format($data['price'], '2' ,'.', '');
