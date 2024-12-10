@@ -5,13 +5,13 @@
         <div class="row justify-content-center">'
             <!--ERRORI JS-->
 
-            <div id="error-card" class="col-12 col-md-8 card text-white bg-danger mb-3 d-none">
+            {{-- <div id="error-card" class="col-12 col-md-8 card text-white bg-danger mb-3 d-none">
                 <div class="card-body">
                     <ol id="input-errors">
                         <!--Ci saranno gli errori-->
                     </ol>
                 </div>
-            </div>
+            </div> --}}
 
             <div class="col-md-8">
                 <div class="card">
@@ -29,6 +29,15 @@
                                     <input id="name" type="text"
                                         class="form-control @error('name') is-invalid @enderror" name="name"
                                         value="{{ old('name') }}" required>
+
+                                        <!-- Sezione Errori Specifica -->
+                                        <div id="error-name" class="card text-white bg-danger my-3 d-none">
+                                            <div class="card-body">
+                                                <ol id="input-name">
+                                                    <!--Ci saranno gli errori-->
+                                                </ol>
+                                            </div>
+                                        </div>
 
                                     @error('name')
                                         <span class="invalid-feedback" role="alert">
