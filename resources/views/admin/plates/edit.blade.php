@@ -7,14 +7,6 @@
     <div class="container">
         <div class="row justify-content-center">
 
-            <div id="error-card" class="col-12 col-md-7 card text-white bg-danger mb-3 d-none">
-                <div class="card-body">
-                    <ol id="input-errors">
-                        <!--Ci saranno gli errori-->
-                    </ol>
-                </div>
-              </div>
-
             <form class="col-12 col-md-8 col-lg-6  card p-4" method="POST" enctype="multipart/form-data" action="{{ route('admin.plates.update', $plate) }}" autocomplete="off">
                 @method('PUT')
                 @csrf
@@ -32,6 +24,15 @@
                 <div class="mb-3">
                     <label for="plate-title" class="form-label">Nome: *</label>
                     <input type="text" class="form-control" id="plate-title" name="name" value="{{ old('name', $plate->name) }}">
+
+                    <div id="error-name" class="card text-white bg-danger my-2 d-none">
+                        <div class="card-body">
+                            <ol id="input-name">
+                                <!--Ci saranno gli errori-->
+                            </ol>
+                        </div>
+                    </div>
+
                     @error('name')
                         <div class="alert alert-danger">
                             {{ $message }}
@@ -42,6 +43,13 @@
                 <div class="mb-3">
                     <label for="plate-description" class="form-label">Descrizione: *</label>
                     <textarea type="text" class="form-control" id="plate-description" name="description" style="height: 100px">{{ old('description', $plate->description) }}</textarea>
+                    <div id="error-description" class="card text-white bg-danger my-2 d-none">
+                        <div class="card-body">
+                            <ol id="input-description">
+                                <!--Ci saranno gli errori-->
+                            </ol>
+                        </div>
+                    </div>
                     @error('description')
                         <div class="alert alert-danger">
                             {{ $message }}
@@ -52,6 +60,13 @@
                 <div class="mb-3">
                     <label for="plate-ingredients" class="form-label">Ingredienti: *</label>
                     <textarea type="text" class="form-control" id="plate-ingredients" name="ingredients" style="height: 100px">{{ old('ingredients', $plate->ingredients) }}</textarea>
+                    <div id="error-ingredients" class="card text-white bg-danger my-3 d-none">
+                        <div class="card-body">
+                            <ol id="input-ingredients">
+                                <!--Ci saranno gli errori-->
+                            </ol>
+                        </div>
+                    </div>
                     @error('ingredients')
                         <div class="alert alert-danger">
                             {{ $message }}
@@ -62,6 +77,13 @@
                 <div class="mb-3">
                     <label for="plate-price" class="form-label">Prezzo: *</label>
                     <input type="text" class="form-control" id="plate-price" name="price" value="{{ old('price', $plate->price) }}">
+                    <div id="error-price" class="card text-white bg-danger my-3 d-none">
+                        <div class="card-body">
+                            <ol id="input-price">
+                                <!--Ci saranno gli errori-->
+                            </ol>
+                        </div>
+                    </div>
                     @error('price')
                         <div class="alert alert-danger">
                             {{ $message }}
@@ -93,6 +115,13 @@
                         <button type="button" class="btn btn-danger mt-2" onclick="removeImage()">Rimuovi immagine</button>
                     </div>
                     @endif
+                    <div id="error-image" class="card text-white bg-danger my-3 d-none">
+                        <div class="card-body">
+                            <ol id="input-image">
+                                <!--Ci saranno gli errori-->
+                            </ol>
+                        </div>
+                    </div>
                     @error('image')
                         <div class="alert alert-danger">
                             {{ $message }}
