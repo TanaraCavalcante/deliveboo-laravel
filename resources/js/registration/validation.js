@@ -102,4 +102,6 @@ subBtn.addEventListener("click", function (event) {
         let pivaError = `L'indirizzo deve avere una lunghezza compresa tra i 3 i 150 caratteri`;
         inputPiva.innerHTML += `<li>${pivaError}</li>`
     }
+
+    //! Validazione per type
 });
