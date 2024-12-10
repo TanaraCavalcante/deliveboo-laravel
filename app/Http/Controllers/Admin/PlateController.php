@@ -17,7 +17,8 @@ use function PHPSTORM_META\type;
 
 class PlateController extends Controller
 {
-    public function index(){
+    public function index()
+    {
         $user = Auth::user();
         $restaurant = $user->restaurant; // Recupera il ristorante associato all'utente
 
@@ -26,47 +27,61 @@ class PlateController extends Controller
         }
 
         $plates = Plate::where('restaurant_id', $restaurant->id)->get();
-        return view('admin.plates.index', compact('plates','restaurant'));
+        return view('admin.plates.index', compact('plates', 'restaurant'));
     }
-    public function create(){
+    public function create()
+    {
         $plate = new Plate();
         $user = Auth::user();
-        $restaurant = $user->restaurant->id;
-        return view('admin.plates.create', compact('plate','restaurant','user'));
+        $restaurant = $user->restaurant;
+        if (!$restaurant) {
+            abort(403, 'Non hai un ristorante associato.');
+        }
+        return view('admin.plates.create', compact('plate', 'restaurant', 'user'));
     }
-    public function store(StorePlateRequest $request){
-        $restaurant = Auth::user();
+    public function store(StorePlateRequest $request)
+    {
+        $user = Auth::user();
+        $restaurant = $user->restaurant;
 
+        if (!$restaurant) {
+            abort(403, 'Non hai un ristorante associato.');
+        }
         $data = $request->validated();
 
-        $data['price'] = number_format($data['price'], '2' ,'.');
+        $data['price'] = number_format($data['price'], '2', '.');
 
         //! implemento l'imagine
-        if($request->hasFile("image")){
-            $filePath = Storage::disk("public")->put("img/plates" , $request->image);
+        if ($request->hasFile("image")) {
+            $filePath = Storage::disk("public")->put("img/plates", $request->image);
             $data["image"] = $filePath;
         }
 
+        $data['restaurant_id'] = $restaurant->id;
         $plate = Plate::create($data);
+
         return redirect()->route('admin.plates.index');
     }
-    public function show(Plate $plate){
+    public function show(Plate $plate)
+    {
         return view('admin.plates.show', compact('plate'));
     }
-    public function edit( Plate $plate){
+    public function edit(Plate $plate)
+    {
         $user = Auth::user();
         $restaurant = $user->restaurant->id;
-        return view('admin.plates.edit', compact('plate','restaurant','user'));
+        return view('admin.plates.edit', compact('plate', 'restaurant', 'user'));
     }
-    public function update(UpdatePlateRequest $request, Plate $plate){
+    public function update(UpdatePlateRequest $request, Plate $plate)
+    {
         $data = $request->validated();
 
         //! inserimento dell'imagine
-        if($request->hasFile("image")){
-            if($plate->image){
+        if ($request->hasFile("image")) {
+            if ($plate->image) {
                 Storage::delete($plate->image);
             }
-            $filePath = Storage::disk("public")->put("img/plates" , $request->image);
+            $filePath = Storage::disk("public")->put("img/plates", $request->image);
             $data["image"] = $filePath;
         }
 
@@ -84,7 +99,6 @@ class PlateController extends Controller
         $plate->delete();
 
         return redirect()->route('admin.plates.index')
-                         ->with('message', 'Piatto eliminato con successo!');
+            ->with('message', 'Piatto eliminato con successo!');
     }
-
 }
