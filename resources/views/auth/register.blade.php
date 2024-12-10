@@ -1,13 +1,9 @@
 @extends('layouts.app')
 
 @section('content')
-
-
-<script type="text/javascript">
-
-    const jsTypes = <?php echo json_encode($types); ?>;
-
-</script>
+    <script type="text/javascript">
+        const jsTypes = <?php echo json_encode($types); ?>;
+    </script>
 
     <div class="container">
         <div class="row justify-content-center">'
@@ -181,18 +177,20 @@
                                             </label>
                                         </div>
                                     @endforeach
-
-                                    <!-- Sezione Errori Specifica -->
-                                    <div id="error-type" class="card text-white bg-danger my-3 d-none">
-                                        <div class="card-body">
-                                            <ol id="input-type">
-                                                <!--Ci saranno gli errori-->
-                                            </ol>
-                                        </div>
-                                    </div>
                                 </div>
-                            </div>
-                    </div>
+
+                                </div>
+                                <div class="row justify-content-center mb-3">
+                                        <div id="error-type" class="col-md-5 card text-white bg-danger my-3 d-none">
+                                            <div class="card-body">
+                                                <ol id="input-type">
+                                                    <!--Ci saranno gli errori-->
+                                                </ol>
+                                            </div>
+                                        </div>
+                                </div>
+                                <!-- Sezione Errori Specifica -->
+                        </div>
 
                     <div class="row mb-0">
                         <div class="col-md-6 offset-md-4">

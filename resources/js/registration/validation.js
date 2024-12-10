@@ -6,11 +6,14 @@ const confirmInput = document.getElementById('password-confirm');
 const addressInput = document.getElementById('indirizzo-attività');
 const pivaInput = document.getElementById('piva');
 const typesInput = [];
+// console.log(jsTypes);
 
-for (let i = 0; i <= jsTypes.length; i++) {
+for (let i = 0; i < jsTypes.length; i++) {
     typesInput.push(document.getElementById(`type_${jsTypes[i].id}`));
-    console.log(typesInput);
 }
+// console.log(typesInput);
+
+// console.log(typesInput);
 
 // # Recupero il bottone
 const subBtn = document.getElementById('submit-btn');
@@ -30,6 +33,8 @@ const addressCard = document.getElementById('error-address');
 let inputAddress = document.getElementById('input-address');
 const pivaCard = document.getElementById('error-piva');
 let inputPiva = document.getElementById('input-piva');
+const typeCard = document.getElementById('error-type');
+let inputType = document.getElementById('input-type');
 
 // Funzione per verificare
 
@@ -46,7 +51,8 @@ subBtn.addEventListener("click", function (event) {
     inputAddress.innerHTML = '';
     pivaCard.classList.add('d-none');
     inputPiva.innerHTML = '';
-
+    typeCard.classList.add('d-none');
+    inputType.innerHTML = '';
 
     //! Validation per name
     let nameValue = nameInput.value;
@@ -110,7 +116,19 @@ subBtn.addEventListener("click", function (event) {
     }
 
     //! Validazione per type
-    typesInput.forEach(function () {
-        console.log(typesInput[i].value);
-    })
+    let typesValue = [];
+    typesInput.forEach(function (value) {
+        if (value.checked) {
+            typesValue.push(value.value);
+            console.log(typesValue);
+        }
+    });
+
+    if (typesValue.length === 0) {
+        event.preventDefault();
+        typeCard.classList.remove('d-none');
+        let typeError = 'Devi selezionare ALMENO un tipo';
+        inputType.innerHTML += `<li>${typeError}</li>`
+    }
+
 });
