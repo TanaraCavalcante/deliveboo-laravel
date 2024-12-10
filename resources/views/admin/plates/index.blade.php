@@ -5,7 +5,10 @@
     <div class="container">
         <div class="row">
             <div class="col-12 text-center">
-                <h1 class="m-3">Lista dei piatti:</h1>
+                <h1 class="m-3">Il tuo menù contiene
+                    {{ count($plates) }}
+                    {{ count($plates) === 1 ? 'piatto' : 'piatti' }}
+                </h1>
             </div>
             <div class="col-12 text-center">
                 @if (count($plates) === 0)
