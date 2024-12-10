@@ -19,6 +19,13 @@ class Restaurant extends Model
         'image',
     ];
 
+
+    protected $filterFields = [
+        'types',
+        'plates',
+         // relation
+      ];
+
     public function user(){
         return $this->belongsTo(User::class);
     }
