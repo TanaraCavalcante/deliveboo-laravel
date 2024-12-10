@@ -21,6 +21,9 @@ class PlateController extends Controller
         $user = Auth::user();
         // Recupera il ristorante associato all'utente
         $restaurant = $user->restaurant;
+        if (!$restaurant) {
+            abort(403, 'Non hai un ristorante associato.');
+        }
         $plates = Plate::where('restaurant_id', $restaurant->id)->get();
 
         return view('admin.plates.index', compact('plates','restaurant'));
