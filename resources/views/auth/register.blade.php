@@ -152,15 +152,6 @@
                                         </div>
                                     </div>
 
-                                    <!-- Sezione Errori Specifica -->
-                                    <div id="error-address" class="card text-white bg-danger my-3 d-none">
-                                        <div class="card-body">
-                                            <ol id="input-address">
-                                                <!--Ci saranno gli errori-->
-                                            </ol>
-                                        </div>
-                                    </div>
-
                                     @error('piva')
                                         <div class="alert alert-danger mt-3">
                                             {{ $message }}
@@ -175,14 +166,22 @@
                                 <div class="col-md-3">
                                     @foreach ($types as $type)
                                         <div class="form-check">
-                                            <input class="form-check-input" type="checkbox"
-                                                id="type_{{ $type->id }}" name="type[]"
-                                                value="{{ $type->id }}">
+                                            <input class="form-check-input" type="checkbox" id="type_{{ $type->id }}"
+                                                name="type[]" value="{{ $type->id }}">
                                             <label class="form-check-label" for="type_{{ $type->id }}">
                                                 {{ $type->name }}
                                             </label>
                                         </div>
                                     @endforeach
+
+                                    <!-- Sezione Errori Specifica -->
+                                    <div id="error-type" class="card text-white bg-danger my-3 d-none">
+                                        <div class="card-body">
+                                            <ol id="input-type">
+                                                <!--Ci saranno gli errori-->
+                                            </ol>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
                     </div>

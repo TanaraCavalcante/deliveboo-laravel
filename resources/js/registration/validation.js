@@ -99,7 +99,7 @@ subBtn.addEventListener("click", function (event) {
     if (!(pivaValue.length === 11)) {
         event.preventDefault();
         pivaCard.classList.remove('d-none');
-        let pivaError = `L'indirizzo deve avere una lunghezza compresa tra i 3 i 150 caratteri`;
+        let pivaError = `La Partita Iva deve essere lunga ESATTAMENTE 11 caratteri`;
         inputPiva.innerHTML += `<li>${pivaError}</li>`
     }
 
