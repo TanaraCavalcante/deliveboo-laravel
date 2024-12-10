@@ -1,6 +1,14 @@
 @extends('layouts.app')
 
 @section('content')
+
+
+<script type="text/javascript">
+
+    const jsTypes = <?php echo json_encode($types); ?>;
+
+</script>
+
     <div class="container">
         <div class="row justify-content-center">'
 

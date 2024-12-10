@@ -5,6 +5,12 @@ const passwordInput = document.getElementById('password');
 const confirmInput = document.getElementById('password-confirm');
 const addressInput = document.getElementById('indirizzo-attività');
 const pivaInput = document.getElementById('piva');
+const typesInput = [];
+
+for (let i = 0; i <= jsTypes.length; i++) {
+    typesInput.push(document.getElementById(`type_${jsTypes[i].id}`));
+    console.log(typesInput);
+}
 
 // # Recupero il bottone
 const subBtn = document.getElementById('submit-btn');
@@ -104,4 +110,7 @@ subBtn.addEventListener("click", function (event) {
     }
 
     //! Validazione per type
+    typesInput.forEach(function () {
+        console.log(typesInput[i].value);
+    })
 });
