@@ -22,6 +22,11 @@
             <p>Email: {{ $order->address }}</p>
             <p>Telefono: {{ $order->address }}</p>
         </div>
+        <div>
+            <h3>Dettagli ordine:</h3>
+            <p>Totale: {{ $order->total }}</p>
+        </div>
+
 
 
         </div>
