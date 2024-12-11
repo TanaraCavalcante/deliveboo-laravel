@@ -23,7 +23,7 @@
                                 <div class="col-md-6">
                                     <input id="name" type="text"
                                         class="form-control @error('name') is-invalid @enderror" name="name"
-                                        value="{{ old('name') }}" required>
+                                        value="{{ old('name') }}" required autocomplete="off">
 
                                     <!-- Sezione Errori Specifica -->
                                     <div id="error-name" class="card text-white bg-danger my-3 d-none">
@@ -50,7 +50,7 @@
                                 <div class="col-md-6">
                                     <input id="email" type="email"
                                         class="form-control @error('email') is-invalid @enderror" name="email"
-                                        value="{{ old('email') }}" required>
+                                        value="{{ old('email') }}" required autocomplete="off">
 
                                     <!-- Sezione Errori Specifica -->
                                     <div id="error-email" class="card text-white bg-danger my-3 d-none">
@@ -120,7 +120,7 @@
 
                                 <div class="col-md-6">
                                     <input id="indirizzo-attività" type="text" class="form-control" name="address"
-                                        required value="{{ old('address') }}">
+                                        required value="{{ old('address') }}" autocomplete="off">
 
                                     <!-- Sezione Errori Specifica -->
                                     <div id="error-address" class="card text-white bg-danger my-3 d-none">
@@ -145,7 +145,7 @@
 
                                 <div class="col-md-6">
                                     <input id="piva" type="text" class="form-control" name="piva" required
-                                        value="{{ old('piva') }}">
+                                        value="{{ old('piva') }}" autocomplete="off">
 
                                     <!-- Sezione Errori Specifica -->
                                     <div id="error-piva" class="card text-white bg-danger my-3 d-none">
