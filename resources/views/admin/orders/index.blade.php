@@ -19,20 +19,20 @@
                   </tr>
                 </thead>
                 <tbody>
-                    {{-- Inserire foreach --}}
-                  <tr>
-                    <th>Id Ordine</th>
-                    <td>Nome Ordinatore</td>
-                    <td>Cognome</td>
-                    <td>Data</td>
-                    <td>Totale Ordine</td>
-                    <td>
-                        <div>
-                            <button class="btn btn-outline-success"><a href="{{route('admin.orders.show', $orders)}}">Mostra</a></button>
-                            {{-- <button class="btn btn-outline-danger">Elimina</button> --}}
-                        </div>
-                    </td>
-                  </tr>
+                    @foreach ($orders as $order )
+                    <tr>
+                        <th>{{$order->id}}</th>
+                        <td>{{$order->first_name}}</td>
+                        <td>{{$order->last_name}}</td>
+                        <td>{{$order->created_at}}</td>
+                        <td>{{$order->total}}€</td>
+                        <td>
+                            <div>
+                                <button class="btn btn-outline-success"><a href="{{route('admin.orders.show', $order)}}">Mostra</a></button>
+                            </div>
+                        </td>
+                    </tr>
+                    @endforeach
                 </tbody>
               </table>
         </div>
