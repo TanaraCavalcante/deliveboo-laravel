@@ -12,19 +12,29 @@
                         </p>
                         <p class="card-text">Ordinato il: <strong>{{ $order->created_at->toDayDateTimeString() }}</strong></p>
                         <p class="card-text">Da consegnare all'indirizzo: <strong>{{ $order->address }}</strong></p>
-                        <p class="card-text">Totale dell'ordine: <strong>{{ $order->total }}€</strong></p>
-                    </div>
-                    <div class="card-body">
                     </div>
                     <!--Lista dei piatti-->
-                    <ul class="list-group list-group-flush">
-                        <li class="list-group-item list-group-item-primary">
-                            <h5>Lista piatti ordinati:</h5>
-                        </li>
-                        <li class="list-group-item list-group-item-secondary">Piatto 1</li>
-                        <li class="list-group-item list-group-item-secondary">Piatto 2</li>
-                        <li class="list-group-item list-group-item-secondary">Piatto 3</li>
-                    </ul>
+                    <div class="card-body">
+
+                        <table class="table table-bordered">
+                            <thead>
+                                <tr>
+                                    <th scope="col">Nome Piatto</th>
+                                    <th scope="col">Quantità</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>Piatto 1</td>
+                                    <td>Quantità piatto 1</td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">Totale</th>
+                                    <td>{{$order->total}}€</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
                 </div>
             </div>
         </div>
