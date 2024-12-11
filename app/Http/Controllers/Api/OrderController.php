@@ -31,12 +31,12 @@ class OrderController extends Controller
             ]);
         }
 
-        $order = Order::create($validator->validated())->with('plates');
-
-        Mail::to('mailacuidevoinviare')->send(new NewOrder($order));
+        $order = Order::create($validator->validated());
+        // Mail::to('mailacuidevoinviare')->send(new NewOrder($order));
 
         return response()->json([
-            'success' => true
+            'success' => true,
+            'orderId' =>$order->id,
         ]);
     }
 
