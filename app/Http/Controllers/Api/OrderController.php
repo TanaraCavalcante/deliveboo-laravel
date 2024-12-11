@@ -15,8 +15,13 @@ class OrderController extends Controller
 {
 
     public function store(Request $request){
-        $validator = Validator::make($request->all()[
-            /* inserire qui le regole di validazione */
+        $validator = Validator::make($request->all(),[
+            'first_name' => 'required|max:255',
+            'last_name' => 'required |max:255',
+            'email' => 'required',
+            'address' => 'required',
+            'phone_number' => 'required',
+            'total' => 'required'
         ]);
 
         if ($validator->fails()) {
