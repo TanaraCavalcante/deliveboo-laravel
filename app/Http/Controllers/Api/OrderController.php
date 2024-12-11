@@ -33,7 +33,7 @@ class OrderController extends Controller
 
         $order = Order::create($validator->validated())->with('plates');
 
-        Mail::to('mailacuidevoinviare')->send(new NewOrder($order));
+        Mail::to($order->email)->send(new NewOrder($order));
 
         return response()->json([
             'success' => true
