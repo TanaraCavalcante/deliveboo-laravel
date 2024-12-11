@@ -14,13 +14,10 @@ class OrderController extends Controller
     //
     public function index () {
         $user = Auth::user();
-        $restaurant = $user->restaurant;
-        if (!$restaurant) {
-            abort(403, 'Non hai un ristorante associato.');
-        }
-        $orders = Order::orderBy('id', 'desc')->get();
+        $orders = Order::find($user->id);
+        // recupero l'utente verificato
 
-        return view('admin.orders.index', compact('orders'));
+        return view('admin.orders.index', compact('user', 'orders'));
     }
 
     public function show (Order $order) {
