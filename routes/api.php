@@ -1,9 +1,10 @@
 <?php
 
-use App\Http\Controllers\Api\PlateController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Api\TypeController;
+use App\Http\Controllers\Api\PlateController;
+use App\Http\Controllers\BraintreeController;
 use App\Http\Controllers\Api\RestaurantController;
 
 /*
@@ -35,3 +36,8 @@ Route::controller(TypeController::class)->name('api.')->group(function(){
     Route::get('types', 'index')->name('types.index');
     Route::get('types/{type}', 'show')->name('types.show');
 });
+
+
+//!rotta senza un middleware di autenticazione, visto che il pagamento non dipende da un cliente autenticato
+    Route::get('/client_token', [BraintreeController::class, 'generateClientToken']);
+    Route::post('/checkout', [BraintreeController::class, 'processPayment']);
