@@ -51,5 +51,7 @@ class OrderController extends Controller
             'publicKey' => env('BRAINTREE_PUBLIC_KEY'),
             'privateKey' => env('BRAINTREE_PRIVATE_KEY')
         ]);
+        return $gateway->clientToken()->generate();
+
     }
 }
