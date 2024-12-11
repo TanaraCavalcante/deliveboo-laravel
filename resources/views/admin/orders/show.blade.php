@@ -1,6 +1,8 @@
 @extends('layouts.app')
 
 @section('content')
+{{-- @dd($plates) --}}
+
     <div class="container">
         <div class="row justify-content-center">
             <div class="col-6 justify-content-center text-center">
@@ -24,11 +26,13 @@
                                     </tr>
                                 </thead>
                                 <tbody>
+                                    @foreach ($plates as $plate)
                                     <tr>
-                                        <td>Piatto 1</td>
-                                        <td>Quantità piatto 1</td>
-                                        <td>Prezzo Piatto 1</td>
+                                        <td>{{$plate->name}}</td>
+                                        <td>{{$plate->pivot->quantity}}</td>
+                                        <td>{{$plate->price}}</td>
                                     </tr>
+                                    @endforeach
                                     <tr>
                                         <th scope="row">Totale</th>
                                         <td colspan="2">{{$order->total}}€</td>
