@@ -9,9 +9,9 @@ class Order extends Model
 {
     use HasFactory;
 
-  public function plates(){
-    return $this->belongsToMany(Plate::class);
-  }
-
-
+    public function plates()
+    {
+        return $this->belongsToMany(Plate::class, 'order_plate')
+            ->withPivot('quantity');
+    }
 }
