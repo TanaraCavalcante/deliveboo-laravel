@@ -38,5 +38,5 @@ Route::controller(TypeController::class)->name('api.')->group(function(){
 });
 
 Route::controller(OrderController::class)->name('api.')->group(function(){
-    Route::post('orders', 'store')->name('orders.store');
+    Route::post('orders/', 'store')->name('orders.store');
 });
