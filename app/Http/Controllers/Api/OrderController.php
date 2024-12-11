@@ -39,10 +39,11 @@ class OrderController extends Controller
 
         return response()->json([
             'success' => true,
+            // MI SERVE PER I PAGMENTI!!!!!!!!!!
             'orderId' => $order->id,
         ]);
     }
-
+//  MI SERVE PER I PAGAMENTI!!!!!!!
     public function getPaymentToken()
     {
         $gateway = new Gateway([
