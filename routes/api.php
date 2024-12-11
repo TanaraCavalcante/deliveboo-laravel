@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\Api\OrderController;
 use App\Http\Controllers\Api\PlateController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
@@ -34,4 +35,8 @@ Route::controller(RestaurantController::class)->name('api.')->group(function(){
 Route::controller(TypeController::class)->name('api.')->group(function(){
     Route::get('types', 'index')->name('types.index');
     Route::get('types/{type}', 'show')->name('types.show');
+});
+
+Route::controller(OrderController::class)->name('api.')->group(function(){
+    Route::post('orders/', 'store')->name('orders.store');
 });
