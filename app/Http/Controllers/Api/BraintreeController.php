@@ -19,4 +19,11 @@ class BraintreeController extends Controller
             'privateKey' => config('braintree.private_key')
         ]);
     }
+
+    // Genera il client token
+    public function generateClientToken()
+    {
+        $clientToken = $this->gateway->clientToken()->generate();
+        return response()->json(['client_token' => $clientToken]);
+    }
 }
