@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
-    <div class="container container-sm">
+    <div class="container">
         <div class="row justify-content-center">
             <div class="col-6 justify-content-center text-center">
                 <!--Inizio card singolo ordine-->
@@ -14,7 +14,7 @@
                     </div>
                     <!--Lista dei piatti-->
                     <div class="card-body">
-                        <div class="table-responsive-sm table-responsive-md">
+                        <div class="table-responsive">
                             <table class="table table-bordered">
                                 <thead>
                                     <tr>
