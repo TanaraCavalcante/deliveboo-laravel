@@ -21,16 +21,18 @@
                                 <tr>
                                     <th scope="col">Nome Piatto</th>
                                     <th scope="col">Quantità</th>
+                                    <th scope="col">Prezzo del piatto</th>
                                 </tr>
                             </thead>
                             <tbody>
                                 <tr>
                                     <td>Piatto 1</td>
                                     <td>Quantità piatto 1</td>
+                                    <td>Prezzo Piatto 1</td>
                                 </tr>
                                 <tr>
                                     <th scope="row">Totale</th>
-                                    <td>{{$order->total}}€</td>
+                                    <td colspan="2">{{$order->total}}€</td>
                                 </tr>
                             </tbody>
                         </table>
