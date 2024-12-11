@@ -1,7 +1,6 @@
 @extends('layouts.app')
 
 @section('content')
-@dd($orders)
     <div class="container">
         <div class="row">
             <div class="col-12 text-center">
@@ -22,7 +21,7 @@
                             </tr>
                         </thead>
                         <tbody>
-                            {{-- @foreach ($orders as $order)
+                            @foreach ($orders as $order)
                                 <tr>
                                     <th>{{ $order->id }}</th>
                                     <td>{{ $order->first_name }}</td>
@@ -36,7 +35,7 @@
                                         </div>
                                     </td>
                                 </tr>
-                            @endforeach --}}
+                            @endforeach
                         </tbody>
                     </table>
                 </div>
