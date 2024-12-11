@@ -10,7 +10,7 @@
                         <h5 class="card-title">Numero Ordine: <strong>{{ $order->id }}</strong></h5>
                         <p class="card-text">Ordinato da: <strong>{{ $order->first_name }} {{ $order->last_name }}</strong>
                         </p>
-                        <p class="card-text">Ordinato il: <strong>{{ $order->created_at }}</strong></p>
+                        <p class="card-text">Ordinato il: <strong>{{ $order->created_at->toDayDateTimeString() }}</strong></p>
                         <p class="card-text">Da consegnare all'indirizzo: <strong>{{ $order->address }}</strong></p>
                         <p class="card-text">Totale dell'ordine: <strong>{{ $order->total }}€</strong></p>
                     </div>

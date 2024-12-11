@@ -24,11 +24,11 @@
                         <th>{{$order->id}}</th>
                         <td>{{$order->first_name}}</td>
                         <td>{{$order->last_name}}</td>
-                        <td>{{$order->created_at}}</td>
+                        <td>{{$order->created_at->toDayDateTimeString()}}</td>
                         <td>{{$order->total}}€</td>
                         <td>
                             <div>
-                                <button class="btn btn-outline-success"><a href="{{route('admin.orders.show', $order)}}">Mostra</a></button>
+                                <a href="{{route('admin.orders.show', $order)}}" class="btn btn-outline-success">Mostra</a>
                             </div>
                         </td>
                     </tr>
