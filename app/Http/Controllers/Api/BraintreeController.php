@@ -9,41 +9,34 @@ class BraintreeController extends Controller
 {
     protected $gateway;
 
-    //uso le variabile con le credenziale Braintree SANDBOX
     public function __construct()
     {
+        // Instanciando o Gateway do Braintree com as credenciais
         $this->gateway = new Gateway([
-            'environment' => config('braintree.environment'),
-            'merchantId' => config('braintree.merchant_id'),
-            'publicKey' => config('braintree.public_key'),
-            'privateKey' => config('braintree.private_key')
+            'environment' => env('BRAINTREE_ENV'),
+            'merchantId' => env('BRAINTREE_MERCHANT_ID'),
+            'publicKey' => env('BRAINTREE_PUBLIC_KEY'),
+            'privateKey' => env('BRAINTREE_PRIVATE_KEY'),
         ]);
     }
 
-    // Genera il client token
+    // Função para gerar o token do cliente
     public function generateClientToken()
     {
-        $clientToken = $this->gateway->clientToken()->generate();
-        return response()->json(['client_token' => $clientToken]);
+        return $this->gateway->clientToken()->generate();
     }
 
-     // Processa o pagamento
-     public function processPayment(Request $request)
-     {
-         $nonceFromClient = $request->payment_method_nonce; //nonce del metodo di pagamento
-         $amount = $request->amount; // valore della compra
+    // Função para processar uma transação
+    public function createTransaction($nonce, $amount)
+    {
+        $result = $this->gateway->transaction()->sale([
+            'amount' => $amount,
+            'paymentMethodNonce' => $nonce,
+            'options' => [
+                'submitForSettlement' => true
+            ]
+        ]);
 
-         $result = $this->gateway->transaction()->sale([
-             'amount' => $amount,
-             'paymentMethodNonce' => $nonceFromClient,
-             'options' => ['submitForSettlement' => true] //Submete a transação para processamento
-         ]);
-
-         //verifica se il pagamento è andato a buon fine dopo della riga 39
-         if ($result->success) {
-             return response()->json(['message' => 'Pagamento realizado com sucesso']);
-         } else {
-             return response()->json(['error' => $result->message], 500);
-         }
-     }
+        return $result;
+    }
 }

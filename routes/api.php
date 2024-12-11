@@ -39,5 +39,7 @@ Route::controller(TypeController::class)->name('api.')->group(function(){
 
 
 //!rotta senza un middleware di autenticazione, visto che il pagamento non dipende da un cliente autenticato
-    Route::get('/client_token', [BraintreeController::class, 'generateClientToken']);
-    Route::post('/checkout', [BraintreeController::class, 'processPayment']);
+   // Route::get('/client_token', [BraintreeController::class, 'generateClientToken']);
+    // Route::post('/checkout', [BraintreeController::class, 'processPayment']);
+
+    
