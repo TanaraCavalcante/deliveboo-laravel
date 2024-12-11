@@ -37,6 +37,9 @@
                     </div>
                 </div>
             </div>
+            <div class="col-12 text-center m-3">
+                <a href="{{route('admin.orders.index')}}" class="btn btn-outline-primary">Torna alla lista completa degli ordini</a>
+            </div>
         </div>
     </div>
 @endsection
