@@ -14,7 +14,7 @@ return new class extends Migration
         Schema::create('order_plate', function (Blueprint $table) {
             $table->foreignId('order_id')->constrained();
             $table->foreignId('plate_id')->constrained();
-            $table->unsignedBigInteger('quantity');
+            $table->unsignedBigInteger('quantity')->nullable();
             $table->primary(['order_id', 'plate_id']);
         });
     }

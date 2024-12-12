@@ -26,9 +26,10 @@ class OrderController extends Controller
             'email' => 'required',
             'address' => 'required',
             'phone_number' => 'required',
-            'total' => 'required'
+            'total' => 'required',
 
         ]);
+
 
         if ($validator->fails()) {
             return response()->json([
@@ -37,15 +38,28 @@ class OrderController extends Controller
             ]);
         } else {
 
+            $validated = $validator->validated();
+            $order = Order::create($validated);
 
-        $order = Order::create($validator->validated());
-        // Mail::to('mailacuidevoinviare')->send(new NewOrder($order));
+/*
+            foreach ($request['items'] as $plate) {
+                $plateDAta = [
+                    'order_id' => $request->id,
+                    'plate_id' => $plate['plate_id'],
+                    'quantity' => $plate['quantity']
+                ];
+                $pivotData =$plateDAta;
+            } */
+            $order->plates()->sync($request['items']);
+
+            Mail::to($order->email)->send(new NewOrder($order));
 
         return response()->json([
             'success' => true,
             // MI SERVE PER I PAGMENTI!!!!!!!!!!
             'orderId' => $order->id,
         ]);
+        }
     }
     //  MI SERVE PER I PAGAMENTI!!!!!!!
     public function getPaymentToken()
