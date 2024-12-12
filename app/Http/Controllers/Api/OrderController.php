@@ -19,13 +19,14 @@ class OrderController extends Controller
 
     public function store(Request $request)
     {
-        $validator = Validator::make($request->all(), [
+        $validator = Validator::make($request->all(),[
             'first_name' => 'required|max:255',
             'last_name' => 'required |max:255',
             'email' => 'required',
             'address' => 'required',
             'phone_number' => 'required',
             'total' => 'required'
+
         ]);
 
         if ($validator->fails()) {
@@ -33,11 +34,14 @@ class OrderController extends Controller
                 'success' => false,
                 'errors' => $validator->errors(),
             ]);
-        }
+        } else {
+
 
         $order = Order::create($validator->validated());
-        // Mail::to('mailacuidevoinviare')->send(new NewOrder($order));
+        $order->plates()->sync($request['items']);
 
+        Mail::to($order->email)->send(new NewOrder($order));
+        
         return response()->json([
             'success' => true,
             // MI SERVE PER I PAGMENTI!!!!!!!!!!
@@ -56,7 +60,7 @@ class OrderController extends Controller
         return $gateway->clientToken()->generate();
     }
 
-    
+
     public function performTransaction(Request $request)
     {
         $validator = Validator::make($request->all(), [
