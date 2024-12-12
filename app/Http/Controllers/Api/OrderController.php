@@ -21,11 +21,14 @@ class OrderController extends Controller
     {
         $validator = Validator::make($request->all(),[
             'first_name' => 'required|max:255',
-            'last_name' => 'required |max:255',
+            'last_name' => 'required|max:255',
             'email' => 'required',
             'address' => 'required',
             'phone_number' => 'required',
-            'total' => 'required'
+            'total' => 'required',
+            'items' => 'required|array',
+            'items.*.plate_id' => 'required|exists:plates,id',
+            'items.*.quantity' => 'required|integer|min:1',
 
         ]);
 
@@ -36,40 +39,54 @@ class OrderController extends Controller
             ]);
         } else {
 
-
         $order = Order::create($validator->validated());
-        $order->plates()->sync($request['items']);
 
-        Mail::to($order->email)->send(new NewOrder($order));
-        
+        $items = collect($request->input('items'))->mapWithKeys(function ($item) {
+            return [$item['plate_id'] => ['quantity' => $item['quantity']]];
+        });
+        $order->plates()->sync($items);
+
+        // Mail::to($order->email)->send(new NewOrder($order));
+
         return response()->json([
             'success' => true,
             // MI SERVE PER I PAGMENTI!!!!!!!!!!
             'orderId' => $order->id,
         ]);
     }
-    //  MI SERVE PER I PAGAMENTI!!!!!!!
-    public function getPaymentToken()
-    {
-        $gateway = new Gateway([
-            'environment' => env('BRAINTREE_ENVIRONMENT'),
-            'merchantId' => env('BRAINTREE_MERCHANT_ID'),
-            'publicKey' => env('BRAINTREE_PUBLIC_KEY'),
-            'privateKey' => env('BRAINTREE_PRIVATE_KEY')
-        ]);
-        return $gateway->clientToken()->generate();
-    }
+}
 
+    //  MI SERVE PER I PAGAMENTI!!!!!!!
+    public function getPaymentToken(){
+        try {
+            $gateway = new Gateway([
+                'environment' => env('BRAINTREE_ENVIRONMENT'),
+                'merchantId' => env('BRAINTREE_MERCHANT_ID'),
+                'publicKey' => env('BRAINTREE_PUBLIC_KEY'),
+                'privateKey' => env('BRAINTREE_PRIVATE_KEY'),
+            ]);
+
+            return response()->json([
+                'success' => true,
+                'token' => $gateway->clientToken()->generate(),
+            ]);
+        } catch (\Exception $e) {
+            Log::error('Braintree Token Generation Failed', ['exception' => $e->getMessage()]);
+            return response()->json([
+                'success' => false,
+                'message' => 'Unable to generate payment token.',
+            ], 500);
+        }
+    }
 
     public function performTransaction(Request $request)
     {
         $validator = Validator::make($request->all(), [
-            // da validare con attenzione! per ora fa schifo
             'payment_method_nonce' => 'required',
             'device_data' => 'required',
-            'orderId' => 'required',
+            'orderId' => 'required|exists:orders,id',
         ]);
-        // DA SISTEMARE PERCHè TORNI CODICE ERRRORE GIUSTO
+
         if ($validator->fails()) {
             return response()->json([
                 'success' => false,
@@ -77,33 +94,58 @@ class OrderController extends Controller
             ]);
         }
 
-        $paymentMethodNonce = $request->input('payment_method_nonce');
-        $deviceData = $request->input('device_data');
-        $orderId = $request->input('orderId');
+        $order = Order::find($request->input('orderId'));
 
-        $gateway = new Gateway([
-            'environment' => env('BRAINTREE_ENVIRONMENT'),
-            'merchantId' => env('BRAINTREE_MERCHANT_ID'),
-            'publicKey' => env('BRAINTREE_PUBLIC_KEY'),
-            'privateKey' => env('BRAINTREE_PRIVATE_KEY')
-        ]);
+        if (!$order) {
+            return response()->json([
+                'success' => false,
+                'message' => 'Order not found.',
+            ], 404);
+        }
 
-        // da fixare l'amount deve essere preso dal orderId per ora tutti pagano 10
-        $result = $gateway->transaction()->sale([
-            'amount' => '10.00',
-            'paymentMethodNonce' => $paymentMethodNonce,
-            'deviceData' => $deviceData,
-            'options' => [
-                'submitForSettlement' => True
-            ]
-        ]);
-        // per tenere traccia della risposta di braintree
-        Log::info('Braintree Transaction result', [
-            'result' => $result
-        ]);
+        try {
+            $gateway = new Gateway([
+                'environment' => env('BRAINTREE_ENVIRONMENT'),
+                'merchantId' => env('BRAINTREE_MERCHANT_ID'),
+                'publicKey' => env('BRAINTREE_PUBLIC_KEY'),
+                'privateKey' => env('BRAINTREE_PRIVATE_KEY'),
+            ]);
 
-        return response()->json([
-            'success' => $result->success,
-        ]);
+            $result = $gateway->transaction()->sale([
+                'amount' => $order->total,
+                'paymentMethodNonce' => $request->input('payment_method_nonce'),
+                'deviceData' => $request->input('device_data'),
+                'options' => [
+                    'submitForSettlement' => true,
+                ],
+            ]);
+
+            Log::info('Braintree Transaction Result', [
+                'result' => $result,
+            ]);
+
+            if (!$result->success) {
+                Log::error('Braintree Transaction Failed', [
+                    'errors' => $result->errors->deepAll(),
+                ]);
+                return response()->json([
+                    'success' => false,
+                    'message' => $result->message,
+                ], 400);
+            }
+
+            return response()->json([
+                'success' => true,
+                'transactionId' => $result->transaction->id,
+            ]);
+        } catch (\Exception $e) {
+            Log::error('Transaction Processing Error', ['exception' => $e->getMessage()]);
+            return response()->json([
+                'success' => false,
+                'message' => 'Transaction failed due to an error.',
+            ], 500);
+        }
     }
 }
+
+
