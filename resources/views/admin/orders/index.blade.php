@@ -14,7 +14,6 @@
                             <tr>
                                 <th scope="col">Numero ordine</th>
                                 <th scope="col">Nome</th>
-                                <th scope="col">Congome</th>
                                 <th scope="col">Data</th>
                                 <th scope="col">Totale</th>
                                 <th scope="col">Azioni</th>
@@ -24,8 +23,7 @@
                             @foreach ($orders as $order)
                                 <tr>
                                     <th>{{ $order->id }}</th>
-                                    <td>{{ $order->first_name }}</td>
-                                    <td>{{ $order->last_name }}</td>
+                                    <td>{{ $order->first_name }} {{ $order->last_name }}</td>
                                     <td>{{ $order->created_at->format('d M Y H:i') }}</td>
                                     <td>{{ $order->total }}€</td>
                                     <td>
