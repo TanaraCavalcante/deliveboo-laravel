@@ -4,7 +4,10 @@
     <div class="container">
         <div class="row">
             <div class="col-12 text-center">
-                <h1>I tuoi ordini sono:</h1>
+                <h1 class="m-3">Hai un totale di
+                    {{ count($orders) }}
+                    {{ count($orders) === 1 ? 'ordine' : 'ordini' }}
+                </h1>
             </div>
             <div class="col-12">
                 <div class="table-responsive">
