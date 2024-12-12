@@ -28,7 +28,7 @@
                                 <tr>
                                     <th>{{ $order->id }}</th>
                                     <td>{{ $order->created_at->format('d M Y H:i') }}</td>
-                                    <td>{{ ucfirst(strtolower($order->first_name)) }} {{ ucfirst(strtolower($order->last_name)) }}</td>
+                                    <td>{{ $order->first_name }} {{ $order->last_name }}</td>
                                     <td>{{ $order->email }} </td>
                                     <td>{{ $order->total }}€</td>
                                     <td>
