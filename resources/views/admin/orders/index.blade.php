@@ -41,6 +41,10 @@
                             @endforeach
                         </tbody>
                     </table>
+                    <!-- Navigazione della pagina -->
+                    <div class="d-flex justify-content-center mt-3">
+                        {{ $orders->links()}}
+                    </div>
                 </div>
             </div>
         </div>

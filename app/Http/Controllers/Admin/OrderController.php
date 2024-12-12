@@ -14,7 +14,7 @@ class OrderController extends Controller
     //
     public function index () {
         $user = Auth::user();
-        $orders = Order::orderBy('created_at', 'desc')->get();
+        $orders = Order::orderBy('created_at', 'desc')->paginate(10);
         // recupero l'utente verificato
 
         return view('admin.orders.index', compact('user', 'orders'));
