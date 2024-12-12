@@ -58,7 +58,7 @@
                                             <button type="button" class="btn btn-sm btn-outline-danger delete"
                                                 data-id="{{ $plate->id }}" data-name="{{ $plate->name }}"
                                                 data-bs-toggle="modal" data-bs-target="#deleteModal">
-                                                Cancella
+                                                Elimina
                                             </button>
 
                                             {{-- !Modale di conferma di cancellazione --}}

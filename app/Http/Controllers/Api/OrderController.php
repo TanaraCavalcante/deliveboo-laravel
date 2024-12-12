@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use App\Http\Requests\Api\StoreOrderRequest;
 use App\Mail\NewOrder;
 use App\Models\Order;
+use App\Models\Plate;
 use Illuminate\Auth\Events\Validated;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Mail;
@@ -82,7 +83,8 @@ class OrderController extends Controller
                 'success' => false,
                 'errors' => $validator->errors(),
             ]);
-        }
+        } else {
+
 
         $paymentMethodNonce = $request->input('payment_method_nonce');
         $deviceData = $request->input('device_data');
