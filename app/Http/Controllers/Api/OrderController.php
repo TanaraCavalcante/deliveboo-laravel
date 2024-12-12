@@ -19,13 +19,17 @@ class OrderController extends Controller
 
     public function store(Request $request)
     {
-        $validator = Validator::make($request->all(), [
+        $validator = Validator::make($request->all(),[
             'first_name' => 'required|max:255',
-            'last_name' => 'required |max:255',
+            'last_name' => 'required|max:255',
             'email' => 'required',
             'address' => 'required',
             'phone_number' => 'required',
-            'total' => 'required'
+            'total' => 'required',
+            'items' => 'required|array',
+            'items.*.plate_id' => 'required|exists:plates,id',
+            'items.*.quantity' => 'required|integer|min:1',
+
         ]);
 
         if ($validator->fails()) {
@@ -33,10 +37,16 @@ class OrderController extends Controller
                 'success' => false,
                 'errors' => $validator->errors(),
             ]);
-        }
+        } else {
 
         $order = Order::create($validator->validated());
-        // Mail::to('mailacuidevoinviare')->send(new NewOrder($order));
+
+        $items = collect($request->input('items'))->mapWithKeys(function ($item) {
+            return [$item['plate_id'] => ['quantity' => $item['quantity']]];
+        });
+        $order->plates()->sync($items);
+
+        // Mail::to($order->email)->send(new NewOrder($order));
 
         return response()->json([
             'success' => true,
@@ -44,6 +54,7 @@ class OrderController extends Controller
             'orderId' => $order->id,
         ]);
     }
+}
     //  MI SERVE PER I PAGAMENTI!!!!!!!
     public function getPaymentToken()
     {
@@ -56,7 +67,7 @@ class OrderController extends Controller
         return $gateway->clientToken()->generate();
     }
 
-    
+
     public function performTransaction(Request $request)
     {
         $validator = Validator::make($request->all(), [
