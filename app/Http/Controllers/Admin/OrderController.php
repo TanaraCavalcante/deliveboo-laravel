@@ -18,8 +18,6 @@ class OrderController extends Controller
         ->orderBy('created_at', 'desc')
         ->paginate(15);
 
-        // recupero l'utente verificato
-
         return view('admin.orders.index', compact('user', 'orders'));
     }
 
