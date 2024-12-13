@@ -17,8 +17,9 @@ class OrderController extends Controller
         $orders = Order::whereRelation('plates', 'restaurant_id', '=', $user->id)
         ->orderBy('created_at', 'desc')
         ->paginate();
+        $restaurant = Order::whereRelation('plates', 'restaurant_id');
 
-        return view('admin.orders.index', compact('user', 'orders'));
+        return view('admin.orders.index', compact('user', 'orders', 'restaurant' ));
     }
 
     public function show (Order $order) {

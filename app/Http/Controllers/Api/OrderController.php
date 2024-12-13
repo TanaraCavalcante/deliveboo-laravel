@@ -37,7 +37,7 @@ class OrderController extends Controller
         $order = Order::create($validator->validated());
         $order->plates()->sync($request['items']);
 
-        Mail::to($order->email)->send(new NewOrder($order));
+        // Mail::to($order->email)->send(new NewOrder($order));
 
         return response()->json([
             'success' => true
