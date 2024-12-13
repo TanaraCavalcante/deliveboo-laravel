@@ -17,12 +17,12 @@ class OrderController extends Controller
 
     public function store(Request $request){
         $validator = Validator::make($request->all(),[
-            'first_name' => 'required|max:255',
-            'last_name' => 'required |max:255',
-            'email' => 'required',
-            'address' => 'required',
+            'first_name' => 'required|min:3|max:20',
+            'last_name' => 'required|min:3|max:30',
+            'email' => 'required|email',
+            'address' => 'required|min:3|max:30',
             'phone_number' => 'required',
-            'total' => 'required'
+            'total' => 'required|numeric'
 
         ]);
 
