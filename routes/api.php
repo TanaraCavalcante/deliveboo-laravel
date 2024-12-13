@@ -39,4 +39,8 @@ Route::controller(TypeController::class)->name('api.')->group(function(){
 
 Route::controller(OrderController::class)->name('api.')->group(function(){
     Route::post('orders/', 'store')->name('orders.store');
+    // rotta per BRAINTREE!!!!!
+    Route::get('braintree-token','getPaymentToken');
+    Route::post('braintree-transaction','performTransaction');
+
 });
