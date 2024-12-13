@@ -107,7 +107,7 @@
 
                 <div class="mb-3">
                     <label for="plate-image" class="form-label">Inserisci URL immagine:</label>
-                    <input type="file" class="form-control" id="plate-image" name="image">
+                    <input type="file" accept="image/jpeg,image/png,image/bmp" class="form-control" id="plate-image" name="image">
                     @if($plate->image)
                     <div class="mt-2" id="hide_img">
                         <p>Immagine corrente:</p>
