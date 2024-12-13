@@ -1,5 +1,16 @@
 @extends('layouts.app')
 
 @section('content')
-<h1>Statistiche</h1>
+
+<div class="container">
+    <div class="row">
+        <div class="col-12 text-center">
+            <h1>Statistiche Ordini</h1>
+        </div>
+        <div class="col-12">
+
+        </div>
+    </div>
+</div>
+
 @endsection
