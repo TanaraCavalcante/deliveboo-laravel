@@ -21,7 +21,7 @@ class OrderController extends Controller
             'last_name' => 'required|min:3|max:30',
             'email' => 'required|email',
             'address' => 'required|min:3|max:30',
-            'phone_number' => 'required',
+            'phone_number' => 'required|string|digits:10',
             'total' => 'required|numeric'
 
         ]);
@@ -37,7 +37,7 @@ class OrderController extends Controller
         $order = Order::create($validator->validated());
         $order->plates()->sync($request['items']);
 
-        Mail::to($order->email)->send(new NewOrder($order));
+        //Mail::to($order->email)->send(new NewOrder($order));
 
         return response()->json([
             'success' => true
