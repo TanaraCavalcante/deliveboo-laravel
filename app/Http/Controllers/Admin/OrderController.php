@@ -16,7 +16,7 @@ class OrderController extends Controller
         $user = Auth::user();
         $orders = Order::whereRelation('plates', 'restaurant_id', '=', $user->id)
         ->orderBy('created_at', 'desc')
-        ->paginate(15);
+        ->paginate();
 
         return view('admin.orders.index', compact('user', 'orders'));
     }
