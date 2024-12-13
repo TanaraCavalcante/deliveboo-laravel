@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Conferma Ordine</title>
+    <title>Nuovo Ordine Ricevuto</title>
 </head>
 
 
@@ -14,16 +14,17 @@
         <div class="container">
             <div class="row">
                 <div class="col-12">
-                    <h2>Il tuo ordine presso {{ $restaurant->name }} è stato ricevuto!!</h2>
+                    <h2>Hai ricevuto un nuovo ordine da {{ $order->first_name . ' ' . $order->last_name }}</h2>
 
                 </div>
             </div>
 
             <div class="col-12">
-                <p>{{ $order->first_name . ' ' . $order->last_name }} Ti ringraziamo per averci scelto! il tuo ordine
-                    con numero {{ $order->id }} è in fase di preparazione.
-                </p>
-
+                <h3>Dati Cliente:</h3>
+                <p>Nome: {{ $order->first_name . ' ' . $order->last_name }}</p>
+                <p>Indirizzo: {{ $order->address }}</p>
+                <p>Email: {{ $order->email }}</p>
+                <p>Telefono: {{ $order->phone_number }}</p>
             </div>
 
             <div class="col-12">
