@@ -42,5 +42,6 @@ Route::middleware('auth')->controller(AdminPlateController::class)->prefix('/adm
 
 Route::middleware('auth')->controller(OrderController::class)->prefix('/admin')->name('admin.')->group(function(){
     route::get('/orders', "index")->name('orders.index');
+    route::get('/orders/stat', 'stat')->name('orders.stat');
     route::get('/orders/{order}', 'show')->name('orders.show');
 });

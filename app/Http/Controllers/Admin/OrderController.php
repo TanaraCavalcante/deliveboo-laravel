@@ -25,4 +25,8 @@ class OrderController extends Controller
         $plates = $order->plates()->get();
         return view('admin.orders.show', compact('order', 'plates'));
     }
+
+    public function stat () {
+        return view('admin.orders.stat');
+    }
 }
