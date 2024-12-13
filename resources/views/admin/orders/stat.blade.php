@@ -8,11 +8,13 @@
             <h1>Statistiche Ordini</h1>
         </div>
         <div class="col-12">
-            <div>
-                <canvas id="myChart"></canvas>
-              </div>
+
         </div>
     </div>
 </div>
 
+@endsection
+
+@section('additional-scripts')
+    @vite('resources/js/orders/stats.js');
 @endsection
