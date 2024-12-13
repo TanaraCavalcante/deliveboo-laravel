@@ -4,6 +4,7 @@ namespace App\Mail;
 
 use App\Models\Order;
 use App\Models\Plate;
+use App\Models\Restaurant;
 use Illuminate\Bus\Queueable;
 use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Mail\Mailable;
@@ -43,11 +44,13 @@ class NewOrder extends Mailable
      */
     public function content(): Content
     {
+        $restaurant = Restaurant::find($this->order->plates->first()->restaurant_id);
         return new Content(
             view: 'emails.new-order-email',
             with: [
                 'plates' => $this->order->plates,
                 'order' => $this->order,
+                'restaurant' => $restaurant,
                 ]
 
         );

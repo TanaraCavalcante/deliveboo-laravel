@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Nuovo Ordine</title>
+    <title>Conferma Ordine</title>
 </head>
 
 
@@ -14,8 +14,8 @@
         <div class="container">
             <div class="row">
                 <div class="col-12">
-                    <h2>Nuovo ordine in arrivo</h2>
-                    <h4>Hai ricevuto un nuovo ordine!</h4>
+                    <h2>Il tuo ordine presso {{ $restaurant->name }} è stato ricevuto!!</h2>
+
                 </div>
             </div>
 
