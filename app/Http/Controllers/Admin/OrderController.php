@@ -14,7 +14,9 @@ class OrderController extends Controller
     //
     public function index () {
         $user = Auth::user();
-        $orders = Order::whereRelation('plates', 'restaurant_id', '=', $user->id)->get();
+        $orders = Order::whereRelation('plates', 'restaurant_id', '=', $user->id)
+        ->orderBy('created_at', 'desc')
+        ->paginate(15);
 
         // recupero l'utente verificato
 
