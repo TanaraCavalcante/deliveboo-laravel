@@ -3,12 +3,14 @@
 namespace App\Mail;
 
 use App\Models\Order;
+use App\Models\Plate;
 use Illuminate\Bus\Queueable;
 use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Mail\Mailable;
 use Illuminate\Mail\Mailables\Content;
 use Illuminate\Mail\Mailables\Envelope;
 use Illuminate\Queue\SerializesModels;
+use Illuminate\Support\Facades\Log;
 
 class NewOrder extends Mailable
 {
@@ -22,6 +24,7 @@ class NewOrder extends Mailable
     public function __construct(Order $order)
     {
         $this->order = $order;
+
     }
 
     /**
@@ -31,7 +34,7 @@ class NewOrder extends Mailable
     {
         return new Envelope(
             subject: 'Nuovo Ordine',
-            replyTo: $this->order->email,
+            replyTo: $this->order->email
         );
     }
 
@@ -42,6 +45,11 @@ class NewOrder extends Mailable
     {
         return new Content(
             view: 'emails.new-order-email',
+            with: [
+                'plates' => $this->order->plates,
+                'order' => $this->order,
+                ]
+
         );
     }
 

@@ -33,6 +33,7 @@ class OrderController extends Controller
 
         ]);
 
+
         if ($validator->fails()) {
             return response()->json([
                 'success' => false,
@@ -40,22 +41,27 @@ class OrderController extends Controller
             ]);
         } else {
 
-        $order = Order::create($validator->validated());
+            $orderData = $validator->validated();
+            $itemsData = $orderData['items'];
+            unset($orderData['items']);
 
-        $items = collect($request->input('items'))->mapWithKeys(function ($item) {
-            return [$item['plate_id'] => ['quantity' => $item['quantity']]];
-        });
-        $order->plates()->sync($items);
+            $order = Order::create($orderData);
 
-        // Mail::to($order->email)->send(new NewOrder($order));
+            $items = collect($itemsData)->mapWithKeys(function ($item) {
+                return [$item['plate_id'] => ['quantity' => $item['quantity']]];
+            });
+            $order->plates()->sync($items);
+            $order->load('plates');
 
+            Mail::to($request->email)->send(new NewOrder($order));
+        }
         return response()->json([
             'success' => true,
             // MI SERVE PER I PAGMENTI!!!!!!!!!!
             'orderId' => $order->id,
         ]);
+
     }
-}
     //  MI SERVE PER I PAGAMENTI!!!!!!!
     public function getPaymentToken()
     {
