@@ -27,6 +27,6 @@ class OrderController extends Controller
     }
 
     public function stat () {
-        return view('admin.orders.stat');
+        return view('admin.orders.stat', compact('orders'));
     }
 }
