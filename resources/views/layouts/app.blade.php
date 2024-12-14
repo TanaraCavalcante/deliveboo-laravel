@@ -29,6 +29,9 @@
       
             
         }
+        .logo{
+            height: 70px;
+        }
       
     
    
@@ -40,6 +43,9 @@
     <div id="app">
         <nav class="navbar  navbar-expand-md navbar-light   shadow bg-orange">
             <div class="container">
+                <a class="navbar-brand" href="{{ url('/') }}">
+                    <img class="logo" src="{{asset('Logo.jpeg')}}" alt="logo">
+                </a>
                 <a class="navbar-brand text-white fw-bold" href="{{ url('/') }}">
                     DeliveBoo
                 </a>
