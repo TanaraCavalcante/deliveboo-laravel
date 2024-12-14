@@ -2,23 +2,24 @@ import Chart from 'chart.js/auto'
 
 (async function () {
     const monthlyData = [
-        { month: 'Gen', total: 10 },
-        { month: 'Feb', total: 20 },
-        { month: 'Mar', total: 15 },
-        { month: 'Apr', total: 25 },
-        { month: 'Mag', total: 22 },
-        { month: 'Giu', total: 30 },
-        { month: 'Lug', total: 28 },
-        { month: 'Ago', total: 28 },
-        { month: 'Set', total: 3 },
-        { month: 'Ott', total: 28 },
-        { month: 'Nov', total: 28 },
-        { month: 'Dic', total: 28 },
+        { month: 'Gen', value: 1 },
+        { month: 'Feb', value: 2 },
+        { month: 'Mar', value: 3 },
+        { month: 'Apr', value: 4 },
+        { month: 'Mag', value: 5 },
+        { month: 'Giu', value: 6 },
+        { month: 'Lug', value: 7 },
+        { month: 'Ago', value: 8 },
+        { month: 'Set', value: 9 },
+        { month: 'Ott', value: 10 },
+        { month: 'Nov', value: 11 },
+        { month: 'Dic', value: 12 },
     ];
 
     let totalSum =[];
     const dates = rawDatas.map(row => row.month);
     totalSum.push(monthlyTotal)
+
     new Chart(
         document.getElementById('myChart'),
         {
