@@ -33,7 +33,7 @@
         //...recupero i totali e li inserisco nell'array
         ordersTotal.push(order.total);
     });
-    console.log(ordersDate, ordersTotal);
+    // console.log(ordersDate, ordersTotal);
 </script>
 
 @vite('resources/js/orders/stats.js');

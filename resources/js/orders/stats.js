@@ -1,26 +1,17 @@
 import Chart from 'chart.js/auto';
 
 (async function () {
-    const dates = [
-        ordersDate.forEach(singleDate => {
-            { year: singleDate }
-        })];
-
-    const totals = [
-        ordersTotal.forEach(singleTotal => {
-            { count: singleTotal }
-        })];
 
     new Chart(
         document.getElementById('myChart'),
         {
-            type: 'bar',
+            type: 'line',
             data: {
-                labels: dates.map(row => row.year),
+                labels: ordersDate.map(row => row.getMonth()),
                 datasets: [
                     {
                         label: 'Acquisitions by year',
-                        data: totals.map(row => row.count)
+                        data: ordersTotal.map(row => row)
                     }
                 ]
             }
