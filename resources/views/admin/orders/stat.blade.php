@@ -13,6 +13,7 @@
     </div>
 </div>
 
+@dd($groupedOrders)
 @endsection
 
 @section('additional-scripts')
@@ -32,11 +33,11 @@
     });
     console.log(rawDatas);
 
-    let years = [];
+    // let years = [];
 
-    rawDatas.forEach(data => {
-        console.log(data)
-    });
+    // rawDatas.forEach(data => {
+    //     console.log(data)
+    // });
 
 </script>
 
