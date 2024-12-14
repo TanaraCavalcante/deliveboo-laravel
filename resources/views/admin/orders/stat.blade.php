@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
-
+{{-- @dd($orders) --}}
 <div class="container">
     <div class="row">
         <div class="col-12 text-center">
@@ -16,5 +16,10 @@
 @endsection
 
 @section('additional-scripts')
-    @vite('resources/js/orders/stats.js');
+    {{-- @vite('resources/js/orders/stats.js'); --}}
+    <script>
+        let orders = @json($orders);
+        console.log(orders);
+    </script>
 @endsection
+
