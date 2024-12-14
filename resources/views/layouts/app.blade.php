@@ -44,9 +44,9 @@
         <nav class="navbar  navbar-expand-md navbar-light   shadow bg-orange">
             <div class="container">
                 <a class="navbar-brand" href="{{ url('/') }}">
-                    <img class="logo" src="{{asset('Logo.jpeg')}}" alt="logo">
+                    <img class="logo pe-3" src="{{asset('Logo.jpeg')}}" alt="logo">
                 </a>
-                <a class="navbar-brand text-white fw-bold" href="{{ url('/') }}">
+                <a class="navbar-brand text-white fw-bold me-5" href="{{ url('/') }}">
                     DeliveBoo
                 </a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
@@ -56,14 +56,14 @@
                 </button>
 
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                    <ul class="navbar-nav me-auto">
+                    <ul class="navbar-nav me-auto ">
                         @auth
                             <li class="nav-item">
-                                <a class="nav-link"
+                                <a class="nav-link fw-bold"
                                     href="{{ route('admin.plates.index') }}">{{ __('La lista dei miei piatti') }}</a>
                             </li>
-                            <li class="nav-item">
-                                <a class="nav-link"
+                            <li class="nav-item ms-3">
+                                <a class="nav-link fw-bold"
                                     href="{{ route('admin.orders.index') }}">{{ __('La lista dei miei ordini') }}</a>
                             </li>
                         @endauth
