@@ -16,14 +16,23 @@
 
     <!-- Scripts -->
     @vite(['resources/sass/app.scss', 'resources/js/app.js'])
+
+    <style>
+        .bg-orange {
+            background-color: #fc7a1e
+
+        }
+   
+    </style>
+</head>
 </head>
 
 <body>
     <div id="app">
-        <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm">
+        <nav class="navbar navbar-expand-md navbar-light   shadow-sm bg-orange">
             <div class="container">
-                <a class="navbar-brand" href="{{ url('/') }}">
-                    Deliveboo
+                <a class="navbar-brand text-white fw-bold" href="{{ url('/') }}">
+                    DeliveBoo
                 </a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
                     data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
