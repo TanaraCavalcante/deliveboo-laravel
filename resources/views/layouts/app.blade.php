@@ -8,7 +8,7 @@
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
-    <title>Deliveboo</title>
+    <title>DeliveBoo</title>
 
     <!-- Fonts -->
     <link rel="dns-prefetch" href="//fonts.bunny.net">
@@ -16,14 +16,38 @@
 
     <!-- Scripts -->
     @vite(['resources/sass/app.scss', 'resources/js/app.js'])
+
+    <style>
+        .bg-orange {
+            background-color: #fc7a1e;
+
+            
+        }
+        .btn-orangered{
+            background-color: #f24c00;
+            border-radius: 15px;
+      
+            
+        }
+        .logo{
+            height: 70px;
+        }
+      
+    
+   
+    </style>
+</head>
 </head>
 
 <body>
     <div id="app">
-        <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm">
+        <nav class="navbar  navbar-expand-md navbar-light   shadow bg-orange">
             <div class="container">
                 <a class="navbar-brand" href="{{ url('/') }}">
-                    Deliveboo
+                    <img class="logo pe-3" src="{{asset('Logo.jpeg')}}" alt="logo">
+                </a>
+                <a class="navbar-brand text-white fw-bold me-5" href="{{ url('/') }}">
+                    DeliveBoo
                 </a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
                     data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
@@ -32,14 +56,14 @@
                 </button>
 
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                    <ul class="navbar-nav me-auto">
+                    <ul class="navbar-nav me-auto ">
                         @auth
                             <li class="nav-item">
-                                <a class="nav-link"
+                                <a class="nav-link fw-bold"
                                     href="{{ route('admin.plates.index') }}">{{ __('La lista dei miei piatti') }}</a>
                             </li>
-                            <li class="nav-item">
-                                <a class="nav-link"
+                            <li class="nav-item ms-3">
+                                <a class="nav-link fw-bold"
                                     href="{{ route('admin.orders.index') }}">{{ __('La lista dei miei ordini') }}</a>
                             </li>
                             <li class="nav-item">
@@ -54,14 +78,15 @@
                         @guest
                             @if (Route::has('login'))
                                 <li class="nav-item">
-                                    <a class="nav-link" href="{{ route('login') }}">{{ __('Accedi') }}</a>
+                                    <button type="button" class="btn btn-sm btn-orangered shadow text-white m-2 me-1"  <a class="nav-link text-center" href="{{ route('login') }}">{{ __('Accedi') }}</a></button>
+                                </a> </button>
                                 </li>
                             @endif
 
                             @if (Route::has('register'))
                                 <li class="nav-item">
-                                    <a class="nav-link" href="{{ route('register') }}">{{ __('Registrati') }}</a>
-                                </li>
+                                    <button type="button" class="btn btn-sm btn-orangered shadow text-white m-2 me-1"   <a class="nav-link" href="{{ route('register') }}">{{ __('Registrati') }}</a>
+                                </li> </button>
                             @endif
                         @else
                             <li class="nav-item dropdown">
