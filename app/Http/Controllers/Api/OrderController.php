@@ -35,7 +35,6 @@ class OrderController extends Controller
 
         ]);
 
-
         if ($validator->fails()) {
             return response()->json([
                 'success' => false,
@@ -47,15 +46,18 @@ class OrderController extends Controller
             $itemsData = $orderData['items'];
             unset($orderData['items']);
 
-            $order = Order::create($orderData);
-
             $items = collect($itemsData)->mapWithKeys(function ($item) {
                 return [$item['plate_id'] => ['quantity' => $item['quantity']]];
             });
+
+            $order = Order::create($orderData);
             $order->plates()->sync($items);
             $order->load('plates');
 
-            Mail::to('deliveboo@example.com')->send(new RecivedNewOrder($order));
+            $restaurantID = $order->plates->first()->restaurant_id;
+            $restaurantMail = $this->getRestaurantMail($restaurantID);
+
+            Mail::to($restaurantMail)->send(new RecivedNewOrder($order));
             Mail::to($request->email)->send(new NewOrder($order));
 
         }
@@ -66,6 +68,13 @@ class OrderController extends Controller
         ]);
 
     }
+    public function getRestaurantMail($id){
+        $restaurant = Restaurant::find($id);
+        $user = $restaurant->user;
+        return $user->email;
+
+    }
+
     //  MI SERVE PER I PAGAMENTI!!!!!!!
     public function getPaymentToken()
     {
