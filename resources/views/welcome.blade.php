@@ -13,12 +13,12 @@
         <!-- Styles -->
         <style>
             body {
-                background-color: #4fae5a
+                background-color: #fc7a1e
             }
             a {
                 text-decoration: none;
-                color: black;
-                text-decoration: underline;
+                color: white;
+              
             }
 
             img {
@@ -34,14 +34,14 @@
         <div>
             @if (Route::has('login'))
             <div class="d-flex justify-content-center align-items-center center flex-column">
-                <img src="{{asset('Food-Delivery-Service-PNG-High-Quality-Image.png')}}" alt="logo">
+                <img src="{{asset('gufetto.png')}}" alt="logo">
                     @auth
                         <a href="{{ url('/home') }}" class="fs-1 fw-bold">Home</a>
                     @else
-                        <a href="{{ route('login') }}" class="me-2 fs-1 fw-bold">Accedi</a>
+                    <button type="button" class="btn btn-primary mb-3 mt-3 fs-5"><a href="{{ route('login') }}">Accedi</a></button>
 
                         @if (Route::has('register'))
-                            <a href="{{ route('register') }}" class="fs-1 fw-bold">Registrati</a>
+                           <button type="button" class="btn btn-primary   fs-5"> <a href="{{ route('register') }}">Registrati</a></button>
                         @endif
                     @endauth
                 </div>
