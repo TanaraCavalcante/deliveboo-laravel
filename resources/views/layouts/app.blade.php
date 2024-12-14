@@ -8,7 +8,7 @@
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
-    <title>Deliveboo</title>
+    <title>DeliveBoo</title>
 
     <!-- Fonts -->
     <link rel="dns-prefetch" href="//fonts.bunny.net">
@@ -19,9 +19,18 @@
 
     <style>
         .bg-orange {
-            background-color: #fc7a1e
+            background-color: #fc7a1e;
 
+            
         }
+        .btn-orangered{
+            background-color: #f24c00;
+            border-radius: 15px;
+      
+            
+        }
+      
+    
    
     </style>
 </head>
@@ -29,7 +38,7 @@
 
 <body>
     <div id="app">
-        <nav class="navbar navbar-expand-md navbar-light   shadow-sm bg-orange">
+        <nav class="navbar  navbar-expand-md navbar-light   shadow bg-orange">
             <div class="container">
                 <a class="navbar-brand text-white fw-bold" href="{{ url('/') }}">
                     DeliveBoo
@@ -59,14 +68,15 @@
                         @guest
                             @if (Route::has('login'))
                                 <li class="nav-item">
-                                    <a class="nav-link" href="{{ route('login') }}">{{ __('Accedi') }}</a>
+                                    <button type="button" class="btn btn-sm btn-orangered text-white m-2 me-1"  <a class="nav-link text-center" href="{{ route('login') }}">{{ __('Accedi') }}</a></button>
+                                </a> </button>
                                 </li>
                             @endif
 
                             @if (Route::has('register'))
                                 <li class="nav-item">
-                                    <a class="nav-link" href="{{ route('register') }}">{{ __('Registrati') }}</a>
-                                </li>
+                                    <button type="button" class="btn btn-sm btn-orangered text-white m-2 me-1"   <a class="nav-link" href="{{ route('register') }}">{{ __('Registrati') }}</a>
+                                </li> </button>
                             @endif
                         @else
                             <li class="nav-item dropdown">
