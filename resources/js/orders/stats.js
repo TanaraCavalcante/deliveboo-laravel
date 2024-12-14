@@ -1,26 +1,34 @@
 import Chart from 'chart.js/auto'
 
 (async function () {
-    const data = [
-        { year: 2010, count: 10 },
-        { year: 2011, count: 20 },
-        { year: 2012, count: 15 },
-        { year: 2013, count: 25 },
-        { year: 2014, count: 22 },
-        { year: 2015, count: 30 },
-        { year: 2016, count: 28 },
+    const monthlyData = [
+        { month: 'Gen', total: 10 },
+        { month: 'Feb', total: 20 },
+        { month: 'Mar', total: 15 },
+        { month: 'Apr', total: 25 },
+        { month: 'Mag', total: 22 },
+        { month: 'Giu', total: 30 },
+        { month: 'Lug', total: 28 },
+        { month: 'Ago', total: 28 },
+        { month: 'Set', total: 3 },
+        { month: 'Ott', total: 28 },
+        { month: 'Nov', total: 28 },
+        { month: 'Dic', total: 28 },
     ];
 
+    let totalSum =[];
+    const dates = rawDatas.map(row => row.month);
+    totalSum.push(monthlyTotal)
     new Chart(
         document.getElementById('myChart'),
         {
             type: 'bar',
             data: {
-                labels: data.map(row => row.year),
+                labels: dates,
                 datasets: [
                     {
-                        label: 'Acquisitions by year',
-                        data: data.map(row => row.count)
+                        label: 'Acquisitions by month',
+                        data: totalSum
                     }
                 ]
             }
