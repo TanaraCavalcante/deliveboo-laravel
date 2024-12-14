@@ -56,19 +56,19 @@
                 </button>
 
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                    <ul class="navbar-nav me-auto ">
+                    <ul class="navbar-nav mx-auto justify-content-center">
                         @auth
                             <li class="nav-item">
                                 <a class="nav-link fw-bold text-white"
-                                    href="{{ route('admin.plates.index') }}">{{ __('La lista dei miei piatti') }}</a>
+                                    href="{{ route('admin.plates.index') }}">{{ __('I miei piatti') }}</a>
                             </li>
                             <li class="nav-item ms-3 ">
                                 <a class="nav-link fw-bold text-white"
-                                    href="{{ route('admin.orders.index') }}">{{ __('La lista dei miei ordini') }}</a>
+                                    href="{{ route('admin.orders.index') }}">{{ __('I miei ordini') }}</a>
                             </li>
                             <li class="nav-item">
                                 <a class="nav-link fw-bold text-white"
-                                    href="{{ route('admin.orders.stat') }}">{{ __('Statistiche dei miei ordini') }}</a>
+                                    href="{{ route('admin.orders.stat') }}">{{ __('Le mie statistiche') }}</a>
                             </li>
                         @endauth
                     </ul>
