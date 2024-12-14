@@ -32,7 +32,9 @@
         .logo{
             height: 70px;
         }
-      
+        .navbar-toggler {
+    background-color:white; 
+    border-color: #f24c00;}
     
    
     </style>
@@ -49,7 +51,7 @@
                 <a class="navbar-brand text-white fw-bold me-5" href="{{ url('/') }}">
                     DeliveBoo
                 </a>
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                <button class="navbar-toggler" type="button " data-bs-toggle="collapse"
                     data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
                     aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
                     <span class="navbar-toggler-icon"></span>
