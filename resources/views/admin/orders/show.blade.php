@@ -36,7 +36,7 @@
                                     @endforeach
                                     <tr>
                                         <th scope="row">Totale</th>
-                                        <td colspan="2">{{$order->total}}€</td>
+                                        <td colspan="2">€ {{$order->total}}</td>
                                     </tr>
                                 </tbody>
                             </table>

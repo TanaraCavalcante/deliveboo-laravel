@@ -24,7 +24,7 @@ class PlateController extends Controller
         if (!$restaurant) {
             abort(403, 'Non hai un ristorante associato.');
         }
-        $plates = Plate::where('restaurant_id', $restaurant->id)->get();
+        $plates = Plate::where('restaurant_id', $restaurant->id)->paginate(10);
 
         return view('admin.plates.index', compact('plates','restaurant'));
     }

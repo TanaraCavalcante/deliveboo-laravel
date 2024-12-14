@@ -30,7 +30,7 @@
                                     <td>{{ $order->created_at->format('d M Y H:i') }}</td>
                                     <td>{{ $order->first_name }} {{ $order->last_name }}</td>
                                     <td>{{ $order->email }} </td>
-                                    <td>{{ $order->total }}€</td>
+                                    <td>€ {{ $order->total }}</td>
                                     <td>
                                         <div>
                                             <a href="{{ route('admin.orders.show', $order) }}"

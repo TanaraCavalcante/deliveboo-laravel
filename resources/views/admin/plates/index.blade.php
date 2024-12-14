@@ -47,7 +47,6 @@
                                                 Non Disponibile
                                             @endif
                                         </td>
-                                        {{-- *Inizia qui --}}
                                         <td>
                                             <a href="{{ route('admin.plates.show', $plate) }}"
                                                 class="btn btn-sm btn-outline-success m-2 me-1">Mostra</a>
@@ -102,6 +101,10 @@
                                         </td>
                                     </tr>
                                 @endforelse
+                                 <!-- Exibe os links de paginação -->
+                                 <div>
+                                    {{ $plates->links() }}
+                                </div>
                             </tbody>
                         </table>
                     </div>
