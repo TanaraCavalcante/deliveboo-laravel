@@ -19,10 +19,9 @@ use Illuminate\Support\Facades\Log;
 
 class OrderController extends Controller
 {
-
     public function store(Request $request)
     {
-        $validator = Validator::make($request->all(),[
+        $validator = Validator::make($request->all(), [
             'first_name' => 'required|max:255',
             'last_name' => 'required|max:255',
             'email' => 'required',
@@ -32,7 +31,6 @@ class OrderController extends Controller
             'items' => 'required|array',
             'items.*.plate_id' => 'required|exists:plates,id',
             'items.*.quantity' => 'required|integer|min:1',
-
         ]);
 
         if ($validator->fails()) {
@@ -105,34 +103,34 @@ class OrderController extends Controller
         } else {
 
 
-        $paymentMethodNonce = $request->input('payment_method_nonce');
-        $deviceData = $request->input('device_data');
-        $orderId = $request->input('orderId');
+            $paymentMethodNonce = $request->input('payment_method_nonce');
+            $deviceData = $request->input('device_data');
+            $orderId = $request->input('orderId');
 
-        $gateway = new Gateway([
-            'environment' => env('BRAINTREE_ENVIRONMENT'),
-            'merchantId' => env('BRAINTREE_MERCHANT_ID'),
-            'publicKey' => env('BRAINTREE_PUBLIC_KEY'),
-            'privateKey' => env('BRAINTREE_PRIVATE_KEY')
-        ]);
+            $gateway = new Gateway([
+                'environment' => env('BRAINTREE_ENVIRONMENT'),
+                'merchantId' => env('BRAINTREE_MERCHANT_ID'),
+                'publicKey' => env('BRAINTREE_PUBLIC_KEY'),
+                'privateKey' => env('BRAINTREE_PRIVATE_KEY')
+            ]);
 
-        // da fixare l'amount deve essere preso dal orderId per ora tutti pagano 10
-        $result = $gateway->transaction()->sale([
-            'amount' => '10.00',
-            'paymentMethodNonce' => $paymentMethodNonce,
-            'deviceData' => $deviceData,
-            'options' => [
-                'submitForSettlement' => True
-            ]
-        ]);
-        // per tenere traccia della risposta di braintree
-        Log::info('Braintree Transaction result', [
-            'result' => $result
-        ]);
+            // da fixare l'amount deve essere preso dal orderId per ora tutti pagano 10
+            $result = $gateway->transaction()->sale([
+                'amount' => '10.00',
+                'paymentMethodNonce' => $paymentMethodNonce,
+                'deviceData' => $deviceData,
+                'options' => [
+                    'submitForSettlement' => True
+                ]
+            ]);
+            // per tenere traccia della risposta di braintree
+            Log::info('Braintree Transaction result', [
+                'result' => $result
+            ]);
 
-        return response()->json([
-            'success' => $result->success,
-        ]);
+            return response()->json([
+                'success' => $result->success,
+            ]);
+        }
     }
-}
 }

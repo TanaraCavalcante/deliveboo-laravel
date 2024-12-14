@@ -9,7 +9,7 @@ use Illuminate\Http\Request;
 class RestaurantController extends Controller
 {
     public function index(){
-        $restaurants = Restaurant::filter()->with(['plates','types'])->get();
+        $restaurants = Restaurant::filter()->with(['plates','types'])->paginate(6);
         return response()->json(
             [
                 "success" => true,

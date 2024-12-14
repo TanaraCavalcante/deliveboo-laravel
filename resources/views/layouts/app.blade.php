@@ -42,6 +42,10 @@
                                 <a class="nav-link"
                                     href="{{ route('admin.orders.index') }}">{{ __('La lista dei miei ordini') }}</a>
                             </li>
+                            <li class="nav-item">
+                                <a class="nav-link"
+                                    href="{{ route('admin.orders.stat') }}">{{ __('Statistiche dei miei ordini') }}</a>
+                            </li>
                         @endauth
                     </ul>
                     <!-- Right Side Of Navbar -->

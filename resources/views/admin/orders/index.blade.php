@@ -5,7 +5,7 @@
         <div class="row">
             <div class="col-12 text-center">
                 <h1 class="m-3">Hai un totale di
-                    {{ count($orders) }}
+                    {{ $orders->total() }}
                     {{ count($orders) === 1 ? 'ordine' : 'ordini' }}
                 </h1>
             </div>
@@ -41,9 +41,14 @@
                             @endforeach
                         </tbody>
                     </table>
-                    <!-- Navigazione della pagina -->
-                    <div class="d-flex justify-content-center mt-3">
-                        {{ $orders->links()}}
+                    <div class="d-flex justify-content-between">
+                        <div>
+                            <a href="{{ route('admin.orders.stat')}}" class="btn btn-info">Vedi Statistiche Ordini</a>
+                        </div>
+                        <!-- Navigazione della pagina -->
+                        <div>
+                            {{ $orders->links()}}
+                        </div>
                     </div>
                 </div>
             </div>
