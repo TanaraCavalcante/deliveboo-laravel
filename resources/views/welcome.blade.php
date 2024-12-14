@@ -44,10 +44,10 @@
                     @auth
                         <a href="{{ url('/home') }}" class="fs-1 fw-bold">Home</a>
                     @else
-                    <button type="button" class="btn btn-orangered mb-3 mt-3 fs-5"><a href="{{ route('login') }}">Accedi</a></button>
+                    <button type="button" class="btn btn-orangered shadow mb-3 mt-3 fs-5"><a href="{{ route('login') }}">Accedi</a></button>
 
                         @if (Route::has('register'))
-                           <button type="button" class="btn btn-orangered   fs-5"> <a href="{{ route('register') }}">Registrati</a></button>
+                           <button type="button" class="btn btn-orangered shadow  fs-5"> <a href="{{ route('register') }}">Registrati</a></button>
                         @endif
                     @endauth
                 </div>
