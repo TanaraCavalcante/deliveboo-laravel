@@ -5,8 +5,10 @@ namespace App\Http\Controllers\Api;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\Api\StoreOrderRequest;
 use App\Mail\NewOrder;
+use App\Mail\RecivedNewOrder;
 use App\Models\Order;
 use App\Models\Plate;
+use App\Models\Restaurant;
 use Illuminate\Auth\Events\Validated;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Mail;
@@ -37,20 +39,38 @@ class OrderController extends Controller
                 'errors' => $validator->errors(),
             ]);
         } else {
-            $order = Order::create($validator->validated());
 
-            $items = collect($request->input('items'))->mapWithKeys(function ($item) {
+            $orderData = $validator->validated();
+            $itemsData = $orderData['items'];
+            unset($orderData['items']);
+
+            $items = collect($itemsData)->mapWithKeys(function ($item) {
                 return [$item['plate_id'] => ['quantity' => $item['quantity']]];
             });
+
+            $order = Order::create($orderData);
             $order->plates()->sync($items);
+            $order->load('plates');
 
-            // Mail::to($order->email)->send(new NewOrder($order));
+            $restaurantID = $order->plates->first()->restaurant_id;
+            $restaurantMail = $this->getRestaurantMail($restaurantID);
 
-            return response()->json([
-                'success' => true,
-                'orderId' => $order->id,
-            ]);
+            Mail::to($restaurantMail)->send(new RecivedNewOrder($order));
+            Mail::to($request->email)->send(new NewOrder($order));
+
         }
+        return response()->json([
+            'success' => true,
+            // MI SERVE PER I PAGMENTI!!!!!!!!!!
+            'orderId' => $order->id,
+        ]);
+
+    }
+    public function getRestaurantMail($id){
+        $restaurant = Restaurant::find($id);
+        $user = $restaurant->user;
+        return $user->email;
+
     }
 
     //  MI SERVE PER I PAGAMENTI!!!!!!!

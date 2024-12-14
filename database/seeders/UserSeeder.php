@@ -6,6 +6,7 @@ use App\Functions\Helpers;
 use App\Models\User;
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
+use Illuminate\Support\Facades\Hash;
 
 class UserSeeder extends Seeder
 {
@@ -20,7 +21,7 @@ class UserSeeder extends Seeder
                 $newUser = new User();
                 $newUser->name = $riga[0];
                 $newUser->email = $riga[1];
-                $newUser->password = $riga[2];
+                $newUser->password = Hash::make($riga[2]) ;
 
                 $newUser->save();
 
