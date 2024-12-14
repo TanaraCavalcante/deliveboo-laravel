@@ -41,7 +41,7 @@
 
 <body>
     <div id="app">
-        <nav class="navbar  navbar-expand-md navbar-light   shadow bg-orange">
+        <nav class="navbar  navbar-expand-md navbar-light  shadow bg-orange">
             <div class="container">
                 <a class="navbar-brand" href="{{ url('/') }}">
                     <img class="logo pe-3" src="{{asset('Logo.jpeg')}}" alt="logo">
@@ -59,15 +59,15 @@
                     <ul class="navbar-nav me-auto ">
                         @auth
                             <li class="nav-item">
-                                <a class="nav-link fw-bold"
+                                <a class="nav-link fw-bold text-white"
                                     href="{{ route('admin.plates.index') }}">{{ __('La lista dei miei piatti') }}</a>
                             </li>
-                            <li class="nav-item ms-3">
-                                <a class="nav-link fw-bold"
+                            <li class="nav-item ms-3 ">
+                                <a class="nav-link fw-bold text-white"
                                     href="{{ route('admin.orders.index') }}">{{ __('La lista dei miei ordini') }}</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link"
+                                <a class="nav-link fw-bold text-white"
                                     href="{{ route('admin.orders.stat') }}">{{ __('Statistiche dei miei ordini') }}</a>
                             </li>
                         @endauth
@@ -90,7 +90,7 @@
                             @endif
                         @else
                             <li class="nav-item dropdown">
-                                <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button"
+                                <a id="navbarDropdown" class="nav-link dropdown-toggle fw-bold text-white" href="#" role="button"
                                     data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
                                     {{ Auth::user()->name }}
                                 </a>
