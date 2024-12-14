@@ -16,10 +16,11 @@
 @endsection
 
 @section('additional-scripts')
-    {{-- @vite('resources/js/orders/stats.js'); --}}
-    <script>
-        let orders = @json($orders);
-        console.log(orders);
-    </script>
+<script>
+    let orders = @json($orders);
+    console.log(orders);
+</script>
+
+@vite('resources/js/orders/stats.js');
 @endsection
 
