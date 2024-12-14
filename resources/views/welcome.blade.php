@@ -22,7 +22,7 @@
             }
 
             img {
-                height: 15rem;
+                height: 25rem;
             }
             .center {
                 height: 100vh;
@@ -40,7 +40,7 @@
         <div>
             @if (Route::has('login'))
             <div class="d-flex justify-content-center align-items-center center flex-column">
-                <img src="{{asset('gufetto.png')}}" alt="logo">
+                <img src="{{asset('Logo.jpeg')}}" alt="logo">
                     @auth
                         <a href="{{ url('/home') }}" class="fs-1 fw-bold">Home</a>
                     @else
