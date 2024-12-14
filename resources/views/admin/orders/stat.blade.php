@@ -20,7 +20,7 @@
 <script>
     //passo gli ordini del ristorante da php a js
     let orders = @json($orders);
-    // console.log(orders);
+    console.log(orders);
 
     let rawDatas = [];
     orders.forEach(element => {
@@ -35,10 +35,8 @@
     let years = [];
 
     rawDatas.forEach(data => {
-
+        console.log(data)
     });
-
-
 
 </script>
 
