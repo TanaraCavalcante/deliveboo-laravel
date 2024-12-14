@@ -105,7 +105,7 @@
                 </div>
                 <div class="mb-3">
                     <label for="plate-image" class="form-label">Inserisci l'immagine:</label>
-                    <input type="file" class="form-control" id="plate-image" name="image" value="{{ old('image') }}">
+                    <input type="file" accept="image/jpeg, image/png, image/bmp" class="form-control" id="plate-image" name="image" value="{{ old('image') }}">
                     <div id="error-image" class="card text-white bg-danger my-3 d-none">
                         <div class="card-body">
                             <ol id="input-image">
