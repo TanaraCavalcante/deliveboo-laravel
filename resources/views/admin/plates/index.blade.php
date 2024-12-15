@@ -25,7 +25,7 @@
                             nuovo
                             piatto!</a>
                     </div>
-                    <div class="table-responsive-sm">
+                    <div class="table-responsive">
                         <table class="table  table-hover table-striped ">
                             <thead>
                                 <tr>
