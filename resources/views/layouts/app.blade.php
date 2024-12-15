@@ -32,7 +32,9 @@
         .logo{
             height: 70px;
         }
-      
+        .navbar-toggler {
+    background-color:white; 
+    border-color: #f24c00;}
     
    
     </style>
@@ -41,7 +43,7 @@
 
 <body>
     <div id="app">
-        <nav class="navbar  navbar-expand-md navbar-light   shadow bg-orange">
+        <nav class="navbar  navbar-expand-md navbar-light  shadow bg-orange">
             <div class="container">
                 <a class="navbar-brand" href="{{ url('/') }}">
                     <img class="logo pe-3" src="{{asset('Logo.jpeg')}}" alt="logo">
@@ -49,26 +51,26 @@
                 <a class="navbar-brand text-white fw-bold me-5" href="{{ url('/') }}">
                     DeliveBoo
                 </a>
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                <button class="navbar-toggler" type="button " data-bs-toggle="collapse"
                     data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
                     aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
                     <span class="navbar-toggler-icon"></span>
                 </button>
 
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                    <ul class="navbar-nav me-auto ">
+                    <ul class="navbar-nav mx-auto justify-content-center">
                         @auth
                             <li class="nav-item">
-                                <a class="nav-link fw-bold"
-                                    href="{{ route('admin.plates.index') }}">{{ __('La lista dei miei piatti') }}</a>
+                                <a class="nav-link fw-bold text-white"
+                                    href="{{ route('admin.plates.index') }}">{{ __('I miei piatti') }}</a>
                             </li>
-                            <li class="nav-item ms-3">
-                                <a class="nav-link fw-bold"
-                                    href="{{ route('admin.orders.index') }}">{{ __('La lista dei miei ordini') }}</a>
+                            <li class="nav-item ms-3 ">
+                                <a class="nav-link fw-bold text-white"
+                                    href="{{ route('admin.orders.index') }}">{{ __('I miei ordini') }}</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link"
-                                    href="{{ route('admin.orders.stat') }}">{{ __('Statistiche dei miei ordini') }}</a>
+                                <a class="nav-link fw-bold text-white"
+                                    href="{{ route('admin.orders.stat') }}">{{ __('Le mie statistiche') }}</a>
                             </li>
                         @endauth
                     </ul>
@@ -90,7 +92,7 @@
                             @endif
                         @else
                             <li class="nav-item dropdown">
-                                <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button"
+                                <a id="navbarDropdown" class="nav-link dropdown-toggle fw-bold text-white" href="#" role="button"
                                     data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
                                     {{ Auth::user()->name }}
                                 </a>
