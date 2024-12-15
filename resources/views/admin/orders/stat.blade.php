@@ -18,27 +18,34 @@
     <script>
         //passo gli ordini del ristorante da php a js
         let orders = @json($orders);
-        // console.log(orders);
 
-        let rawDatas = [];
+        // oggetto di mapping tra mese e importo
+        // serve per calcolare i totali
+        // chiave: mese, valore: totale ordini per quel mese
+        const monthsTotals = {};
+
         orders.forEach(element => {
-            let singleData = {
-                month: new Date((element.created_at)).getMonth(),
-                total: element.total
+
+            const orderDate = new Date((element.created_at));
+            const orderMonth = orderDate.toLocaleString('default', { month: 'long' });
+
+            // se il mese non è censito nell'oggetto monthsTotals, lo inserisco
+            if (monthsTotals[orderMonth] === undefined) {
+                monthsTotals[orderMonth] = 0;
             }
-            rawDatas.push(singleData);
-            console.log('month', singleData.month)
+
+            // vado ad aggiungere all'esistente l'importo dell'ordine
+            // corrente
+            monthsTotals[orderMonth] = monthsTotals[orderMonth] + parseFloat(element.total);
+
         });
 
-        let monthlyTotal = 0;
-        const sum = rawDatas.map(data => parseFloat(data.total))
-        for (let i = 0; i < sum.length; i++) {
-            const element = sum[i];
-            monthlyTotal += element;
-        }
+        const x = Object.keys(monthsTotals);
+        const y = Object.values(monthsTotals);
 
-        console.log('rawDAtas:', rawDatas)
-        console.log('monthly :', monthlyTotal);
+        console.log("x", x);
+        console.log("y", y);
+
     </script>
 
     @vite('resources/js/orders/stats.js');
