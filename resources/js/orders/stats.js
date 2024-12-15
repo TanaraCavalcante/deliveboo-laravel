@@ -1,35 +1,32 @@
 import Chart from 'chart.js/auto'
 
 (async function () {
-    const monthlyData = [
-        { month: 'Gen', value: 1 },
-        { month: 'Feb', value: 2 },
-        { month: 'Mar', value: 3 },
-        { month: 'Apr', value: 4 },
-        { month: 'Mag', value: 5 },
-        { month: 'Giu', value: 6 },
-        { month: 'Lug', value: 7 },
-        { month: 'Ago', value: 8 },
-        { month: 'Set', value: 9 },
-        { month: 'Ott', value: 10 },
-        { month: 'Nov', value: 11 },
-        { month: 'Dic', value: 12 },
-    ];
 
-    let totalSum =[];
-    const dates = rawDatas.map(row => row.month);
-    totalSum.push(monthlyTotal)
+    if (!x || !y) {
+        console.error("il grafico ha bisogno di x e y definite", x, y);
+        return;
+    }
+
+    if (!Array.isArray(x) || !Array.isArray(y)) {
+        console.error("x e y devono essere array", x, y);
+        return;
+    }
+
+    if (x.length !== y.length) {
+        console.error("x e y devono contenere lo stesso numero di elementi", x, y);
+        return;
+    }
 
     new Chart(
         document.getElementById('myChart'),
         {
             type: 'bar',
             data: {
-                labels: dates,
+                labels: x,
                 datasets: [
                     {
-                        label: 'Acquisitions by month',
-                        data: totalSum
+                        label: 'Ordini per mese',
+                        data: y
                     }
                 ]
             }
