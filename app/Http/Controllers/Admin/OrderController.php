@@ -27,6 +27,8 @@ class OrderController extends Controller
     }
 
     public function stat () {
-        return view('admin.orders.stat');
+        $user = Auth::user();
+        $orders = Order::whereRelation('plates', 'restaurant_id', '=', $user->id)->get();
+        return view('admin.orders.stat', compact('orders'));
     }
 }
