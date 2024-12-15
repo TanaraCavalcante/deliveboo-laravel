@@ -12,23 +12,26 @@ use Illuminate\Support\Facades\Http;
 class OrderController extends Controller
 {
     //
-    public function index () {
+    public function index()
+    {
         $user = Auth::user();
         $orders = Order::whereRelation('plates', 'restaurant_id', '=', $user->id)
-        ->orderBy('created_at', 'desc')
-        ->paginate();
+            ->orderBy('created_at', 'desc')
+            ->paginate();
 
         return view('admin.orders.index', compact('user', 'orders'));
     }
 
-    public function show (Order $order) {
+    public function show(Order $order)
+    {
         $plates = $order->plates()->get();
         return view('admin.orders.show', compact('order', 'plates'));
     }
 
-    public function stat () {
+    public function stat()
+    {
         $user = Auth::user();
-        $orders = Order::whereRelation('plates', 'restaurant_id', '=', $user->id)->get();
+        $orders = Order::whereRelation('plates', 'restaurant_id', '=', $user->id)->orderBy('created_at', 'asc')->get();
         return view('admin.orders.stat', compact('orders'));
     }
 }
