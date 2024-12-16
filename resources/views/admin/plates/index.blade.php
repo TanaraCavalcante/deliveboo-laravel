@@ -39,12 +39,12 @@
                                 @forelse ($plates as $index => $plate)
                                     <tr>
                                         <td>{{ $plate->name }}</td>
-                                        <td> <strong>€ {{ $plate->price }} </td>
+                                        <td> <strong>{{ $plate->price }}€</td>
                                         <td>
                                             @if ($plate->visibility)
-                                                Disponibile
+                                                <p style="color: green; font-size: 20px">&#10003;</p>
                                             @else
-                                                Non Disponibile
+                                            <p style="color: red; font-size: 20px">&#10005;</p>
                                             @endif
                                         </td>
                                         <td>
