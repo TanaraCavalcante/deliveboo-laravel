@@ -11,7 +11,8 @@
                     <div class="card-body">
                         <h5 class="card-title">Numero Ordine: <strong>{{ $order->id }}</strong></h5>
                         <p class="card-text">Ordinato da: <strong>{{ $order->first_name }} {{ $order->last_name}}</strong></p>
-                        <p class="card-text">Contatto: <strong>{{ $order->phone_number}}</strong></p>
+                        <p class="card-text">Telefono: <strong>{{ $order->phone_number}}</strong></p>
+                        <p class="card-text">E-Mail: <strong>{{ $order->email}}</strong></p>
                         <p class="card-text">Ordinato il: <strong>{{ $order->created_at->format('d M Y H:i') }}</strong></p>
                         <p class="card-text">Da consegnare all'indirizzo: <strong>{{ $order->address }}</strong></p>
                     </div>
@@ -31,12 +32,12 @@
                                     <tr>
                                         <td>{{$plate->name}}</td>
                                         <td>{{$plate->pivot->quantity}}</td>
-                                        <td>{{$plate->price}}</td>
+                                        <td>{{$plate->price}}€</td>
                                     </tr>
                                     @endforeach
                                     <tr>
                                         <th scope="row">Totale</th>
-                                        <td colspan="2">€ {{$order->total}}</td>
+                                        <td colspan="2">{{$order->total}}€</td>
                                     </tr>
                                 </tbody>
                             </table>
