@@ -25,4 +25,9 @@ class RestaurantController extends Controller
         $newRestaurant = Restaurant::create($formData);
         return redirect()->route('admin.plates.index');
     } */
+
+    public function redirectToVue()
+    {
+        return redirect('http://localhost:5180/');
+    }
 }

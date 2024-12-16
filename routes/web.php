@@ -45,3 +45,10 @@ Route::middleware('auth')->controller(OrderController::class)->prefix('/admin')-
     route::get('/orders/stat', 'stat')->name('orders.stat');
     route::get('/orders/{order}', 'show')->name('orders.show');
 });
+
+
+//  Route per il progetto in Vue
+// Route::middleware('auth')->controller(RestaurantController::class)->prefix('/admin')->name('admin.')->group(function(){
+//     Route::get('/app', 'redirectToVue')->name('app.redirect');
+// });
+Route::get('/app', [RestaurantController::class, 'redirectToVue']);
