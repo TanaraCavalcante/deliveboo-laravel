@@ -80,20 +80,19 @@ const yearsBtn = document.getElementById('yearsBtn');
 
 // console.log(monthsBtn, yearsBtn);
 
+function toggleGraph(adder, remover, btnActive, btnDisabled) {
+    remover.classList.remove('d-none');
+    adder.classList.add('d-none');
+    btnActive.classList.remove('btn-secondary');
+    btnActive.classList.add('btn-primary');
+    btnDisabled.classList.remove('btn-primary');
+    btnDisabled.classList.add('btn-secondary');
+}
+
 yearsBtn.addEventListener('click', function () {
-    yearsDiv.classList.remove('d-none');
-    monthsDiv.classList.add('d-none');
-    yearsBtn.classList.remove('btn-secondary');
-    yearsBtn.classList.add('btn-primary');
-    monthsBtn.classList.remove('btn-primary');
-    monthsBtn.classList.add('btn-secondary')
+    toggleGraph(monthsDiv, yearsDiv, yearsBtn, monthsBtn)
 })
 
 monthsBtn.addEventListener('click', function () {
-    yearsDiv.classList.add('d-none');
-    monthsDiv.classList.remove('d-none');
-    monthsBtn.classList.remove('btn-secondary');
-    monthsBtn.classList.add('btn-primary');
-    yearsBtn.classList.remove('btn-primary');
-    yearsBtn.classList.add('btn-secondary');
-})
+    toggleGraph(yearsDiv, monthsDiv, monthsBtn, yearsBtn)
+});
