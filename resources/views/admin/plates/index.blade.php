@@ -26,28 +26,37 @@
                             piatto!</a>
                     </div>
                     <div class="table-responsive">
-                        <table class="table  table-hover table-striped ">
+                        <table class="table align-middle table-hover table-striped ">
                             <thead>
                                 <tr>
                                     <th scope="col">Piatto</th>
                                     <th scope="col">Prezzo</th>
                                     <th scope="col">Disponibilità</th>
-                                    <th scope="col">Azioni</th>
+                                    <th scope="col" class="col-3">Azioni</th>
                                 </tr>
                             </thead>
                             <tbody>
                                 @forelse ($plates as $index => $plate)
                                     <tr>
-                                        <td>{{ $plate->name }}</td>
+                                        <td class="d-flex align-ìtems-center text-start ps-5">
+                                            <figure class="my-0 py-2" style="width: 150px">
+                                                @if ($plate->image)
+                                                    <img src="{{ asset('/storage/' . $plate->image) }}" style="height: 50px" alt="{{ $plate->name }}">
+                                                @else
+                                                    <img src="{{ asset('images/placeholder-plate.png') }}" style="height: 50px" alt="Placeholder">
+                                                @endif
+                                            </figure>
+                                           <p class="align-self-center my-0"> {{ $plate->name }} </p>
+                                        </td>
                                         <td> <strong>{{ $plate->price }}€</td>
                                         <td>
                                             @if ($plate->visibility)
-                                                <p style="color: green; font-size: 20px">&#10003;</p>
+                                                <p style="color: green; font-size: 20px" class="mb-0">&#10003;</p>
                                             @else
-                                            <p style="color: red; font-size: 20px">&#10005;</p>
+                                            <p style="color: red; font-size: 20px" class="mb-0">&#10005;</p>
                                             @endif
                                         </td>
-                                        <td>
+                                        <td class="col-3">
                                             <a href="{{ route('admin.plates.show', $plate) }}"
                                                 class="btn btn-sm btn-success m-2 me-1">Mostra</a>
                                             <a href="{{ route('admin.plates.edit', $plate) }}"
