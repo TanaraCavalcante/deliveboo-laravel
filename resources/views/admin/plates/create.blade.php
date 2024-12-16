@@ -5,6 +5,7 @@
 @section('content')
     <div class="container">
         <div class="row justify-content-center">
+            <h1 class="text-center my-3">Crea un nuovo piatto</h1>
             <form class="col-12 col-md-8 col-lg-6 card p-4" method="POST" enctype="multipart/form-data" action="{{ route('admin.plates.store') }}" autocomplete="off">
                 @csrf
                 <div class="row mb-3 d-none">

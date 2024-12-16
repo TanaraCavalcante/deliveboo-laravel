@@ -15,10 +15,8 @@
                     <table class="table  table-striped">
                         <thead>
                             <tr>
-                                <th scope="col">Numero ordine</th>
-                                <th scope="col">Data</th>
                                 <th scope="col">Nome</th>
-                                <th scope="col">E-Mail</th>
+                                <th scope="col">Data</th>
                                 <th scope="col">Totale</th>
                                 <th scope="col">Azioni</th>
                             </tr>
@@ -26,25 +24,20 @@
                         <tbody>
                             @foreach ($orders as $order)
                                 <tr>
-                                    <th>{{ $order->id }}</th>
-                                    <td>{{ $order->created_at->format('d M Y H:i') }}</td>
                                     <td>{{ $order->first_name }} {{ $order->last_name }}</td>
-                                    <td>{{ $order->email }} </td>
-                                    <td>€ {{ $order->total }}</td>
+                                    <td>{{ $order->created_at->format('d M Y H:i') }}</td>
+                                    <td>{{ $order->total }}€</td>
                                     <td>
                                         <div>
                                             <a href="{{ route('admin.orders.show', $order) }}"
-                                                class="btn btn-outline-success">Mostra</a>
+                                                class="btn btn-success">Mostra</a>
                                         </div>
                                     </td>
                                 </tr>
                             @endforeach
                         </tbody>
                     </table>
-                    <div class="d-flex justify-content-between">
-                        <div>
-                            <a href="{{ route('admin.orders.stat')}}" class="btn btn-info">Vedi Statistiche Ordini</a>
-                        </div>
+                    <div class="d-flex justify-content-end">
                         <!-- Navigazione della pagina -->
                         <div>
                             {{ $orders->links()}}

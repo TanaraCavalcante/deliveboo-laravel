@@ -80,6 +80,13 @@ subBtn.addEventListener("click", function (event) {
         inputEmail.innerHTML += `<li>${emailError1}</li>`
     }
 
+    if (!emailValue.includes('.it' || '.com' || '.org')) {
+        event.preventDefault();
+        emailCard.classList.remove('d-none');
+        let emailError2 = 'La mail deve concludersi con .it oppure .com oppure .org';
+        inputEmail.innerHTML += `<li>${emailError2}</li>`
+    }
+
     //!Validation per password
     let passwordValue = passwordInput.value;
     if (passwordValue.length === 0 || passwordValue.length < 8 || passwordValue.length > 50) {
