@@ -45,3 +45,8 @@ Route::middleware('auth')->controller(OrderController::class)->prefix('/admin')-
     route::get('/orders/stat', 'stat')->name('orders.stat');
     route::get('/orders/{order}', 'show')->name('orders.show');
 });
+
+
+//  Route per il progetto in Vue
+
+Route::get('/app', [RestaurantController::class, 'redirectToVue'])->name('app.redirect');

@@ -21,22 +21,22 @@
         .bg-orange {
             background-color: #fc7a1e;
 
-            
+
         }
         .btn-orangered{
             background-color: #f24c00;
             border-radius: 15px;
-      
-            
+
+
         }
         .logo{
             height: 70px;
         }
         .navbar-toggler {
-    background-color:white; 
+    background-color:white;
     border-color: #f24c00;}
-    
-   
+
+
     </style>
 </head>
 </head>
@@ -48,9 +48,13 @@
                 <a class="navbar-brand" href="{{ url('/') }}">
                     <img class="logo pe-3" src="{{asset('Logo.jpeg')}}" alt="logo">
                 </a>
-                <a class="navbar-brand text-white fw-bold me-5" href="{{ url('/') }}">
+
+                {{-- Redirezionamento per vue --}}
+                <a class="navbar-brand text-white fw-bold me-5" href="{{ route('app.redirect') }}">
                     DeliveBoo
                 </a>
+
+
                 <button class="navbar-toggler" type="button " data-bs-toggle="collapse"
                     data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
                     aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
