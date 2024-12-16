@@ -25,7 +25,7 @@
 
                                     <!-- Sezione Errori Specifica -->
                                     <div id="error-name" class="card text-white bg-danger my-1 d-none">
-                                        <div class="card-body">
+                                        <div class="card-body p-2">
                                             <ol id="input-name" class="m-0">
                                                 <!--Ci saranno gli errori-->
                                             </ol>
@@ -52,7 +52,7 @@
 
                                     <!-- Sezione Errori Specifica -->
                                     <div id="error-email" class="card text-white bg-danger my-1 d-none">
-                                        <div class="card-body">
+                                        <div class="card-body p-2">
                                             <ol id="input-email" class="m-0">
                                                 <!--Ci saranno gli errori-->
                                             </ol>
@@ -78,7 +78,7 @@
 
                                     <!-- Sezione Errori Specifica -->
                                     <div id="error-password" class="card text-white bg-danger my-1 d-none">
-                                        <div class="card-body">
+                                        <div class="card-body p-2">
                                             <ol id="input-password" class="m-0">
                                                 <!--Ci saranno gli errori-->
                                             </ol>
@@ -103,7 +103,7 @@
 
                                     <!-- Sezione Errori Specifica -->
                                     <div id="error-confirm" class="card text-white bg-danger my-1 d-none">
-                                        <div class="card-body">
+                                        <div class="card-body p-2">
                                             <ol id="input-confirm" class="m-0">
                                                 <!--Ci saranno gli errori-->
                                             </ol>
@@ -122,7 +122,7 @@
 
                                     <!-- Sezione Errori Specifica -->
                                     <div id="error-address" class="card text-white bg-danger my-1 d-none">
-                                        <div class="card-body">
+                                        <div class="card-body p-2">
                                             <ol id="input-address" class="m-0">
                                                 <!--Ci saranno gli errori-->
                                             </ol>
@@ -147,7 +147,7 @@
 
                                     <!-- Sezione Errori Specifica -->
                                     <div id="error-piva" class="card text-white bg-danger my-1 d-none">
-                                        <div class="card-body">
+                                        <div class="card-body p-2">
                                             <ol id="input-piva" class="m-0">
                                                 <!--Ci saranno gli errori-->
                                             </ol>
@@ -180,7 +180,7 @@
                                 </div>
                                 <div class="row justify-content-center mb-3">
                                         <div id="error-type" class="col-md-5 card text-white bg-danger my-1 d-none">
-                                            <div class="card-body">
+                                            <div class="card-body p-2">
                                                 <ol id="input-type" class="m-0">
                                                     <!--Ci saranno gli errori-->
                                                 </ol>
