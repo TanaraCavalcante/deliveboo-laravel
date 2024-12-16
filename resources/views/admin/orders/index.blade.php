@@ -41,10 +41,7 @@
                             @endforeach
                         </tbody>
                     </table>
-                    <div class="d-flex justify-content-between">
-                        <div>
-                            <a href="{{ route('admin.orders.stat')}}" class="btn btn-info">Vedi Statistiche Ordini</a>
-                        </div>
+                    <div class="d-flex justify-content-end">
                         <!-- Navigazione della pagina -->
                         <div>
                             {{ $orders->links()}}
