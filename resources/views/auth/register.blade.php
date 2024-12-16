@@ -191,7 +191,7 @@
                         </div>
 
                     <div class="row mb-0">
-                        <div class="col-md-6 offset-md-4">
+                        <div class="col-md-6 offset-md-4 mb-3">
                             <button type="submit" id="submit-btn" class="btn btn-primary">
                                 {{ __('Registrati') }}
                             </button>
