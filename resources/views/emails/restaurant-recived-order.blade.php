@@ -38,7 +38,7 @@
                     </div>
                 @endforeach
                 <div class="col-12">
-                    <p>Totale: {{ $order->total }}</p>
+                    <p>Totale: {{ $order->total }} €</p>
                 </div>
             </div>
 
