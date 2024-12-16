@@ -30,7 +30,7 @@
                                     <td>
                                         <div>
                                             <a href="{{ route('admin.orders.show', $order) }}"
-                                                class="btn btn-outline-success">Mostra</a>
+                                                class="btn btn-success">Mostra</a>
                                         </div>
                                     </td>
                                 </tr>

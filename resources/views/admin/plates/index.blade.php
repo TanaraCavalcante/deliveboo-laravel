@@ -15,13 +15,13 @@
                     <div class="alert alert-success tex-center">
                         <h3>Benvenuto nel tuo pannello di controllo</h3>
                         <p>Inserisci i tuoi piatti cliccando il bottone qui in basso</p>
-                        <a href="{{ route('admin.plates.create') }}" class="btn btn-sm btn-outline-primary me-1 m-1">Crea un
+                        <a href="{{ route('admin.plates.create') }}" class="btn btn-sm btn-primary me-1 m-1">Crea un
                             nuovo
                             piatto!</a>
                     </div>
                 @else
                     <div class="mb-3">
-                        <a href="{{ route('admin.plates.create') }}" class="btn btn-sm btn-outline-primary me-1 m-1">Crea un
+                        <a href="{{ route('admin.plates.create') }}" class="btn btn-sm btn-primary me-1 m-1">Crea un
                             nuovo
                             piatto!</a>
                     </div>
@@ -49,12 +49,12 @@
                                         </td>
                                         <td>
                                             <a href="{{ route('admin.plates.show', $plate) }}"
-                                                class="btn btn-sm btn-outline-success m-2 me-1">Mostra</a>
+                                                class="btn btn-sm btn-success m-2 me-1">Mostra</a>
                                             <a href="{{ route('admin.plates.edit', $plate) }}"
-                                                class="btn btn-sm btn-outline-warning m-2 me-1">Modifica</a>
+                                                class="btn btn-sm btn-warning m-2 me-1">Modifica</a>
 
 
-                                            <button type="button" class="btn btn-sm btn-outline-danger delete"
+                                            <button type="button" class="btn btn-sm btn-danger delete"
                                                 data-id="{{ $plate->id }}" data-name="{{ $plate->name }}"
                                                 data-bs-toggle="modal" data-bs-target="#deleteModal">
                                                 Elimina
