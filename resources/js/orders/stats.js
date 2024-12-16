@@ -25,7 +25,7 @@ import Chart from 'chart.js/auto'
                 labels: x,
                 datasets: [
                     {
-                        label: 'Ordini per mese',
+                        label: 'Totale vendite per mese',
                         data: y
                     }
                 ]
