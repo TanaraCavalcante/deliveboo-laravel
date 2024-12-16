@@ -26,7 +26,7 @@
                                     <!-- Sezione Errori Specifica -->
                                     <div id="error-name" class="card text-white bg-danger my-1 d-none">
                                         <div class="card-body">
-                                            <ol id="input-name">
+                                            <ol id="input-name" class="m-0">
                                                 <!--Ci saranno gli errori-->
                                             </ol>
                                         </div>
@@ -53,7 +53,7 @@
                                     <!-- Sezione Errori Specifica -->
                                     <div id="error-email" class="card text-white bg-danger my-1 d-none">
                                         <div class="card-body">
-                                            <ol id="input-email">
+                                            <ol id="input-email" class="m-0">
                                                 <!--Ci saranno gli errori-->
                                             </ol>
                                         </div>
@@ -79,7 +79,7 @@
                                     <!-- Sezione Errori Specifica -->
                                     <div id="error-password" class="card text-white bg-danger my-1 d-none">
                                         <div class="card-body">
-                                            <ol id="input-password">
+                                            <ol id="input-password" class="m-0">
                                                 <!--Ci saranno gli errori-->
                                             </ol>
                                         </div>
@@ -104,7 +104,7 @@
                                     <!-- Sezione Errori Specifica -->
                                     <div id="error-confirm" class="card text-white bg-danger my-1 d-none">
                                         <div class="card-body">
-                                            <ol id="input-confirm">
+                                            <ol id="input-confirm" class="m-0">
                                                 <!--Ci saranno gli errori-->
                                             </ol>
                                         </div>
@@ -123,7 +123,7 @@
                                     <!-- Sezione Errori Specifica -->
                                     <div id="error-address" class="card text-white bg-danger my-1 d-none">
                                         <div class="card-body">
-                                            <ol id="input-address">
+                                            <ol id="input-address" class="m-0">
                                                 <!--Ci saranno gli errori-->
                                             </ol>
                                         </div>
@@ -148,7 +148,7 @@
                                     <!-- Sezione Errori Specifica -->
                                     <div id="error-piva" class="card text-white bg-danger my-1 d-none">
                                         <div class="card-body">
-                                            <ol id="input-piva">
+                                            <ol id="input-piva" class="m-0">
                                                 <!--Ci saranno gli errori-->
                                             </ol>
                                         </div>
@@ -181,7 +181,7 @@
                                 <div class="row justify-content-center mb-3">
                                         <div id="error-type" class="col-md-5 card text-white bg-danger my-1 d-none">
                                             <div class="card-body">
-                                                <ol id="input-type">
+                                                <ol id="input-type" class="m-0">
                                                     <!--Ci saranno gli errori-->
                                                 </ol>
                                             </div>
