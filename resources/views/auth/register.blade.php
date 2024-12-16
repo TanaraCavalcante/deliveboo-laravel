@@ -24,7 +24,7 @@
                                         value="{{ old('name') }}" required autocomplete="off">
 
                                     <!-- Sezione Errori Specifica -->
-                                    <div id="error-name" class="card text-white bg-danger my-3 d-none">
+                                    <div id="error-name" class="card text-white bg-danger my-1 d-none">
                                         <div class="card-body">
                                             <ol id="input-name">
                                                 <!--Ci saranno gli errori-->
@@ -51,7 +51,7 @@
                                         value="{{ old('email') }}" required autocomplete="off">
 
                                     <!-- Sezione Errori Specifica -->
-                                    <div id="error-email" class="card text-white bg-danger my-3 d-none">
+                                    <div id="error-email" class="card text-white bg-danger my-1 d-none">
                                         <div class="card-body">
                                             <ol id="input-email">
                                                 <!--Ci saranno gli errori-->
@@ -77,7 +77,7 @@
                                         required autocomplete="new-password">
 
                                     <!-- Sezione Errori Specifica -->
-                                    <div id="error-password" class="card text-white bg-danger my-3 d-none">
+                                    <div id="error-password" class="card text-white bg-danger my-1 d-none">
                                         <div class="card-body">
                                             <ol id="input-password">
                                                 <!--Ci saranno gli errori-->
@@ -102,7 +102,7 @@
                                         name="password_confirmation" required autocomplete="new-password">
 
                                     <!-- Sezione Errori Specifica -->
-                                    <div id="error-confirm" class="card text-white bg-danger my-3 d-none">
+                                    <div id="error-confirm" class="card text-white bg-danger my-1 d-none">
                                         <div class="card-body">
                                             <ol id="input-confirm">
                                                 <!--Ci saranno gli errori-->
@@ -121,7 +121,7 @@
                                         required value="{{ old('address') }}" autocomplete="off">
 
                                     <!-- Sezione Errori Specifica -->
-                                    <div id="error-address" class="card text-white bg-danger my-3 d-none">
+                                    <div id="error-address" class="card text-white bg-danger my-1 d-none">
                                         <div class="card-body">
                                             <ol id="input-address">
                                                 <!--Ci saranno gli errori-->
@@ -146,7 +146,7 @@
                                         value="{{ old('piva') }}" autocomplete="off">
 
                                     <!-- Sezione Errori Specifica -->
-                                    <div id="error-piva" class="card text-white bg-danger my-3 d-none">
+                                    <div id="error-piva" class="card text-white bg-danger my-1 d-none">
                                         <div class="card-body">
                                             <ol id="input-piva">
                                                 <!--Ci saranno gli errori-->
@@ -179,7 +179,7 @@
 
                                 </div>
                                 <div class="row justify-content-center mb-3">
-                                        <div id="error-type" class="col-md-5 card text-white bg-danger my-3 d-none">
+                                        <div id="error-type" class="col-md-5 card text-white bg-danger my-1 d-none">
                                             <div class="card-body">
                                                 <ol id="input-type">
                                                     <!--Ci saranno gli errori-->
