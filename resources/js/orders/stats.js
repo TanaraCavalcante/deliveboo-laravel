@@ -70,10 +70,30 @@ import Chart from 'chart.js/auto'
     );
 })();
 
+// recupero i div
+const monthsDiv = document.getElementById('monthlyDiv');
+const yearsDiv = document.getElementById('annualDiv');
+
 // recupero i bottoni
 const monthsBtn = document.getElementById('monthsBtn');
 const yearsBtn = document.getElementById('yearsBtn');
 
 // console.log(monthsBtn, yearsBtn);
 
+yearsBtn.addEventListener('click', function () {
+    yearsDiv.classList.remove('d-none');
+    monthsDiv.classList.add('d-none');
+    yearsBtn.classList.remove('btn-secondary');
+    yearsBtn.classList.add('btn-primary');
+    monthsBtn.classList.remove('btn-primary');
+    monthsBtn.classList.add('btn-secondary')
+})
 
+monthsBtn.addEventListener('click', function () {
+    yearsDiv.classList.add('d-none');
+    monthsDiv.classList.remove('d-none');
+    monthsBtn.classList.remove('btn-secondary');
+    monthsBtn.classList.add('btn-primary');
+    yearsBtn.classList.remove('btn-primary');
+    yearsBtn.classList.add('btn-secondary');
+})

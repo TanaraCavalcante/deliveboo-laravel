@@ -11,11 +11,11 @@
                     <button id="yearsBtn" class="btn btn-secondary">Anni</button>
                 </div>
             </div>
-            <div class="col-12 my-2">
+            <div class="col-12 my-2" id="monthlyDiv">
                 <h2>Andamento Vendite Mensili</h2>
                 <canvas id="myChart"></canvas>
             </div>
-            <div class="col-12 mt-5">
+            <div class="col-12 mt-5 d-none" id="annualDiv">
                 <h2>Andamento Vendite Annuali</h2>
                 <canvas id="annualChart"></canvas>
             </div>
