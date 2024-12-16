@@ -10,6 +10,9 @@
             <div class="col-12">
                 <canvas id="myChart"></canvas>
             </div>
+            <div class="col-12 mt-5">
+                <canvas id="annualChart"></canvas>
+            </div>
         </div>
     </div>
 @endsection
@@ -43,9 +46,26 @@
         const x = Object.keys(monthsTotals);
         const y = Object.values(monthsTotals);
 
-        console.log("x", x);
-        console.log("y", y);
+        // console.log("x", x);
+        // console.log("y", y);
 
+        const yearsTotals = {};
+
+        orders.forEach(element => {
+
+            const orderDate2 = new Date((element.created_at));
+            const orderYear = orderDate2.toLocaleString('default', { year: 'numeric' });
+
+            if (yearsTotals[orderYear] === undefined) {
+                yearsTotals[orderYear] = 0;
+            }
+
+            yearsTotals[orderYear] = yearsTotals[orderYear] + parseFloat(element.total);
+
+            });
+
+        const x1 = Object.keys(yearsTotals);
+        const y1 = Object.values(yearsTotals);
     </script>
 
     @vite('resources/js/orders/stats.js');
