@@ -6,11 +6,17 @@
         <div class="row">
             <div class="col-12 text-center">
                 <h1>Statistiche Ordini</h1>
+                <div>
+                    <button id="monthsBtn"  class="btn btn-primary">Mesi</button>
+                    <button id="yearsBtn" class="btn btn-secondary">Anni</button>
+                </div>
             </div>
-            <div class="col-12">
+            <div class="col-12 my-2">
+                <h2>Andamento Vendite Mensili</h2>
                 <canvas id="myChart"></canvas>
             </div>
             <div class="col-12 mt-5">
+                <h2>Andamento Vendite Annuali</h2>
                 <canvas id="annualChart"></canvas>
             </div>
         </div>

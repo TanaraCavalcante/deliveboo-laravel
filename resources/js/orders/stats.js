@@ -70,5 +70,10 @@ import Chart from 'chart.js/auto'
     );
 })();
 
+// recupero i bottoni
+const monthsBtn = document.getElementById('monthsBtn');
+const yearsBtn = document.getElementById('yearsBtn');
+
+// console.log(monthsBtn, yearsBtn);
 
 
