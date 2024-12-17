@@ -29,6 +29,7 @@
                         <table class="table align-middle table-hover table-striped ">
                             <thead>
                                 <tr>
+                                    <th scope="col">Immagine</th>
                                     <th scope="col">Piatto</th>
                                     <th scope="col">Prezzo</th>
                                     <th scope="col">Disponibilità</th>
@@ -38,14 +39,16 @@
                             <tbody>
                                 @forelse ($plates as $index => $plate)
                                     <tr>
-                                        <td class="d-flex align-ìtems-center text-start ps-5">
-                                            <figure class="my-0 py-2" style="width: 150px">
+                                        <td class="">
+                                            <figure class="my-0 m-auto py-2" style="width: 150px">
                                                 @if ($plate->image)
                                                     <img src="{{ asset('/storage/' . $plate->image) }}" style="height: 50px" alt="{{ $plate->name }}">
                                                 @else
                                                     <img src="{{ asset('images/placeholder-plate.png') }}" style="height: 50px" alt="Placeholder">
                                                 @endif
                                             </figure>
+                                        </td>
+                                        <td>
                                            <p class="align-self-center my-0"> {{ $plate->name }} </p>
                                         </td>
                                         <td> <strong>{{ $plate->price }}€</td>
@@ -57,51 +60,53 @@
                                             @endif
                                         </td>
                                         <td class="col-3">
-                                            <a href="{{ route('admin.plates.show', $plate) }}"
-                                                class="btn btn-sm btn-success m-2 me-1">Mostra</a>
-                                            <a href="{{ route('admin.plates.edit', $plate) }}"
-                                                class="btn btn-sm btn-warning m-2 me-1">Modifica</a>
+                                            <div class="d-flex justify-content-center">
+                                                <a href="{{ route('admin.plates.show', $plate) }}"
+                                                    class="btn btn-sm btn-success  me-1">Mostra</a>
+                                                <a href="{{ route('admin.plates.edit', $plate) }}"
+                                                    class="btn btn-sm btn-warning  me-1">Modifica</a>
 
 
-                                            <button type="button" class="btn btn-sm btn-danger delete"
-                                                data-id="{{ $plate->id }}" data-name="{{ $plate->name }}"
-                                                data-bs-toggle="modal" data-bs-target="#deleteModal">
-                                                Elimina
-                                            </button>
+                                                <button type="button" class="btn btn-sm btn-danger delete"
+                                                    data-id="{{ $plate->id }}" data-name="{{ $plate->name }}"
+                                                    data-bs-toggle="modal" data-bs-target="#deleteModal">
+                                                    Elimina
+                                                </button>
 
-                                            {{-- !Modale di conferma di cancellazione --}}
-                                            <div class="modal fade" id="deleteModal" tabindex="-1"
-                                                aria-labelledby="deleteModalLabel" aria-hidden="true">
-                                                <div class="modal-dialog">
-                                                    <div class="modal-content">
-                                                        <div class="modal-header">
-                                                            <h5 class="modal-title" id="deleteModalLabel">Conferma di
-                                                                cancellazione</h5>
-                                                            <button type="button" class="btn-close" data-bs-dismiss="modal"
-                                                                aria-label="Chiudi"></button>
+                                                {{-- !Modale di conferma di cancellazione --}}
+                                                <div class="modal fade" id="deleteModal" tabindex="-1"
+                                                    aria-labelledby="deleteModalLabel" aria-hidden="true">
+                                                    <div class="modal-dialog">
+                                                        <div class="modal-content">
+                                                            <div class="modal-header">
+                                                                <h5 class="modal-title" id="deleteModalLabel">Conferma di
+                                                                    cancellazione</h5>
+                                                                <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                                                    aria-label="Chiudi"></button>
+                                                            </div>
+                                                            <div class="modal-body">
+                                                                <p>Sei sicuro di voler eliminare il piatto <strong
+                                                                        id="plateName"></strong>?</p>
+                                                                <form action="{{ route('admin.plates.delete', $plate) }}"
+                                                                    id="deleteForm" method="POST">
+                                                                    @csrf
+                                                                    @method('DELETE')
+                                                                    <input type="hidden" name="id" id="plateId">
+                                                                    <div class="modal-footer">
+                                                                        <button type="button" class="btn btn-outline-success"
+                                                                            data-bs-dismiss="modal">Annulla</button>
+                                                                        <button type="submit" class="btn btn-danger"
+                                                                            form="deleteForm">Elimina</button>
+                                                                    </div>
+                                                                </form>
+                                                            </div>
+
                                                         </div>
-                                                        <div class="modal-body">
-                                                            <p>Sei sicuro di voler eliminare il piatto <strong
-                                                                    id="plateName"></strong>?</p>
-                                                            <form action="{{ route('admin.plates.delete', $plate) }}"
-                                                                id="deleteForm" method="POST">
-                                                                @csrf
-                                                                @method('DELETE')
-                                                                <input type="hidden" name="id" id="plateId">
-                                                                <div class="modal-footer">
-                                                                    <button type="button" class="btn btn-outline-success"
-                                                                        data-bs-dismiss="modal">Annulla</button>
-                                                                    <button type="submit" class="btn btn-danger"
-                                                                        form="deleteForm">Elimina</button>
-                                                                </div>
-                                                            </form>
-                                                        </div>
-
                                                     </div>
                                                 </div>
-                                            </div>
 
-                                            {{-- !Fine modale di conferma di cancellazione --}}
+                                                {{-- !Fine modale di conferma di cancellazione --}}
+                                            </div>
                                         </td>
                                     </tr>
                                 @empty
