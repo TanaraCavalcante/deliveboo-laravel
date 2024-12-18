@@ -29,6 +29,6 @@ class RestaurantController extends Controller
     // Function che porta al progetto vue
     public function redirectToVue()
     {
-        return redirect('http://localhost:5177/');
+        return redirect('http://localhost:5175/');
     }
 }
